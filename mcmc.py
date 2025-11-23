@@ -10,11 +10,23 @@ def initialize_state(N):
     return state
 
 
+def is_attacking(i1, j1, k1, i2, j2, k2):
+    if i1 == i2 or j1 == j2 or k1 == k2:
+        return True
+    
+    if k1 == k2 and abs(i1 - i2) == abs(j1 - j2):
+        return True
+    
+    if j1 == j2 and abs(i1 - i2) == abs(k1 - k2):
+        return True
+    
+    if abs(i1 - i2) == abs(j1 - j2) == abs(k1 - k2):
+        return True
+    
+    return False
+
 def energy(state):
     N = len(state)
-    if N < 2:
-        return 0
-    
     count = 0
     
     for q1 in range(N):
@@ -22,29 +34,30 @@ def energy(state):
             i1, j1, k1 = state[q1]
             i2, j2, k2 = state[q2]
             
-            if i1 == i2 or j1 == j2 or k1 == k2:
+            if is_attacking(i1, j1, k1, i2, j2, k2):
                 count += 1
-                continue
-            
-            if k1 == k2 and abs(i1 - i2) == abs(j1 - j2):
-                count += 1
-                continue
-            
-            if j1 == j2 and abs(i1 - i2) == abs(k1 - k2):
-                count += 1
-                continue
-            
-            if i1 == i2 and abs(j1 - j2) == abs(k1 - k2):
-                count += 1
-                continue
-            
-            di = abs(i1 - i2)
-            dj = abs(j1 - j2)
-            dk = abs(k1 - k2)
-            if di == dj == dk:
-                count += 1
-    
     return count
+
+
+def energy_delta(state, queen_idx, old_pos, new_pos):
+    i_old, j_old, k_old = old_pos
+    i_new, j_new, k_new = new_pos
+    old_attacks = 0
+    new_attacks = 0
+    
+    for q in range(len(state)):
+        if q == queen_idx:
+            continue
+        
+        i, j, k = state[q]
+
+        if is_attacking(i, j, k, i_old, j_old, k_old):
+            old_attacks += 1
+        if is_attacking(i, j, k, i_new, j_new, k_new):
+            new_attacks += 1
+    
+    delta = new_attacks - old_attacks
+    return delta
 
 
 def metropolis_mcmc(N, beta, n_steps, verbose=True):
@@ -57,49 +70,42 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
     if verbose:
         print(f"Initial energy: {current_energy}")
     
-    all_positions = np.array([(i, j, k) for i in range(N) for j in range(N) for k in range(N)])
+    occupied_set = {tuple(pos) for pos in state}
     
-    accepted = 0
     energy_history = [current_energy]
     
     for step in range(n_steps):
         queen_idx = np.random.randint(0, N*N)
-        old_pos = state[queen_idx]
+        old_pos = tuple(state[queen_idx])
+
+        while True:
+            i_new = np.random.randint(0, N)
+            j_new = np.random.randint(0, N)
+            k_new = np.random.randint(0, N)
+            new_pos = (i_new, j_new, k_new)
+            
+            if new_pos not in occupied_set:
+                break
         
-        occupied_set = {tuple(pos) for pos in state}
-        empty_positions = [pos for pos in all_positions if tuple(pos) not in occupied_set]
+        delta_E = energy_delta(state, queen_idx, old_pos, new_pos)
+        proposed_energy = current_energy + delta_E
         
-        if len(empty_positions) == 0:
-            continue
-        
-        new_pos_idx = np.random.randint(0, len(empty_positions))
-        new_pos = empty_positions[new_pos_idx]
-        
-        proposed_state = state.copy()
-        proposed_state[queen_idx] = new_pos
-        
-        proposed_energy = energy(proposed_state)
-        
-        delta_E = proposed_energy - current_energy
         accept_prob = min(1.0, np.exp(-beta * delta_E))
         
         if np.random.random() < accept_prob:
-            state = proposed_state
+            occupied_set.remove(old_pos)
+            occupied_set.add(new_pos)
+            state[queen_idx] = np.array([i_new, j_new, k_new])
             current_energy = proposed_energy
-            accepted += 1
             
             if current_energy < best_energy:
                 best_state = state.copy()
                 best_energy = current_energy
-        
+
         energy_history.append(current_energy)
         
         if verbose and (step + 1) % 1000 == 0:
             print(f"Step {step + 1}/{n_steps}: energy = {current_energy}, best = {best_energy}")
-    
-    if verbose:
-        print(f"Final energy: {current_energy}")
-        print(f"Best energy: {best_energy}")
     
     return {
         'final_state': state,
@@ -112,9 +118,9 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
 
 if __name__ == "__main__":
     np.random.seed(42)
-    N = 7
-    beta = 1.0
-    n_steps = 10000
+    N = 50
+    beta = 10.0
+    n_steps = 100_000
     
     print(f"N = {N}, beta = {beta}, n_steps = {n_steps}")
     
