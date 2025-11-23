@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import os
 
 
 def initialize_state(N):
@@ -58,6 +60,7 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
     all_positions = np.array([(i, j, k) for i in range(N) for j in range(N) for k in range(N)])
     
     accepted = 0
+    energy_history = [current_energy]
     
     for step in range(n_steps):
         queen_idx = np.random.randint(0, N*N)
@@ -89,6 +92,8 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
                 best_state = state.copy()
                 best_energy = current_energy
         
+        energy_history.append(current_energy)
+        
         if verbose and (step + 1) % 1000 == 0:
             print(f"Step {step + 1}/{n_steps}: energy = {current_energy}, best = {best_energy}")
     
@@ -100,19 +105,31 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
         'final_state': state,
         'final_energy': current_energy,
         'best_state': best_state,
-        'best_energy': best_energy
+        'best_energy': best_energy,
+        'energy_history': energy_history
     }
 
 
 if __name__ == "__main__":
     np.random.seed(42)
-    N = 2
+    N = 7
     beta = 1.0
     n_steps = 10000
     
-    print(f"N = {N}, beta = {beta}, steps = {n_steps}")
+    print(f"N = {N}, beta = {beta}, n_steps = {n_steps}")
     
     results = metropolis_mcmc(N, beta, n_steps, verbose=True)
     
     print(f"Final energy: {results['final_energy']}")
     print(f"Best energy: {results['best_energy']}")
+    
+    os.makedirs('figures', exist_ok=True)
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(results['energy_history'])
+    plt.xlabel('Step')
+    plt.ylabel('Energy')
+    plt.title(f'Energy History (N={N}, beta={beta})')
+    plt.grid(True)
+    plt.savefig('figures/energy_history.png')
+    plt.close()
