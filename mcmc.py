@@ -60,7 +60,22 @@ def energy_delta(state, queen_idx, old_pos, new_pos):
     return delta
 
 
-def metropolis_mcmc(N, beta, n_steps, verbose=True):
+def constant_beta(beta):
+    def schedule(step):
+        return beta
+    return schedule
+
+
+def linear_annealing_beta(beta_start, beta_end, n_steps):
+    def schedule(step):
+        if n_steps <= 1:
+            return beta_end
+        frac = step / (n_steps - 1)
+        return beta_start + frac * (beta_end - beta_start)
+    return schedule
+
+
+def metropolis_mcmc(N, beta_schedule, n_steps, verbose=True):
     state = initialize_state(N)
     current_energy = energy(state)
     
@@ -75,6 +90,8 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
     energy_history = [current_energy]
     
     for step in range(n_steps):
+        beta_t = beta_schedule(step)
+        
         queen_idx = np.random.randint(0, N*N)
         old_pos = tuple(state[queen_idx])
 
@@ -90,7 +107,7 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
         delta_E = energy_delta(state, queen_idx, old_pos, new_pos)
         proposed_energy = current_energy + delta_E
         
-        accept_prob = min(1.0, np.exp(-beta * delta_E))
+        accept_prob = min(1.0, np.exp(-beta_t * delta_E))
         
         if np.random.random() < accept_prob:
             occupied_set.remove(old_pos)
@@ -105,7 +122,8 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
         energy_history.append(current_energy)
         
         if verbose and (step + 1) % 1000 == 0:
-            print(f"Step {step + 1}/{n_steps}: energy = {current_energy}, best = {best_energy}")
+            beta_str = f", beta={beta_t:.3f}"
+            print(f"Step {step + 1}/{n_steps}: energy = {current_energy}, best = {best_energy}{beta_str}")
     
     return {
         'final_state': state,
@@ -118,24 +136,49 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
 
 if __name__ == "__main__":
     np.random.seed(42)
-    N = 2
-    beta = 1
-    n_steps = 1000
+    N = 5
+    n_steps = 10000
     
-    print(f"N = {N}, beta = {beta}, n_steps = {n_steps}")
+    use_annealing = True
     
-    results = metropolis_mcmc(N, beta, n_steps, verbose=True)
-    
-    print(f"Final energy: {results['final_energy']}")
-    print(f"Best energy: {results['best_energy']}")
-    
-    os.makedirs('figures', exist_ok=True)
-    
-    plt.figure(figsize=(10, 6))
-    plt.plot(results['energy_history'])
-    plt.xlabel('Step')
-    plt.ylabel('Energy')
-    plt.title(f'Energy History (N={N}, beta={beta})')
-    plt.grid(True)
-    plt.savefig('figures/energy_history.png')
-    plt.close()
+    if use_annealing:
+        beta_start = 0.1
+        beta_end = 5.0
+        beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps)
+        print(f"N = {N}, Simulated Annealing: beta = {beta_start} -> {beta_end}, n_steps = {n_steps}")
+        
+        results = metropolis_mcmc(N, beta_schedule, n_steps, verbose=True)
+        
+        print(f"Final energy: {results['final_energy']}")
+        print(f"Best energy: {results['best_energy']}")
+        
+        os.makedirs('figures', exist_ok=True)
+        
+        plt.figure(figsize=(10, 6))
+        plt.plot(results['energy_history'])
+        plt.xlabel('Step')
+        plt.ylabel('Energy')
+        plt.title(f'Energy History (N={N}, SA: beta {beta_start}->{beta_end})')
+        plt.grid(True)
+        plt.savefig('figures/energy_history_sa.png')
+        plt.close()
+    else:
+        beta = 1.0
+        beta_schedule = constant_beta(beta)
+        print(f"N = {N}, Fixed beta = {beta}, n_steps = {n_steps}")
+        
+        results = metropolis_mcmc(N, beta_schedule, n_steps, verbose=True)
+        
+        print(f"Final energy: {results['final_energy']}")
+        print(f"Best energy: {results['best_energy']}")
+        
+        os.makedirs('figures', exist_ok=True)
+        
+        plt.figure(figsize=(10, 6))
+        plt.plot(results['energy_history'])
+        plt.xlabel('Step')
+        plt.ylabel('Energy')
+        plt.title(f'Energy History (N={N}, beta={beta})')
+        plt.grid(True)
+        plt.savefig(f'figures/energy_history_beta_{beta}.png')
+        plt.close()
