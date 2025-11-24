@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-
+import time   
 
 # ------------------------------
 #  Geometry / attack checks
@@ -137,7 +137,7 @@ class State3DQueens:
         attacked &= not_self
 
         return int(attacked.sum())
-
+    
 
 # ------------------------------
 #  Beta schedules (Metropolis vs SA)
@@ -248,16 +248,6 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
         "energy_history": energy_history,
     }
     
-
-
-
-import os
-import time          # 👈 add this
-import numpy as np
-import matplotlib.pyplot as plt
-# ... rest of your imports + definitions (State3DQueens, beta schedules, sampler, etc.)
-
-
 # ------------------------------
 #  Experiment layer
 # ------------------------------
@@ -363,6 +353,89 @@ def plot_energy_histories(all_histories, title, out_path=None):
     else:
         plt.show()
 
+def measure_min_energy_vs_N(
+    Ns,
+    n_steps,
+    beta_schedule,
+    n_runs=5,
+    base_seed=100,
+    verbose=True,
+    plot=True,
+    out_path=None,
+):
+    """
+    Measure minimal energy reached by MCMC as a function of board size N.
+    """
+
+    mean_min_energies = []
+    std_min_energies = []
+    all_min_energies = []
+
+    for idx, N in enumerate(Ns):
+        if verbose:
+            print(f"\n=== Running N = {N} ===")
+
+        # Run the experiment for this N
+        _, best_energies, _ = run_experiment(
+            N=N,
+            n_steps=n_steps,
+            beta_schedule=beta_schedule,
+            n_runs=n_runs,
+            base_seed=base_seed + 10 * idx,
+            verbose=verbose,
+        )
+
+        # best_energies is a list of minimal energies from each run
+        best_energies = np.array(best_energies)
+        all_min_energies.append(best_energies)
+
+        mean_min_energies.append(best_energies.mean())
+        std_min_energies.append(best_energies.std())
+
+        if verbose:
+            print(f"  → Mean min energy = {mean_min_energies[-1]:.2f} ± {std_min_energies[-1]:.2f}")
+
+    mean_min_energies = np.array(mean_min_energies)
+    std_min_energies = np.array(std_min_energies)
+
+    # -------------------------------------------------------------
+    # Optional plot
+    # -------------------------------------------------------------
+    if plot:
+        plt.figure(figsize=(8, 6))
+        Ns_arr = np.array(Ns)
+
+        plt.errorbar(
+            Ns_arr,
+            mean_min_energies,
+            yerr=std_min_energies,
+            fmt="o-",
+            capsize=4,
+            linewidth=2,
+            markersize=6,
+            label="Mean minimal energy (±1 std)"
+        )
+
+        plt.xlabel("Board size N")
+        plt.ylabel("Minimal energy reached")
+        plt.title("MCMC: Minimal Energy vs. Board Size N")
+        plt.grid(True)
+        plt.legend()
+
+        if out_path is not None:
+            os.makedirs(os.path.dirname(out_path), exist_ok=True)
+            plt.savefig(out_path, bbox_inches="tight")
+            plt.close()
+        else:
+            plt.show()
+
+    return (
+        Ns,
+        mean_min_energies,
+        std_min_energies,
+        all_min_energies,
+    )
+
 
 # ------------------------------
 #  Main: choose schedule & run
@@ -425,3 +498,22 @@ if __name__ == "__main__":
 
     print("\nBest energies (Metropolis):", best_const)
     print("Best energies (Simulated Annealing):", best_sa)
+
+    # Measuring minimal energy vs N
+    Ns = [3, 4, 5, 6, 7, 8]
+
+    print("\nMeasuring minimal energy as a function of N...")
+    Ns_out, means, stds, all_data = measure_min_energy_vs_N(
+        Ns=Ns,
+        n_steps=100000,
+        beta_schedule=beta_schedule_const,   # or beta_schedule_sa
+        n_runs=5,
+        base_seed=500,
+        verbose=True,
+        plot=True,
+        out_path="figures/min_energy_vs_N.png",
+    )
+
+    print("\nResults:")
+    for N, m, s in zip(Ns_out, means, stds):
+        print(f"N={N}: {m:.2f} ± {s:.2f}")
