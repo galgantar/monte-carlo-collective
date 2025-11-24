@@ -323,7 +323,7 @@ def plot_energy_histories(all_histories, title, out_path=None):
 
 if __name__ == "__main__":
     N = 7
-    n_steps = 10000
+    n_steps = 100000
     n_runs = 5
 
     # Example 1: plain Metropolis (constant beta)
