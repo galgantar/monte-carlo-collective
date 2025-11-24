@@ -11,18 +11,18 @@ def initialize_state(N):
 
 
 def is_attacking(i1, j1, k1, i2, j2, k2):
-    if i1 == i2 or j1 == j2 or k1 == k2:
+    if i1 == i2 and j1 == j2:
         return True
-    
+    if i1 == i2 and k1 == k2:
+        return True
+    if j1 == j2 and k1 == k2:
+        return True
     if k1 == k2 and abs(i1 - i2) == abs(j1 - j2):
         return True
-    
     if j1 == j2 and abs(i1 - i2) == abs(k1 - k2):
         return True
-    
     if abs(i1 - i2) == abs(j1 - j2) == abs(k1 - k2):
         return True
-    
     return False
 
 def energy(state):
@@ -118,9 +118,9 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
 
 if __name__ == "__main__":
     np.random.seed(42)
-    N = 50
-    beta = 10.0
-    n_steps = 100_000
+    N = 2
+    beta = 1
+    n_steps = 1000
     
     print(f"N = {N}, beta = {beta}, n_steps = {n_steps}")
     
