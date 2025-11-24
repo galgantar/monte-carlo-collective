@@ -54,6 +54,10 @@ class State3DQueens:
             self.state = np.random.randint(0, N, size=(N, N))
         else:
             self.state = state
+
+        # Precompute coordinate grids for vectorization
+        self.I_grid, self.J_grid = np.indices((N, N))
+
         self._energy = None
 
     def copy(self):
@@ -65,6 +69,9 @@ class State3DQueens:
         return self._energy
 
     def _compute_energy(self):
+        """
+        Full O(N^4) energy computation, only used for initialization / debugging.
+        """
         N = self.N
         positions = [(i, j, self.state[i, j]) for i in range(N) for j in range(N)]
         Q = len(positions)
@@ -84,14 +91,52 @@ class State3DQueens:
 
     def propose_move(self, i, j, new_k):
         """
-        Temporarily apply move (i, j) -> new_k, return old_k.
+        Apply move (i, j) -> new_k, return old_k.
         """
         old_k = self.state[i, j]
         self.state[i, j] = new_k
         return old_k
 
     def revert_move(self, i, j, old_k):
+        """
+        Revert move at (i, j) to old_k.
+        """
         self.state[i, j] = old_k
+
+    def conflicts_for_queen(self, i, j, k):
+        """
+        Vectorized count of how many other queens are attacked by a queen
+        at (i, j, k). Complexity: O(N^2) in NumPy.
+        """
+        k_grid = self.state
+        I = self.I_grid
+        J = self.J_grid
+
+        # Exclude the queen itself
+        not_self = (I != i) | (J != j)
+
+        # Same rows/lines
+        same_ik = (I == i) & (k_grid == k)
+        same_jk = (J == j) & (k_grid == k)
+
+        # 2D diagonals
+        plane_k_diag = (k_grid == k) & (np.abs(I - i) == np.abs(J - j))
+        plane_j_diag = (J == j) & (np.abs(I - i) == np.abs(k_grid - k))
+        plane_i_diag = (I == i) & (np.abs(J - j) == np.abs(k_grid - k))
+
+        # 3D space diagonal
+        di = np.abs(I - i)
+        dj = np.abs(J - j)
+        dk = np.abs(k_grid - k)
+        space_diag = (di == dj) & (dj == dk)
+
+        attacked = (same_ik | same_jk |
+                    plane_k_diag | plane_j_diag | plane_i_diag |
+                    space_diag)
+
+        attacked &= not_self
+
+        return int(attacked.sum())
 
 
 # ------------------------------
@@ -99,17 +144,12 @@ class State3DQueens:
 # ------------------------------
 
 def constant_beta(beta):
-    """Return a schedule beta_t = beta (plain Metropolis)."""
     def schedule(step):
         return beta
     return schedule
 
 
 def linear_annealing_beta(beta_start, beta_end, n_steps):
-    """
-    Linear schedule from beta_start to beta_end over n_steps.
-    beta_start small -> high temperature at beginning.
-    """
     def schedule(step):
         if n_steps <= 1:
             return beta_end
@@ -118,51 +158,13 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
     return schedule
 
 
-def exponential_annealing_beta(beta_start, beta_end, n_steps):
-    """
-    Exponential schedule between beta_start and beta_end.
-    """
-    if beta_start <= 0 or beta_end <= 0:
-        raise ValueError("beta_start and beta_end must be > 0 for exponential schedule.")
-
-    ratio = beta_end / beta_start
-
-    def schedule(step):
-        if n_steps <= 1:
-            return beta_end
-        frac = step / (n_steps - 1)
-        return beta_start * (ratio ** frac)
-
-    return schedule
-
-
 # ------------------------------
-#  Core sampler (no plotting)
+#  Core sampler using local ΔE
 # ------------------------------
 
 def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
     """
-    Metropolis / Simulated Annealing sampler.
-
-    Parameters
-    ----------
-    N : int
-        Board size.
-    n_steps : int
-        Number of MCMC steps.
-    beta_schedule : callable
-        Function beta_schedule(step) returning beta_t at given step.
-        - constant_beta(beta) => plain Metropolis
-        - *_annealing_beta(...) => simulated annealing
-    verbose : bool
-        Whether to print progress.
-    seed : int or None
-        Random seed for reproducibility.
-
-    Returns
-    -------
-    dict with keys:
-        final_state, final_energy, best_state, best_energy, energy_history
+    Metropolis / SA sampler with local, vectorized ΔE update.
     """
     if seed is not None:
         np.random.seed(seed)
@@ -176,6 +178,10 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
     accepted = 0
     energy_history = [current_energy]
 
+    # For progress tracking
+    if verbose and n_steps > 0:
+        next_report = max(1, n_steps // 10)  # report roughly every 10%
+
     for step in range(n_steps):
         beta_t = beta_schedule(step)
 
@@ -184,22 +190,31 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
         j = np.random.randint(0, N)
         old_k = state.state[i, j]
 
+        # Compute conflicts at old position
+        old_conflicts = state.conflicts_for_queen(i, j, old_k)
+
         # Propose new k != old_k
         new_k = np.random.randint(0, N - 1)
         if new_k >= old_k:
             new_k += 1
 
-        # Apply move in-place
-        state.propose_move(i, j, new_k)
+        # Apply move
+        state.state[i, j] = new_k
 
-        proposed_energy = state.energy(recompute=True)
-        delta_E = proposed_energy - current_energy
+        # Conflicts at new position
+        new_conflicts = state.conflicts_for_queen(i, j, new_k)
+
+        # Each conflict corresponds to one pair,
+        # so the global energy changes by new_conflicts - old_conflicts
+        delta_E = new_conflicts - old_conflicts
+        proposed_energy = current_energy + delta_E
 
         accept_prob = min(1.0, np.exp(-beta_t * delta_E))
 
         if np.random.random() < accept_prob:
             # Accept
             current_energy = proposed_energy
+            state._energy = current_energy
             accepted += 1
 
             if current_energy < best_energy:
@@ -207,22 +222,23 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
                 best_energy = current_energy
         else:
             # Reject: revert
-            state.revert_move(i, j, old_k)
-            state._energy = current_energy  # restore cached energy
+            state.state[i, j] = old_k
+            state._energy = current_energy
 
         energy_history.append(current_energy)
 
-        if verbose and (step + 1) % 1000 == 0:
+        if verbose and (step + 1) % next_report == 0:
+            frac = (step + 1) / n_steps
             print(
-                f"Step {step + 1}/{n_steps}: "
-                f"energy = {current_energy}, best = {best_energy}, "
-                f"beta_t = {beta_t:.4f}"
+                f"[chain] {step + 1}/{n_steps} steps "
+                f"({frac*100:.1f}%) | E={current_energy}, best={best_energy}, "
+                f"beta_t={beta_t:.3f}"
             )
 
     if verbose:
-        print(f"Final energy: {current_energy}")
-        print(f"Best energy: {best_energy}")
-        print(f"Acceptance rate: {accepted / n_steps:.3f}")
+        print(f"[chain] Final energy: {current_energy}")
+        print(f"[chain] Best energy:   {best_energy}")
+        print(f"[chain] Acceptance rate: {accepted / n_steps:.3f}")
 
     return {
         "final_state": state,
@@ -231,6 +247,15 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
         "best_energy": best_energy,
         "energy_history": energy_history,
     }
+    
+
+
+
+import os
+import time          # 👈 add this
+import numpy as np
+import matplotlib.pyplot as plt
+# ... rest of your imports + definitions (State3DQueens, beta schedules, sampler, etc.)
 
 
 # ------------------------------
@@ -255,24 +280,46 @@ def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False
     -------
     all_histories : list of lists (energies per run)
     best_energies : list of best energies per run
+    run_times     : list of wall-clock durations (seconds) per run
     """
     all_histories = []
     best_energies = []
+    run_times = []
 
     for r in range(n_runs):
         if verbose:
             print(f"\n=== Run {r+1}/{n_runs} ===")
+
+        start_time = time.time()
         res = run_single_chain(
             N=N,
             n_steps=n_steps,
             beta_schedule=beta_schedule,
             seed=base_seed + r,
-            verbose=verbose,
+            verbose=verbose,   # step-level progress comes from here
         )
+        end_time = time.time()
+
+        duration = end_time - start_time
+        run_times.append(duration)
+
         all_histories.append(res["energy_history"])
         best_energies.append(res["best_energy"])
 
-    return all_histories, best_energies
+        if verbose:
+            frac_runs = (r + 1) / n_runs
+            print(f"=== Completed run {r+1}/{n_runs} "
+                  f"({frac_runs*100:.1f}% of experiment) | "
+                  f"time this run: {duration:.2f} s ===")
+
+    # Print mean time if verbose
+    if verbose and n_runs > 0:
+        mean_time = np.mean(run_times)
+        total_time = np.sum(run_times)
+        print(f"\n>>> Mean time per run: {mean_time:.2f} s")
+        print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
+
+    return all_histories, best_energies, run_times
 
 
 def plot_energy_histories(all_histories, title, out_path=None):
@@ -322,7 +369,7 @@ def plot_energy_histories(all_histories, title, out_path=None):
 # ------------------------------
 
 if __name__ == "__main__":
-    N = 7
+    N = 5
     n_steps = 100000
     n_runs = 5
 
@@ -331,14 +378,17 @@ if __name__ == "__main__":
     beta_schedule_const = constant_beta(beta_const)
 
     print(f"Running {n_runs} runs with constant beta = {beta_const}")
-    all_hist_const, best_const = run_experiment(
+    all_hist_const, best_const, times_const = run_experiment(
         N=N,
         n_steps=n_steps,
         beta_schedule=beta_schedule_const,
         n_runs=n_runs,
         base_seed=42,
-        verbose=False,
+        verbose=True,   # 👈 get progress + timing
     )
+
+    mean_time_const = np.mean(times_const)
+    print(f"\n[Metropolis] Mean time per run: {mean_time_const:.2f} s")
 
     plot_energy_histories(
         all_hist_const,
@@ -347,21 +397,24 @@ if __name__ == "__main__":
     )
 
     # Example 2: simulated annealing with linear schedule
-    beta_start = 0.1   # high temperature (weak penalty on uphill moves)
-    beta_end = 5.0     # low temperature
+    beta_start = 0.01   # high temperature (weak penalty on uphill moves)
+    beta_end = 10.0     # low temperature
     beta_schedule_sa = linear_annealing_beta(beta_start, beta_end, n_steps)
 
     print(f"\nRunning {n_runs} runs with simulated annealing "
           f"(beta from {beta_start} to {beta_end})")
 
-    all_hist_sa, best_sa = run_experiment(
+    all_hist_sa, best_sa, times_sa = run_experiment(
         N=N,
         n_steps=n_steps,
         beta_schedule=beta_schedule_sa,
         n_runs=n_runs,
         base_seed=123,
-        verbose=False,
+        verbose=True,
     )
+
+    mean_time_sa = np.mean(times_sa)
+    print(f"\n[Simulated Annealing] Mean time per run: {mean_time_sa:.2f} s")
 
     plot_energy_histories(
         all_hist_sa,
