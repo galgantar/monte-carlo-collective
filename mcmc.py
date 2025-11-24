@@ -65,10 +65,11 @@ def conflicts_for_queen_vectorized(state, queen_idx, i, j, k):
     same_ik = same_i & same_k
     same_jk = same_j & same_k
     
-    plane_k_diag = same_k & (di == dj) & (di > 0)
-    plane_j_diag = same_j & (di == dk) & (di > 0)
-    plane_i_diag = same_i & (dj == dk) & (dj > 0)
-    space_diag = (di == dj) & (dj == dk) & (di > 0)
+    plane_k_diag = same_k & (di == dj)
+    plane_j_diag = same_j & (di == dk)
+    plane_i_diag = same_i & (dj == dk)
+    
+    space_diag = (di == dj) & (dj == dk)
     
     attacked = same_ij | same_ik | same_jk | plane_k_diag | plane_j_diag | plane_i_diag | space_diag
     attacked = attacked & not_self
@@ -162,7 +163,7 @@ def metropolis_mcmc(N, beta_schedule, n_steps, verbose=True):
 
 if __name__ == "__main__":
     np.random.seed(42)
-    N = 6
+    N = 5
     n_steps = 100000
     
     beta_start = 0.01
