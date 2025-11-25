@@ -118,9 +118,9 @@ def metropolis_mcmc(N, beta, n_steps, verbose=True):
 
 if __name__ == "__main__":
     np.random.seed(42)
-    N = 2
+    N = 5
     beta = 1
-    n_steps = 1000
+    n_steps = 100000
     
     print(f"N = {N}, beta = {beta}, n_steps = {n_steps}")
     

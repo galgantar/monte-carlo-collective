@@ -1,4 +1,5 @@
 import os
+import time
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -8,7 +9,7 @@ import matplotlib.pyplot as plt
 # ------------------------------
 
 def is_attacking(i1, j1, k1, i2, j2, k2):
-    # Same (i,j) position — impossible in your representation, but safe to keep
+    # Same (i,j) vertical line (along k)
     if i1 == i2 and j1 == j2:
         return True
 
@@ -43,25 +44,60 @@ def is_attacking(i1, j1, k1, i2, j2, k2):
 # ------------------------------
 
 class State3DQueens:
-    def __init__(self, N, state=None):
-        """
-        State: N x N array.
-        For each (i, j), state[i, j] = k in {0, ..., N-1},
-        meaning there is exactly one queen at (i, j, k).
-        """
-        self.N = N
-        if state is None:
-            self.state = np.random.randint(0, N, size=(N, N))
-        else:
-            self.state = state
+    """
+    General 3D queens configuration:
 
-        # Precompute coordinate grids for vectorization
-        self.I_grid, self.J_grid = np.indices((N, N))
+    - Board is N x N x N.
+    - We keep Q queens (by default Q = N^2).
+    - Queens can be anywhere in the 3D grid, with at most one queen per (i,j,k).
+    - Multiple queens can share the same (i,j) with different k.
+    - We store only:
+        * self.queens: (Q, 3) array of coordinates
+        * self.occ_set: set of occupied (i,j,k)
+      No full N^3 grid.
+    """
+
+    def __init__(self, N, Q=None, positions=None):
+        self.N = N
+        if Q is None:
+            Q = N * N  # same number of queens as before
+        self.Q = Q
+
+        if positions is None:
+            # Sample Q distinct cells from the N^3 possible positions
+            total_cells = N ** 3
+            if Q > total_cells:
+                raise ValueError("Q cannot exceed N^3.")
+
+            flat_indices = np.random.choice(total_cells, size=Q, replace=False)
+            k_coords = flat_indices % N
+            j_coords = (flat_indices // N) % N
+            i_coords = flat_indices // (N * N)
+            self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
+        else:
+            positions = np.asarray(positions, dtype=int)
+            if positions.shape[1] != 3:
+                raise ValueError("positions must be of shape (Q, 3).")
+            self.queens = positions
+            self.Q = positions.shape[0]
+
+        # Occupancy set: track which (i,j,k) are used
+        self.occ_set = set()
+        for (i, j, k) in self.queens:
+            pos = (int(i), int(j), int(k))
+            if pos in self.occ_set:
+                raise ValueError("Two queens occupy the same (i,j,k) cell.")
+            self.occ_set.add(pos)
 
         self._energy = None
 
     def copy(self):
-        return State3DQueens(self.N, state=self.state.copy())
+        new_state = State3DQueens(self.N, Q=self.Q, positions=self.queens.copy())
+        # Copy cached energy as well
+        new_state._energy = self._energy
+        return new_state
+
+    # --------- Energy computation ---------
 
     def energy(self, recompute=False):
         if self._energy is None or recompute:
@@ -70,15 +106,13 @@ class State3DQueens:
 
     def _compute_energy(self):
         """
-        Full O(N^4) energy computation, only used for initialization / debugging.
+        Full O(Q^2) energy computation by pairwise checking.
         """
-        N = self.N
-        positions = [(i, j, self.state[i, j]) for i in range(N) for j in range(N)]
-        Q = len(positions)
-
+        Q = self.Q
         if Q < 2:
             return 0
 
+        positions = self.queens
         count = 0
         for q1 in range(Q):
             i1, j1, k1 = positions[q1]
@@ -86,55 +120,99 @@ class State3DQueens:
                 i2, j2, k2 = positions[q2]
                 if is_attacking(i1, j1, k1, i2, j2, k2):
                     count += 1
-
         return count
 
-    def propose_move(self, i, j, new_k):
-        """
-        Apply move (i, j) -> new_k, return old_k.
-        """
-        old_k = self.state[i, j]
-        self.state[i, j] = new_k
-        return old_k
+    # --------- Local move operations ---------
 
-    def revert_move(self, i, j, old_k):
+    def propose_move(self, q_idx, new_pos):
         """
-        Revert move at (i, j) to old_k.
+        Move queen q_idx to new_pos = (i_new, j_new, k_new).
+        Returns old_pos for possible revert (not used in current sampler).
         """
-        self.state[i, j] = old_k
+        i_old, j_old, k_old = self.queens[q_idx]
+        i_new, j_new, k_new = new_pos
 
-    def conflicts_for_queen(self, i, j, k):
+        old_pos = (int(i_old), int(j_old), int(k_old))
+        new_pos_t = (int(i_new), int(j_new), int(k_new))
+
+        # Update occupancy set
+        self.occ_set.remove(old_pos)
+        self.occ_set.add(new_pos_t)
+
+        # Update queen position
+        self.queens[q_idx] = [i_new, j_new, k_new]
+
+        return old_pos
+
+    def revert_move(self, q_idx, old_pos):
         """
-        Vectorized count of how many other queens are attacked by a queen
-        at (i, j, k). Complexity: O(N^2) in NumPy.
+        Revert queen q_idx to old_pos = (i_old, j_old, k_old).
+        Not used in current sampler, but implemented for completeness.
         """
-        k_grid = self.state
-        I = self.I_grid
-        J = self.J_grid
+        i_current, j_current, k_current = self.queens[q_idx]
+        current_pos = (int(i_current), int(j_current), int(k_current))
 
-        # Exclude the queen itself
-        not_self = (I != i) | (J != j)
+        # Remove current pos from occ_set, add old_pos
+        self.occ_set.remove(current_pos)
+        self.occ_set.add(old_pos)
 
-        # Same rows/lines
-        same_ik = (I == i) & (k_grid == k)
-        same_jk = (J == j) & (k_grid == k)
+        i_old, j_old, k_old = old_pos
+        self.queens[q_idx] = [i_old, j_old, k_old]
 
-        # 2D diagonals
-        plane_k_diag = (k_grid == k) & (np.abs(I - i) == np.abs(J - j))
-        plane_j_diag = (J == j) & (np.abs(I - i) == np.abs(k_grid - k))
-        plane_i_diag = (I == i) & (np.abs(J - j) == np.abs(k_grid - k))
+    # --------- Local conflict counting ---------
 
-        # 3D space diagonal
-        di = np.abs(I - i)
-        dj = np.abs(J - j)
-        dk = np.abs(k_grid - k)
+    def conflicts_for_queen(self, q_idx, pos=None):
+        """
+        Count how many other queens are attacked by queen q_idx.
+
+        If pos is None, use its current position.
+        If pos is given (i,j,k), treat that as a hypothetical position
+        WITHOUT modifying the state.
+        """
+        if pos is None:
+            i, j, k = self.queens[q_idx]
+        else:
+            i, j, k = pos
+
+        # All other queens
+        mask = np.ones(self.Q, dtype=bool)
+        mask[q_idx] = False
+        others = self.queens[mask]  # shape (Q-1, 3)
+        if others.shape[0] == 0:
+            return 0
+
+        i2 = others[:, 0]
+        j2 = others[:, 1]
+        k2 = others[:, 2]
+
+        di = np.abs(i2 - i)
+        dj = np.abs(j2 - j)
+        dk = np.abs(k2 - k)
+
+        # Same (i,j) vertical line (along k)
+        same_ij = (i2 == i) & (j2 == j)
+
+        # Same "row" in (i,j,k) axes
+        same_ik = (i2 == i) & (k2 == k)
+        same_jk = (j2 == j) & (k2 == k)
+
+        # 2D diagonals in slices
+        plane_k_diag = (k2 == k) & (di == dj)
+        plane_j_diag = (j2 == j) & (di == dk)
+        plane_i_diag = (i2 == i) & (dj == dk)
+
+        # Full 3D diagonal
         space_diag = (di == dj) & (dj == dk)
 
-        attacked = (same_ik | same_jk |
-                    plane_k_diag | plane_j_diag | plane_i_diag |
-                    space_diag)
-
-        attacked &= not_self
+        attacked = (
+            same_ij
+            | same_ik
+            | same_jk
+            | plane_k_diag
+            | plane_j_diag
+            | plane_i_diag
+            | space_diag
+        )
 
         return int(attacked.sum())
 
@@ -162,14 +240,17 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
 #  Core sampler using local ΔE
 # ------------------------------
 
-def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
+def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None):
     """
-    Metropolis / SA sampler with local, vectorized ΔE update.
+    Metropolis / SA sampler with local ΔE updates on a general 3D state.
+
+    - Board: N x N x N
+    - Queens: Q (default N^2) distinct positions (i,j,k), no constraint per (i,j).
     """
     if seed is not None:
         np.random.seed(seed)
 
-    state = State3DQueens(N)
+    state = State3DQueens(N, Q=Q)
     current_energy = state.energy(recompute=True)
 
     best_state = state.copy()
@@ -185,34 +266,34 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
     for step in range(n_steps):
         beta_t = beta_schedule(step)
 
-        # Pick random (i, j)
-        i = np.random.randint(0, N)
-        j = np.random.randint(0, N)
-        old_k = state.state[i, j]
+        # Pick a random queen index to move
+        q_idx = np.random.randint(0, state.Q)
 
-        # Compute conflicts at old position
-        old_conflicts = state.conflicts_for_queen(i, j, old_k)
+        # Conflicts at old position
+        old_conflicts = state.conflicts_for_queen(q_idx)
 
-        # Propose new k != old_k
-        new_k = np.random.randint(0, N - 1)
-        if new_k >= old_k:
-            new_k += 1
+        # Propose a random new empty (i,j,k)
+        N_ = state.N
+        while True:
+            i_new = np.random.randint(0, N_)
+            j_new = np.random.randint(0, N_)
+            k_new = np.random.randint(0, N_)
+            if (int(i_new), int(j_new), int(k_new)) not in state.occ_set:
+                break
 
-        # Apply move
-        state.state[i, j] = new_k
+        # Compute conflicts at new position (hypothetical)
+        new_conflicts = state.conflicts_for_queen(q_idx, pos=(i_new, j_new, k_new))
 
-        # Conflicts at new position
-        new_conflicts = state.conflicts_for_queen(i, j, new_k)
-
-        # Each conflict corresponds to one pair,
-        # so the global energy changes by new_conflicts - old_conflicts
+        # Each conflict corresponds to one pair involving this queen,
+        # so the global energy changes by new_conflicts - old_conflicts.
         delta_E = new_conflicts - old_conflicts
         proposed_energy = current_energy + delta_E
 
         accept_prob = min(1.0, np.exp(-beta_t * delta_E))
 
         if np.random.random() < accept_prob:
-            # Accept
+            # Accept: actually move the queen
+            state.propose_move(q_idx, (i_new, j_new, k_new))
             current_energy = proposed_energy
             state._energy = current_energy
             accepted += 1
@@ -221,8 +302,7 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
                 best_state = state.copy()
                 best_energy = current_energy
         else:
-            # Reject: revert
-            state.state[i, j] = old_k
+            # Reject: do nothing (we never changed the state)
             state._energy = current_energy
 
         energy_history.append(current_energy)
@@ -235,7 +315,7 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
                 f"beta_t={beta_t:.3f}"
             )
 
-    if verbose:
+    if verbose and n_steps > 0:
         print(f"[chain] Final energy: {current_energy}")
         print(f"[chain] Best energy:   {best_energy}")
         print(f"[chain] Acceptance rate: {accepted / n_steps:.3f}")
@@ -247,15 +327,6 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None):
         "best_energy": best_energy,
         "energy_history": energy_history,
     }
-    
-
-
-
-import os
-import time          # 👈 add this
-import numpy as np
-import matplotlib.pyplot as plt
-# ... rest of your imports + definitions (State3DQueens, beta schedules, sampler, etc.)
 
 
 # ------------------------------
@@ -296,7 +367,7 @@ def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False
             n_steps=n_steps,
             beta_schedule=beta_schedule,
             seed=base_seed + r,
-            verbose=verbose,   # step-level progress comes from here
+            verbose=verbose,
         )
         end_time = time.time()
 
@@ -308,11 +379,12 @@ def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False
 
         if verbose:
             frac_runs = (r + 1) / n_runs
-            print(f"=== Completed run {r+1}/{n_runs} "
-                  f"({frac_runs*100:.1f}% of experiment) | "
-                  f"time this run: {duration:.2f} s ===")
+            print(
+                f"=== Completed run {r+1}/{n_runs} "
+                f"({frac_runs*100:.1f}% of experiment) | "
+                f"time this run: {duration:.2f} s ==="
+            )
 
-    # Print mean time if verbose
     if verbose and n_runs > 0:
         mean_time = np.mean(run_times)
         total_time = np.sum(run_times)
@@ -370,7 +442,7 @@ def plot_energy_histories(all_histories, title, out_path=None):
 
 if __name__ == "__main__":
     N = 5
-    n_steps = 100000
+    n_steps = 200000
     n_runs = 5
 
     # Example 1: plain Metropolis (constant beta)
@@ -384,7 +456,7 @@ if __name__ == "__main__":
         beta_schedule=beta_schedule_const,
         n_runs=n_runs,
         base_seed=42,
-        verbose=True,   # 👈 get progress + timing
+        verbose=True,
     )
 
     mean_time_const = np.mean(times_const)
@@ -397,12 +469,14 @@ if __name__ == "__main__":
     )
 
     # Example 2: simulated annealing with linear schedule
-    beta_start = 0.01   # high temperature (weak penalty on uphill moves)
-    beta_end = 10.0     # low temperature
+    beta_start = 0.1   # high temperature (weak penalty on uphill moves)
+    beta_end = 5.0     # low temperature
     beta_schedule_sa = linear_annealing_beta(beta_start, beta_end, n_steps)
 
-    print(f"\nRunning {n_runs} runs with simulated annealing "
-          f"(beta from {beta_start} to {beta_end})")
+    print(
+        f"\nRunning {n_runs} runs with simulated annealing "
+        f"(beta from {beta_start} to {beta_end})"
+    )
 
     all_hist_sa, best_sa, times_sa = run_experiment(
         N=N,
@@ -418,8 +492,10 @@ if __name__ == "__main__":
 
     plot_energy_histories(
         all_hist_sa,
-        title=f"Energy History (Simulated Annealing, N={N}, "
-              f"beta: {beta_start}→{beta_end})",
+        title=(
+            f"Energy History (Simulated Annealing, N={N}, "
+            f"beta: {beta_start}→{beta_end})"
+        ),
         out_path="figures/energy_history_sa.png",
     )
 
