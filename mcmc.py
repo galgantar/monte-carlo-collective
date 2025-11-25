@@ -2,32 +2,7 @@ import os
 import time
 import numpy as np
 import matplotlib.pyplot as plt
-import yaml   
-
-
-def is_attacking(i1, j1, k1, i2, j2, k2):
-    if i1 == i2 and j1 == j2:
-        return True
-
-    if i1 == i2 and k1 == k2:
-        return True
-
-    if j1 == j2 and k1 == k2:
-        return True
-
-    if k1 == k2 and abs(i1 - i2) == abs(j1 - j2):
-        return True
-
-    if j1 == j2 and abs(i1 - i2) == abs(k1 - k2):
-        return True
-
-    if i1 == i2 and abs(j1 - j2) == abs(k1 - k2):
-        return True
-
-    if abs(i1 - i2) == abs(j1 - j2) == abs(k1 - k2):
-        return True
-
-    return False
+import yaml
 
 
 class State3DQueens:
@@ -80,14 +55,40 @@ class State3DQueens:
             return 0
 
         positions = self.queens
-        count = 0
-        for q1 in range(Q):
-            i1, j1, k1 = positions[q1]
-            for q2 in range(q1 + 1, Q):
-                i2, j2, k2 = positions[q2]
-                if is_attacking(i1, j1, k1, i2, j2, k2):
-                    count += 1
-        return count
+        # Note: i, j, k have shape (Q,)
+        i = positions[:, 0]
+        j = positions[:, 1]
+        k = positions[:, 2]
+
+        # Note: di, dj, dk have shape (Q, Q)
+        di = np.abs(i[:, None] - i[None, :])
+        dj = np.abs(j[:, None] - j[None, :])
+        dk = np.abs(k[:, None] - k[None, :])
+
+        # Note: same_ij, same_ik, same_jk have shape (Q, Q)
+        same_ij = (i[:, None] == i[None, :]) & (j[:, None] == j[None, :])
+        same_ik = (i[:, None] == i[None, :]) & (k[:, None] == k[None, :])
+        same_jk = (j[:, None] == j[None, :]) & (k[:, None] == k[None, :])
+        
+        # Note: plane_k_diag, plane_j_diag, plane_i_diag have shape (Q, Q)
+        plane_k_diag = (k[:, None] == k[None, :]) & (di == dj)
+        plane_j_diag = (j[:, None] == j[None, :]) & (di == dk)
+        plane_i_diag = (i[:, None] == i[None, :]) & (dj == dk)
+        
+        space_diag = (di == dj) & (dj == dk)
+
+        attacked = (
+            same_ij
+            | same_ik
+            | same_jk
+            | plane_k_diag
+            | plane_j_diag
+            | plane_i_diag
+            | space_diag
+        )
+
+        upper_triangle = np.triu(attacked, k=1)
+        return int(upper_triangle.sum())
 
     def propose_move(self, q_idx, new_pos):
         i_old, j_old, k_old = self.queens[q_idx]
