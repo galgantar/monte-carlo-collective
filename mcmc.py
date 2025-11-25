@@ -1,92 +1,161 @@
+import os
+import time
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-
-
-def initialize_state(N):
-    all_positions = [(i, j, k) for i in range(N) for j in range(N) for k in range(N)]
-    selected = np.random.choice(len(all_positions), size=N*N, replace=False)
-    state = np.array([all_positions[idx] for idx in selected])
-    return state
+import time   
 
 
 def is_attacking(i1, j1, k1, i2, j2, k2):
     if i1 == i2 and j1 == j2:
         return True
+
     if i1 == i2 and k1 == k2:
         return True
+
     if j1 == j2 and k1 == k2:
         return True
+
     if k1 == k2 and abs(i1 - i2) == abs(j1 - j2):
         return True
+
     if j1 == j2 and abs(i1 - i2) == abs(k1 - k2):
         return True
+
     if i1 == i2 and abs(j1 - j2) == abs(k1 - k2):
         return True
+
     if abs(i1 - i2) == abs(j1 - j2) == abs(k1 - k2):
         return True
+
     return False
 
 
-def energy(state):
-    N = len(state)
-    count = 0
-    
-    for q1 in range(N):
-        for q2 in range(q1 + 1, N):
-            i1, j1, k1 = state[q1]
-            i2, j2, k2 = state[q2]
-            
-            if is_attacking(i1, j1, k1, i2, j2, k2):
-                count += 1
-    return count
+class State3DQueens:
+    def __init__(self, N, Q=None, positions=None):
+        self.N = N
+        if Q is None:
+            Q = N * N
+        self.Q = Q
+
+        if positions is None:
+            total_cells = N ** 3
+            if Q > total_cells:
+                raise ValueError("Q cannot exceed N^3.")
+
+            flat_indices = np.random.choice(total_cells, size=Q, replace=False)
+            k_coords = flat_indices % N
+            j_coords = (flat_indices // N) % N
+            i_coords = flat_indices // (N * N)
+            self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
+        else:
+            positions = np.asarray(positions, dtype=int)
+            if positions.shape[1] != 3:
+                raise ValueError("positions must be of shape (Q, 3).")
+            self.queens = positions
+            self.Q = positions.shape[0]
+
+        self.occ_set = set()
+        for (i, j, k) in self.queens:
+            pos = (int(i), int(j), int(k))
+            if pos in self.occ_set:
+                raise ValueError("Two queens occupy the same (i,j,k) cell.")
+            self.occ_set.add(pos)
+
+        self._energy = None
+
+    def copy(self):
+        new_state = State3DQueens(self.N, Q=self.Q, positions=self.queens.copy())
+        new_state._energy = self._energy
+        return new_state
 
 
-def conflicts_for_queen_vectorized(state, queen_idx, i, j, k):
-    if len(state) == 0:
-        return 0
-    
-    state_array = np.array(state)
-    I = state_array[:, 0]
-    J = state_array[:, 1]
-    K = state_array[:, 2]
-    
-    not_self = np.arange(len(state)) != queen_idx
-    
-    same_i = (I == i)
-    same_j = (J == j)
-    same_k = (K == k)
-    
-    di = np.abs(I - i)
-    dj = np.abs(J - j)
-    dk = np.abs(K - k)
-    
-    same_ij = same_i & same_j
-    same_ik = same_i & same_k
-    same_jk = same_j & same_k
-    
-    plane_k_diag = same_k & (di == dj)
-    plane_j_diag = same_j & (di == dk)
-    plane_i_diag = same_i & (dj == dk)
-    
-    space_diag = (di == dj) & (dj == dk)
-    
-    attacked = same_ij | same_ik | same_jk | plane_k_diag | plane_j_diag | plane_i_diag | space_diag
-    attacked = attacked & not_self
-    
-    return int(attacked.sum())
+    def energy(self, recompute=False):
+        if self._energy is None or recompute:
+            self._energy = self._compute_energy()
+        return self._energy
 
+    def _compute_energy(self):
+        Q = self.Q
+        if Q < 2:
+            return 0
 
-def energy_delta(state, queen_idx, old_pos, new_pos):
-    i_old, j_old, k_old = old_pos
-    i_new, j_new, k_new = new_pos
-    
-    old_attacks = conflicts_for_queen_vectorized(state, queen_idx, i_old, j_old, k_old)
-    new_attacks = conflicts_for_queen_vectorized(state, queen_idx, i_new, j_new, k_new)
-    
-    delta = new_attacks - old_attacks
-    return delta
+        positions = self.queens
+        count = 0
+        for q1 in range(Q):
+            i1, j1, k1 = positions[q1]
+            for q2 in range(q1 + 1, Q):
+                i2, j2, k2 = positions[q2]
+                if is_attacking(i1, j1, k1, i2, j2, k2):
+                    count += 1
+        return count
 
+    def propose_move(self, q_idx, new_pos):
+        i_old, j_old, k_old = self.queens[q_idx]
+        i_new, j_new, k_new = new_pos
+
+        old_pos = (int(i_old), int(j_old), int(k_old))
+        new_pos_t = (int(i_new), int(j_new), int(k_new))
+
+        self.occ_set.remove(old_pos)
+        self.occ_set.add(new_pos_t)
+
+        self.queens[q_idx] = [i_new, j_new, k_new]
+
+        return old_pos
+
+    def revert_move(self, q_idx, old_pos):
+        i_current, j_current, k_current = self.queens[q_idx]
+        current_pos = (int(i_current), int(j_current), int(k_current))
+
+        self.occ_set.remove(current_pos)
+        self.occ_set.add(old_pos)
+
+        i_old, j_old, k_old = old_pos
+        self.queens[q_idx] = [i_old, j_old, k_old]
+
+    def conflicts_for_queen(self, q_idx, pos=None):
+        if pos is None:
+            i, j, k = self.queens[q_idx]
+        else:
+            i, j, k = pos
+
+        mask = np.ones(self.Q, dtype=bool)
+        mask[q_idx] = False
+        others = self.queens[mask]
+        if others.shape[0] == 0:
+            return 0
+
+        i2 = others[:, 0]
+        j2 = others[:, 1]
+        k2 = others[:, 2]
+
+        di = np.abs(i2 - i)
+        dj = np.abs(j2 - j)
+        dk = np.abs(k2 - k)
+
+        same_ij = (i2 == i) & (j2 == j)
+
+        same_ik = (i2 == i) & (k2 == k)
+        same_jk = (j2 == j) & (k2 == k)
+
+        plane_k_diag = (k2 == k) & (di == dj)
+        plane_j_diag = (j2 == j) & (di == dk)
+        plane_i_diag = (i2 == i) & (dj == dk)
+
+        space_diag = (di == dj) & (dj == dk)
+
+        attacked = (
+            same_ij
+            | same_ik
+            | same_jk
+            | plane_k_diag
+            | plane_j_diag
+            | plane_i_diag
+            | space_diag
+        )
+
+        return int(attacked.sum())
+    
 
 def constant_beta(beta):
     def schedule(step):
@@ -102,88 +171,338 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
         return beta_start + frac * (beta_end - beta_start)
     return schedule
 
+def exponential_annealing_beta(beta_start, beta_end, n_steps):
 
-def metropolis_mcmc(N, beta_schedule, n_steps, verbose=True):
-    state = initialize_state(N)
-    current_energy = energy(state)
-    
+    if n_steps <= 1:
+        # Degenerate case: always return beta_end
+        def schedule(_):
+            return beta_end
+        return schedule
+
+    # Precompute the log ratio so we don't recompute it every time
+    log_ratio = np.log(beta_end / beta_start)
+
+    def schedule(step):
+        # Clamp step to [0, n_steps-1] just in case
+        step = np.clip(step, 0, n_steps - 1)
+        t = step / (n_steps - 1)
+        return beta_start * np.exp(log_ratio * t)
+
+    return schedule
+
+
+def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None):
+    if seed is not None:
+        np.random.seed(seed)
+
+    state = State3DQueens(N, Q=Q)
+    current_energy = state.energy(recompute=True)
+
     best_state = state.copy()
     best_energy = current_energy
-    
-    if verbose:
-        print(f"Initial energy: {current_energy}")
-    
-    occupied_set = {tuple(pos) for pos in state}
-    
+
+    accepted = 0
     energy_history = [current_energy]
-    
+
+    if verbose and n_steps > 0:
+        next_report = max(1, n_steps // 10)
+
     for step in range(n_steps):
         beta_t = beta_schedule(step)
-        
-        queen_idx = np.random.randint(0, N*N)
-        old_pos = tuple(state[queen_idx])
 
+        q_idx = np.random.randint(0, state.Q)
+
+        old_conflicts = state.conflicts_for_queen(q_idx)
+
+        N_ = state.N
         while True:
-            i_new = np.random.randint(0, N)
-            j_new = np.random.randint(0, N)
-            k_new = np.random.randint(0, N)
-            new_pos = (i_new, j_new, k_new)
-            
-            if new_pos not in occupied_set:
+            i_new = np.random.randint(0, N_)
+            j_new = np.random.randint(0, N_)
+            k_new = np.random.randint(0, N_)
+            if (int(i_new), int(j_new), int(k_new)) not in state.occ_set:
                 break
-        
-        delta_E = energy_delta(state, queen_idx, old_pos, new_pos)
+
+        new_conflicts = state.conflicts_for_queen(q_idx, pos=(i_new, j_new, k_new))
+
+        delta_E = new_conflicts - old_conflicts
         proposed_energy = current_energy + delta_E
-        
+
         accept_prob = min(1.0, np.exp(-beta_t * delta_E))
-        
+
         if np.random.random() < accept_prob:
-            occupied_set.remove(old_pos)
-            occupied_set.add(new_pos)
-            state[queen_idx] = np.array([i_new, j_new, k_new])
+            state.propose_move(q_idx, (i_new, j_new, k_new))
             current_energy = proposed_energy
-            
+            state._energy = current_energy
+            accepted += 1
+
             if current_energy < best_energy:
                 best_state = state.copy()
                 best_energy = current_energy
+        else:
+            state._energy = current_energy
 
         energy_history.append(current_energy)
-        
-        if verbose and (step + 1) % 1000 == 0:
-            print(f"Step {step + 1}/{n_steps}: energy = {current_energy}, best = {best_energy}, beta_t = {beta_t:.3f}")
-    
+
+        if verbose and (step + 1) % next_report == 0:
+            frac = (step + 1) / n_steps
+            print(
+                f"[chain] {step + 1}/{n_steps} steps "
+                f"({frac*100:.1f}%) | E={current_energy}, best={best_energy}, "
+                f"beta_t={beta_t:.3f}"
+            )
+
+    if verbose and n_steps > 0:
+        print(f"[chain] Final energy: {current_energy}")
+        print(f"[chain] Best energy:   {best_energy}")
+        print(f"[chain] Acceptance rate: {accepted / n_steps:.3f}")
+
     return {
-        'final_state': state,
-        'final_energy': current_energy,
-        'best_state': best_state,
-        'best_energy': best_energy,
-        'energy_history': energy_history
+        "final_state": state,
+        "final_energy": current_energy,
+        "best_state": best_state,
+        "best_energy": best_energy,
+        "energy_history": energy_history,
     }
 
 
-if __name__ == "__main__":
-    np.random.seed(42)
-    N = 5
-    n_steps = 100000
-    
-    beta_start = 0.01
-    beta_end = 10.0 
-    beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps)
-    print(f"N = {N}, Simulated Annealing: beta = {beta_start} -> {beta_end}, n_steps = {n_steps}")
-    
-    results = metropolis_mcmc(N, beta_schedule, n_steps, verbose=True)
-    
-    print(f"Final energy: {results['final_energy']}")
-    print(f"Best energy: {results['best_energy']}")
-    print(f"Sanity: {energy(results['best_state'])}")
-    
-    os.makedirs('figures', exist_ok=True)
-    
+def run_single_chain(N, n_steps, beta_schedule, seed=None, verbose=False):
+    return metropolis_mcmc(
+        N=N,
+        n_steps=n_steps,
+        beta_schedule=beta_schedule,
+        verbose=verbose,
+        seed=seed,
+    )
+
+
+def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False):
+    all_histories = []
+    best_energies = []
+    run_times = []
+
+    for r in range(n_runs):
+        if verbose:
+            print(f"\n=== Run {r+1}/{n_runs} ===")
+
+        start_time = time.time()
+        res = run_single_chain(
+            N=N,
+            n_steps=n_steps,
+            beta_schedule=beta_schedule,
+            seed=base_seed + r,
+            verbose=verbose,
+        )
+        end_time = time.time()
+
+        duration = end_time - start_time
+        run_times.append(duration)
+
+        all_histories.append(res["energy_history"])
+        best_energies.append(res["best_energy"])
+
+        if verbose:
+            frac_runs = (r + 1) / n_runs
+            print(
+                f"=== Completed run {r+1}/{n_runs} "
+                f"({frac_runs*100:.1f}% of experiment) | "
+                f"time this run: {duration:.2f} s ==="
+            )
+
+    if verbose and n_runs > 0:
+        mean_time = np.mean(run_times)
+        total_time = np.sum(run_times)
+        print(f"\n>>> Mean time per run: {mean_time:.2f} s")
+        print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
+
+    return all_histories, best_energies, run_times
+
+
+def plot_energy_histories(all_histories, title, out_path=None):
+    n_runs = len(all_histories)
+    n_steps_plus1 = len(all_histories[0])
+
+    energies = np.array(all_histories)
+    mean_energy = energies.mean(axis=0)
+    std_energy = energies.std(axis=0)
+
     plt.figure(figsize=(10, 6))
-    plt.plot(results['energy_history'])
-    plt.xlabel('Step')
-    plt.ylabel('Energy')
-    plt.title(f'Energy History (N={N}, SA: beta {beta_start}->{beta_end})')
+
+    for r in range(n_runs):
+        plt.plot(energies[r], alpha=0.3, linewidth=1)
+
+    steps = np.arange(n_steps_plus1)
+    plt.plot(mean_energy, linewidth=2.5, label="Mean energy")
+    plt.fill_between(
+        steps,
+        mean_energy - std_energy,
+        mean_energy + std_energy,
+        alpha=0.2,
+        label="±1 std",
+    )
+
+    plt.xlabel("Step")
+    plt.ylabel("Energy")
+    plt.title(title)
     plt.grid(True)
-    plt.savefig('figures/energy_history_sa.png')
-    plt.close()
+    plt.legend()
+
+    if out_path is not None:
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        plt.savefig(out_path, bbox_inches="tight")
+        plt.close()
+    else:
+        plt.show()
+
+def measure_min_energy_vs_N(
+    Ns,
+    n_steps,
+    beta_schedule,
+    n_runs=5,
+    base_seed=100,
+    verbose=True,
+    plot=True,
+    out_path=None,
+):
+    mean_min_energies = []
+    std_min_energies = []
+    all_min_energies = []
+
+    for idx, N in enumerate(Ns):
+        if verbose:
+            print(f"\n=== Running N = {N} ===")
+
+        _, best_energies, _ = run_experiment(
+            N=N,
+            n_steps=n_steps,
+            beta_schedule=beta_schedule,
+            n_runs=n_runs,
+            base_seed=base_seed + 10 * idx,
+            verbose=verbose,
+        )
+
+        best_energies = np.array(best_energies)
+        all_min_energies.append(best_energies)
+
+        mean_min_energies.append(best_energies.mean())
+        std_min_energies.append(best_energies.std())
+
+        if verbose:
+            print(f"  → Mean min energy = {mean_min_energies[-1]:.2f} ± {std_min_energies[-1]:.2f}")
+
+    mean_min_energies = np.array(mean_min_energies)
+    std_min_energies = np.array(std_min_energies)
+
+    if plot:
+        plt.figure(figsize=(8, 6))
+        Ns_arr = np.array(Ns)
+
+        plt.errorbar(
+            Ns_arr,
+            mean_min_energies,
+            yerr=std_min_energies,
+            fmt="o-",
+            capsize=4,
+            linewidth=2,
+            markersize=6,
+            label="Mean minimal energy (±1 std)"
+        )
+
+        plt.xlabel("Board size N")
+        plt.ylabel("Minimal energy reached")
+        plt.title("MCMC: Minimal Energy vs. Board Size N")
+        plt.grid(True)
+        plt.legend()
+
+        if out_path is not None:
+            os.makedirs(os.path.dirname(out_path), exist_ok=True)
+            plt.savefig(out_path, bbox_inches="tight")
+            plt.close()
+        else:
+            plt.show()
+
+    return (
+        Ns,
+        mean_min_energies,
+        std_min_energies,
+        all_min_energies,
+    )
+
+
+if __name__ == "__main__":
+    N = 5
+    n_steps = 200000
+    n_runs = 5
+
+    beta_const = 1.0
+    beta_schedule_const = constant_beta(beta_const)
+
+    print(f"Running {n_runs} runs with constant beta = {beta_const}")
+    all_hist_const, best_const, times_const = run_experiment(
+        N=N,
+        n_steps=n_steps,
+        beta_schedule=beta_schedule_const,
+        n_runs=n_runs,
+        base_seed=42,
+        verbose=True,
+    )
+
+    mean_time_const = np.mean(times_const)
+    print(f"\n[Metropolis] Mean time per run: {mean_time_const:.2f} s")
+
+    plot_energy_histories(
+        all_hist_const,
+        title=f"Energy History (Metropolis, N={N}, beta={beta_const})",
+        out_path="figures/energy_history_metropolis.png",
+    )
+
+    # Example 2: simulated annealing with linear schedule
+    beta_start = 0.1
+    beta_end = 5.0
+    beta_schedule_sa = exponential_annealing_beta(beta_start, beta_end, n_steps)
+
+    print(
+        f"\nRunning {n_runs} runs with simulated annealing "
+        f"(beta from {beta_start} to {beta_end})"
+    )
+
+    all_hist_sa, best_sa, times_sa = run_experiment(
+        N=N,
+        n_steps=n_steps,
+        beta_schedule=beta_schedule_sa,
+        n_runs=n_runs,
+        base_seed=123,
+        verbose=True,
+    )
+
+    mean_time_sa = np.mean(times_sa)
+    print(f"\n[Simulated Annealing] Mean time per run: {mean_time_sa:.2f} s")
+
+    plot_energy_histories(
+        all_hist_sa,
+        title=(
+            f"Energy History (Simulated Annealing, N={N}, "
+            f"beta: {beta_start}→{beta_end})"
+        ),
+        out_path="figures/energy_history_sa.png",
+    )
+
+    print("\nBest energies (Metropolis):", best_const)
+    print("Best energies (Simulated Annealing):", best_sa)
+
+    Ns = [3, 4, 5, 6, 7, 8]
+
+    print("\nMeasuring minimal energy as a function of N...")
+    Ns_out, means, stds, all_data = measure_min_energy_vs_N(
+        Ns=Ns,
+        n_steps=100000,
+        beta_schedule=beta_schedule_const,
+        n_runs=5,
+        base_seed=500,
+        verbose=True,
+        plot=True,
+        out_path="figures/min_energy_vs_N.png",
+    )
+
+    print("\nResults:")
+    for N, m, s in zip(Ns_out, means, stds):
+        print(f"N={N}: {m:.2f} ± {s:.2f}")
