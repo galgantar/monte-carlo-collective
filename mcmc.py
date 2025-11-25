@@ -146,16 +146,6 @@ class State3DQueens:
 
         return old_pos
 
-    def revert_move(self, q_idx, old_pos):
-        i_current, j_current, k_current = self.queens[q_idx]
-        current_pos = (int(i_current), int(j_current), int(k_current))
-
-        self.occ_set.remove(current_pos)
-        self.occ_set.add(old_pos)
-
-        i_old, j_old, k_old = old_pos
-        self.queens[q_idx] = [i_old, j_old, k_old]
-
     def conflicts_for_queen(self, q_idx, pos=None):
         if pos is None:
             i, j, k = self.queens[q_idx]
