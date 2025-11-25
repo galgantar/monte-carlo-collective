@@ -2,7 +2,7 @@ import os
 import time
 import numpy as np
 import matplotlib.pyplot as plt
-import time   
+import yaml   
 
 
 def is_attacking(i1, j1, k1, i2, j2, k2):
@@ -214,18 +214,14 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
     return schedule
 
 def exponential_annealing_beta(beta_start, beta_end, n_steps):
-
     if n_steps <= 1:
-        # Degenerate case: always return beta_end
         def schedule(_):
             return beta_end
         return schedule
 
-    # Precompute the log ratio so we don't recompute it every time
     log_ratio = np.log(beta_end / beta_start)
 
     def schedule(step):
-        # Clamp step to [0, n_steps-1] just in case
         step = np.clip(step, 0, n_steps - 1)
         t = step / (n_steps - 1)
         return beta_start * np.exp(log_ratio * t)
@@ -470,81 +466,153 @@ def measure_min_energy_vs_N(
     )
 
 
+
 if __name__ == "__main__":
-    N = 11
-    n_steps = 200000
-    n_runs = 5
+    with open("config.yaml", "r") as f:
+        config = yaml.safe_load(f)
+    
+    experiment_type = config["experiment_type"]
+    common = config["common"]
+    n_steps = common["n_steps"]
+    n_runs = common["n_runs"]
+    verbose = common["verbose"]
 
-    beta_const = 5.0
-    beta_schedule_const = constant_beta(beta_const)
+    if experiment_type == "constant_beta":
+        params = config["constant_beta"]
+        N = params["N"]
+        beta_const = params["beta_const"]
+        base_seed = params["base_seed"]
+        output_path = params["output_path"]
+        
+        beta_schedule_const = constant_beta(beta_const)
 
-    print(f"Running {n_runs} runs with constant beta = {beta_const}")
-    all_hist_const, best_const, times_const = run_experiment(
-        N=N,
-        n_steps=n_steps,
-        beta_schedule=beta_schedule_const,
-        n_runs=n_runs,
-        base_seed=42,
-        verbose=True,
-    )
+        print(f"Running {n_runs} runs with constant beta = {beta_const}")
+        all_hist_const, best_const, times_const = run_experiment(
+            N=N,
+            n_steps=n_steps,
+            beta_schedule=beta_schedule_const,
+            n_runs=n_runs,
+            base_seed=base_seed,
+            verbose=verbose,
+        )
 
-    mean_time_const = np.mean(times_const)
-    print(f"\n[Metropolis] Mean time per run: {mean_time_const:.2f} s")
+        mean_time_const = np.mean(times_const)
+        print(f"\n[Metropolis] Mean time per run: {mean_time_const:.2f} s")
 
-    plot_energy_histories(
-        all_hist_const,
-        title=f"Energy History (Metropolis, N={N}, beta={beta_const})",
-        out_path="figures/energy_history_metropolis.png",
-    )
+        plot_energy_histories(
+            all_hist_const,
+            title=f"Energy History (Metropolis, N={N}, beta={beta_const})",
+            out_path=output_path,
+        )
 
-    # Example 2: simulated annealing with linear schedule
-    beta_start = 0.1
-    beta_end = 5.0
-    beta_schedule_sa = linear_annealing_beta(beta_start, beta_end, n_steps)
+    elif experiment_type == "linear_annealing":
+        params = config["linear_annealing"]
+        N = params["N"]
+        beta_start = params["beta_start"]
+        beta_end = params["beta_end"]
+        base_seed = params["base_seed"]
+        output_path = params["output_path"]
+        
+        beta_schedule_linear = linear_annealing_beta(beta_start, beta_end, n_steps)
 
-    print(
-        f"\nRunning {n_runs} runs with simulated annealing "
-        f"(beta from {beta_start} to {beta_end})"
-    )
+        print(
+            f"\nRunning {n_runs} runs with linear annealing "
+            f"(beta from {beta_start} to {beta_end})"
+        )
 
-    all_hist_sa, best_sa, times_sa = run_experiment(
-        N=N,
-        n_steps=n_steps,
-        beta_schedule=beta_schedule_sa,
-        n_runs=n_runs,
-        base_seed=123,
-        verbose=True,
-    )
+        all_hist_la, best_la, times_la = run_experiment(
+            N=N,
+            n_steps=n_steps,
+            beta_schedule=beta_schedule_linear,
+            n_runs=n_runs,
+            base_seed=base_seed,
+            verbose=verbose,
+        )
 
-    mean_time_sa = np.mean(times_sa)
-    print(f"\n[Simulated Annealing] Mean time per run: {mean_time_sa:.2f} s")
+        mean_time_la = np.mean(times_la)
+        print(f"\n[Linear Annealing] Mean time per run: {mean_time_la:.2f} s")
 
-    plot_energy_histories(
-        all_hist_sa,
-        title=(
-            f"Energy History (Simulated Annealing, N={N}, "
-            f"beta: {beta_start}→{beta_end})"
-        ),
-        out_path="figures/energy_history_sa.png",
-    )
+        plot_energy_histories(
+            all_hist_la,
+            title=(
+                f"Energy History (Linear Annealing, N={N}, "
+                f"beta: {beta_start}→{beta_end})"
+            ),
+            out_path=output_path,
+        )
 
-    print("\nBest energies (Metropolis):", best_const)
-    print("Best energies (Simulated Annealing):", best_sa)
+        print("\nBest energies (Linear Annealing):", best_la)
 
-    Ns = [3, 4, 5, 6, 7, 8]
+    elif experiment_type == "exponential_annealing":
+        params = config["exponential_annealing"]
+        N = params["N"]
+        beta_start = params["beta_start"]
+        beta_end = params["beta_end"]
+        base_seed = params["base_seed"]
+        output_path = params["output_path"]
+        
+        beta_schedule_ea = exponential_annealing_beta(beta_start, beta_end, n_steps)
 
-    print("\nMeasuring minimal energy as a function of N...")
-    Ns_out, means, stds, all_data = measure_min_energy_vs_N(
-        Ns=Ns,
-        n_steps=100000,
-        beta_schedule=beta_schedule_const,
-        n_runs=5,
-        base_seed=500,
-        verbose=True,
-        plot=True,
-        out_path="figures/min_energy_vs_N.png",
-    )
+        print(
+            f"\nRunning {n_runs} runs with exponential annealing "
+            f"(beta from {beta_start} to {beta_end})"
+        )
 
-    print("\nResults:")
-    for N, m, s in zip(Ns_out, means, stds):
-        print(f"N={N}: {m:.2f} ± {s:.2f}")
+        all_hist_ea, best_ea, times_ea = run_experiment(
+            N=N,
+            n_steps=n_steps,
+            beta_schedule=beta_schedule_ea,
+            n_runs=n_runs,
+            base_seed=base_seed,
+            verbose=verbose,
+        )
+
+        mean_time_ea = np.mean(times_ea)
+        print(f"\n[Exponential Annealing] Mean time per run: {mean_time_ea:.2f} s")
+
+        plot_energy_histories(
+            all_hist_ea,
+            title=(
+                f"Energy History (Exponential Annealing, N={N}, "
+                f"beta: {beta_start}→{beta_end})"
+            ),
+            out_path=output_path,
+        )
+
+    elif experiment_type == "measure_min_energy_vs_N":
+        params = config["measure_min_energy_vs_N"]
+        Ns = params["Ns"]
+        n_steps_exp = params.get("n_steps", n_steps)
+        beta_schedule_type = params["beta_schedule_type"]
+        base_seed = params["base_seed"]
+        output_path = params["output_path"]
+        
+        if beta_schedule_type == "constant_beta":
+            beta_const = params["beta_const"]
+            beta_schedule = constant_beta(beta_const)
+        elif beta_schedule_type == "linear_annealing":
+            beta_start = params["beta_start"]
+            beta_end = params["beta_end"]
+            beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps_exp)
+        elif beta_schedule_type == "exponential_annealing":
+            beta_start = params["beta_start"]
+            beta_end = params["beta_end"]
+            beta_schedule = exponential_annealing_beta(beta_start, beta_end, n_steps_exp)
+        else:
+            raise ValueError(f"Unknown beta_schedule_type: {beta_schedule_type}")
+
+        print("\nMeasuring minimal energy as a function of N...")
+        Ns_out, means, stds, all_data = measure_min_energy_vs_N(
+            Ns=Ns,
+            n_steps=n_steps_exp,
+            beta_schedule=beta_schedule,
+            n_runs=n_runs,
+            base_seed=base_seed,
+            verbose=verbose,
+            plot=True,
+            out_path=output_path,
+        )
+
+        print("\nResults:")
+        for N, m, s in zip(Ns_out, means, stds):
+            print(f"N={N}: {m:.2f} ± {s:.2f}")
