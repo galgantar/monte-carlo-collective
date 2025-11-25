@@ -235,12 +235,24 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
         return beta_start + frac * (beta_end - beta_start)
     return schedule
 
-def exponential_annealing_beta(beta, n_steps):
-    def schedule(step):
-        return np.exp(beta*step)
-    return schedule
+def exponential_annealing_beta(beta_start, beta_end, n_steps):
 
-    
+    if n_steps <= 1:
+        # Degenerate case: always return beta_end
+        def schedule(_):
+            return beta_end
+        return schedule
+
+    # Precompute the log ratio so we don't recompute it every time
+    log_ratio = np.log(beta_end / beta_start)
+
+    def schedule(step):
+        # Clamp step to [0, n_steps-1] just in case
+        step = np.clip(step, 0, n_steps - 1)
+        t = step / (n_steps - 1)
+        return beta_start * np.exp(log_ratio * t)
+
+    return schedule
 
 
 # ------------------------------
@@ -561,7 +573,7 @@ if __name__ == "__main__":
     # Example 2: simulated annealing with linear schedule
     beta_start = 0.1   # high temperature (weak penalty on uphill moves)
     beta_end = 5.0     # low temperature
-    beta_schedule_sa = linear_annealing_beta(beta_start, beta_end, n_steps)
+    beta_schedule_sa = exponential_annealing_beta(beta_start, beta_end, n_steps)
 
     print(
         f"\nRunning {n_runs} runs with simulated annealing "
