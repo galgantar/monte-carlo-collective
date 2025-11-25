@@ -171,6 +171,13 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
         return beta_start + frac * (beta_end - beta_start)
     return schedule
 
+def exponential_annealing_beta(beta, n_steps):
+    def schedule(step):
+        return np.exp(beta*step)
+    return schedule
+
+    
+
 
 def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None):
     if seed is not None:
