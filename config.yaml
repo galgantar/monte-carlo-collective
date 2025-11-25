@@ -1,4 +1,4 @@
-experiment_type: "constant_beta"
+experiment_type: "linear_annealing"
 
 common:
   n_steps: 200000
@@ -15,7 +15,7 @@ constant_beta:
 linear_annealing:
   N: 5
   beta_start: 0.1
-  beta_end: 5.0
+  beta_end: 10.0
   base_seed: 123
   output_path: "figures/energy_history_la.png"
 
