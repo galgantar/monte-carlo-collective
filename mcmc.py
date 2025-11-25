@@ -29,24 +29,64 @@ def is_attacking(i1, j1, k1, i2, j2, k2):
 
     return False
 
+import math
 
 class State3DQueens:
-    def __init__(self, N, Q=None, positions=None):
+    def __init__(self, N, Q=None, positions=None, init_mode="latin"):
+        """
+        init_mode:
+            - "latin": k = (i + j) mod N (deterministic Latin-square style)
+            - "klarner": k = (3i + 5j) mod N (requires gcd(N, 210) == 1 for non-attacking theorem)
+            - "random": fully random distinct 3D positions
+        """
         self.N = N
         if Q is None:
             Q = N * N
         self.Q = Q
 
         if positions is None:
-            total_cells = N ** 3
-            if Q > total_cells:
-                raise ValueError("Q cannot exceed N^3.")
+            if init_mode in ("latin", "klarner"):
+                if Q != N * N:
+                    raise ValueError(
+                        f"{init_mode} initialization assumes Q = N^2, "
+                        f"got Q={Q}, N^2={N*N}."
+                    )
 
-            flat_indices = np.random.choice(total_cells, size=Q, replace=False)
-            k_coords = flat_indices % N
-            j_coords = (flat_indices // N) % N
-            i_coords = flat_indices // (N * N)
-            self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
+                # Create full (i,j) grid
+                i_grid, j_grid = np.indices((N, N))  # shape (N,N)
+
+                if init_mode == "latin":
+                    # Latin square: k = (i + j) mod N
+                    k_grid = (i_grid + j_grid) % N
+                else:  # "klarner"
+                    # Klarner construction: k = (3i + 5j) mod N
+                    # For gcd(N, 210) == 1 this is a known non-attacking configuration
+                    if math.gcd(N, 210) != 1:
+                        print(
+                            f"[warning] Klarner construction has no guarantee for N={N} "
+                            f"(gcd(N, 210) = {math.gcd(N,210)}). Using it anyway."
+                        )
+                    k_grid = (3 * i_grid + 5 * j_grid) % N
+
+                # Flatten into (Q, 3)
+                i_coords = i_grid.ravel()
+                j_coords = j_grid.ravel()
+                k_coords = k_grid.ravel()
+                self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
+
+            elif init_mode == "random":
+                total_cells = N ** 3
+                if Q > total_cells:
+                    raise ValueError("Q cannot exceed N^3.")
+
+                flat_indices = np.random.choice(total_cells, size=Q, replace=False)
+                k_coords = flat_indices % N
+                j_coords = (flat_indices // N) % N
+                i_coords = (flat_indices // (N * N))
+                self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
+
+            else:
+                raise ValueError(f"Unknown init_mode: {init_mode}")
         else:
             positions = np.asarray(positions, dtype=int)
             if positions.shape[1] != 3:
@@ -54,6 +94,7 @@ class State3DQueens:
             self.queens = positions
             self.Q = positions.shape[0]
 
+        # Occupancy set
         self.occ_set = set()
         for (i, j, k) in self.queens:
             pos = (int(i), int(j), int(k))
@@ -62,6 +103,7 @@ class State3DQueens:
             self.occ_set.add(pos)
 
         self._energy = None
+
 
     def copy(self):
         new_state = State3DQueens(self.N, Q=self.Q, positions=self.queens.copy())
@@ -195,7 +237,7 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None):
     if seed is not None:
         np.random.seed(seed)
 
-    state = State3DQueens(N, Q=Q)
+    state = State3DQueens(N, Q=Q, init_mode = "latin")
     current_energy = state.energy(recompute=True)
 
     best_state = state.copy()
@@ -429,11 +471,11 @@ def measure_min_energy_vs_N(
 
 
 if __name__ == "__main__":
-    N = 5
+    N = 11
     n_steps = 200000
     n_runs = 5
 
-    beta_const = 1.0
+    beta_const = 5.0
     beta_schedule_const = constant_beta(beta_const)
 
     print(f"Running {n_runs} runs with constant beta = {beta_const}")
@@ -458,7 +500,7 @@ if __name__ == "__main__":
     # Example 2: simulated annealing with linear schedule
     beta_start = 0.1
     beta_end = 5.0
-    beta_schedule_sa = exponential_annealing_beta(beta_start, beta_end, n_steps)
+    beta_schedule_sa = linear_annealing_beta(beta_start, beta_end, n_steps)
 
     print(
         f"\nRunning {n_runs} runs with simulated annealing "
