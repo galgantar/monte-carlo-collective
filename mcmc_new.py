@@ -235,6 +235,13 @@ def linear_annealing_beta(beta_start, beta_end, n_steps):
         return beta_start + frac * (beta_end - beta_start)
     return schedule
 
+def exponential_annealing_beta(beta, n_steps):
+    def schedule(step):
+        return np.exp(beta*step)
+    return schedule
+
+    
+
 
 # ------------------------------
 #  Core sampler using local ΔE
