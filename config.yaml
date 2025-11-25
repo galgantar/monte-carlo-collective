@@ -4,6 +4,7 @@ common:
   n_steps: 200000
   n_runs: 5
   verbose: true
+  initialization: random
 
 constant_beta:
   N: 5

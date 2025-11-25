@@ -476,6 +476,7 @@ if __name__ == "__main__":
     n_steps = common["n_steps"]
     n_runs = common["n_runs"]
     verbose = common["verbose"]
+    init_mode = common["initialization"]
 
     if experiment_type == "constant_beta":
         params = config["constant_beta"]
