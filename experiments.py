@@ -36,6 +36,36 @@ def exponential_annealing_beta(beta_start, beta_end, n_steps):
 
     return schedule
 
+def build_schedule_from_common(common_cfg, n_steps):
+    """
+    Build a beta schedule (and base_seed) from common['betta_scheduling'].
+    """
+    sched_cfg = common_cfg["betta_scheduling"]
+    sched_type = sched_cfg["type"]
+    base_seed = sched_cfg.get("base_seed", 0)
+
+    if sched_type == "constant":
+        beta_const = sched_cfg["beta_const"]
+        beta_schedule = constant_beta(beta_const)
+        desc = f"constant beta={beta_const}"
+    elif sched_type == "linear_annealing":
+        beta_start = sched_cfg["beta_start"]
+        beta_end = sched_cfg["beta_end"]
+        beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps)
+        desc = f"linear beta: {beta_start}→{beta_end}"
+    elif sched_type == "exponential_annealing":
+        beta_start = sched_cfg["beta_start"]
+        beta_end = sched_cfg["beta_end"]
+        beta_schedule = exponential_annealing_beta(beta_start, beta_end, n_steps)
+        desc = f"exp beta: {beta_start}→{beta_end}"
+    else:
+        raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
+
+    return beta_schedule, base_seed, desc
+
+
+
+
 
 def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, Q=None):
     if seed is not None:
@@ -222,6 +252,7 @@ def measure_min_energy_vs_N(
         _, best_energies, _ = run_experiment(
             N=N,
             n_steps=n_steps,
+            init_mode = init_mode,
             beta_schedule=beta_schedule,
             n_runs=n_runs,
             base_seed=base_seed + 10 * idx,
@@ -280,146 +311,77 @@ def measure_min_energy_vs_N(
 if __name__ == "__main__":
     with open("config.yaml", "r") as f:
         config = yaml.safe_load(f)
-    
+
     experiment_type = config["experiment_type"]
     common = config["common"]
     n_steps = common["n_steps"]
     n_runs = common["n_runs"]
     verbose = common["verbose"]
     init_mode = common["initialization"]
+    common_output_path = common["output_path"]
 
-    print(init_mode)
+    print(f"Initialization mode: {init_mode}")
+    print(f"Experiment type: {experiment_type}")
 
-    if experiment_type == "constant_beta":
-        params = config["constant_beta"]
-        N = params["N"]
-        beta_const = params["beta_const"]
-        base_seed = params["base_seed"]
-        output_path = params["output_path"]
-        
-        beta_schedule_const = constant_beta(beta_const)
+    if experiment_type == "single_N":
+        # --- Single N experiment -------------------------------------------
+        single_cfg = config["single_N"]
+        N = single_cfg["N"]
 
-        print(f"Running {n_runs} runs with constant beta = {beta_const}")
-        all_hist_const, best_const, times_const = run_experiment(
-            N=N,
-            n_steps=n_steps,
-            beta_schedule=beta_schedule_const,
-            n_runs=n_runs,
-            base_seed=base_seed,
-            verbose=verbose,
+        # Output path comes from common (config matches your YAML)
+        output_path = common_output_path
+
+        # Build schedule + base_seed from common.betta_scheduling
+        beta_schedule, base_seed, sched_desc = build_schedule_from_common(
+            common, n_steps
         )
-
-        mean_time_const = np.mean(times_const)
-        print(f"\n[Metropolis] Mean time per run: {mean_time_const:.2f} s")
-
-        plot_energy_histories(
-            all_hist_const,
-            title=f"Energy History (Metropolis, N={N}, beta={beta_const})",
-            out_path=output_path,
-        )
-
-    elif experiment_type == "linear_annealing":
-        params = config["linear_annealing"]
-        N = params["N"]
-        beta_start = params["beta_start"]
-        beta_end = params["beta_end"]
-        base_seed = params["base_seed"]
-        output_path = params["output_path"]
-        
-        beta_schedule_linear = linear_annealing_beta(beta_start, beta_end, n_steps)
 
         print(
-            f"\nRunning {n_runs} runs with linear annealing "
-            f"(beta from {beta_start} to {beta_end})"
+            f"\nRunning {n_runs} runs on N={N} with {sched_desc}, "
+            f"init_mode={init_mode}, base_seed={base_seed}"
         )
 
-        all_hist_la, best_la, times_la = run_experiment(
+        all_histories, best_energies, run_times = run_experiment(
             N=N,
             n_steps=n_steps,
             init_mode=init_mode,
-            beta_schedule=beta_schedule_linear,
+            beta_schedule=beta_schedule,
             n_runs=n_runs,
             base_seed=base_seed,
             verbose=verbose,
         )
 
-        mean_time_la = np.mean(times_la)
-        print(f"\n[Linear Annealing] Mean time per run: {mean_time_la:.2f} s")
+        mean_time = np.mean(run_times)
+        print(f"\n[Single_N] Mean time per run: {mean_time:.2f} s")
+        print("[Single_N] Best energies:", best_energies)
 
-        plot_energy_histories(
-            all_hist_la,
-            title=(
-                f"Energy History (Linear Annealing, N={N}, "
-                f"beta: {beta_start}→{beta_end})"
-            ),
-            out_path=output_path,
-        )
-
-        print("\nBest energies (Linear Annealing):", best_la)
-
-    elif experiment_type == "exponential_annealing":
-        params = config["exponential_annealing"]
-        N = params["N"]
-        beta_start = params["beta_start"]
-        beta_end = params["beta_end"]
-        base_seed = params["base_seed"]
-        output_path = params["output_path"]
-        
-        beta_schedule_ea = exponential_annealing_beta(beta_start, beta_end, n_steps)
-
-        print(
-            f"\nRunning {n_runs} runs with exponential annealing "
-            f"(beta from {beta_start} to {beta_end})"
-        )
-
-        all_hist_ea, best_ea, times_ea = run_experiment(
-            N=N,
-            n_steps=n_steps,
-            beta_schedule=beta_schedule_ea,
-            n_runs=n_runs,
-            base_seed=base_seed,
-            verbose=verbose,
-        )
-
-        mean_time_ea = np.mean(times_ea)
-        print(f"\n[Exponential Annealing] Mean time per run: {mean_time_ea:.2f} s")
-
-        plot_energy_histories(
-            all_hist_ea,
-            title=(
-                f"Energy History (Exponential Annealing, N={N}, "
-                f"beta: {beta_start}→{beta_end})"
-            ),
-            out_path=output_path,
-        )
+        title = f"Energy History (N={N}, {sched_desc})"
+        plot_energy_histories(all_histories, title=title, out_path=output_path)
 
     elif experiment_type == "measure_min_energy_vs_N":
+        # --- Minimal energy vs N experiment --------------------------------
         params = config["measure_min_energy_vs_N"]
         Ns = params["Ns"]
-        n_steps_exp = params.get("n_steps", n_steps)
-        beta_schedule_type = params["beta_schedule_type"]
-        base_seed = params["base_seed"]
-        output_path = params["output_path"]
-        
-        if beta_schedule_type == "constant_beta":
-            beta_const = params["beta_const"]
-            beta_schedule = constant_beta(beta_const)
-        elif beta_schedule_type == "linear_annealing":
-            beta_start = params["beta_start"]
-            beta_end = params["beta_end"]
-            beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps_exp)
-        elif beta_schedule_type == "exponential_annealing":
-            beta_start = params["beta_start"]
-            beta_end = params["beta_end"]
-            beta_schedule = exponential_annealing_beta(beta_start, beta_end, n_steps_exp)
-        else:
-            raise ValueError(f"Unknown beta_schedule_type: {beta_schedule_type}")
 
-        print("\nMeasuring minimal energy as a function of N...")
+        # Use the same n_steps as in common (your YAML doesn’t override it here)
+        n_steps_exp = n_steps
+        output_path = common_output_path
+
+        # Schedule from *common* (no per-experiment beta branches)
+        beta_schedule, base_seed, sched_desc = build_schedule_from_common(
+            common, n_steps_exp
+        )
+
+        print(
+            "\nMeasuring minimal energy as a function of N with "
+            f"{sched_desc}, init_mode={init_mode}, base_seed={base_seed}"
+        )
+
         Ns_out, means, stds, all_data = measure_min_energy_vs_N(
             Ns=Ns,
             n_steps=n_steps_exp,
             beta_schedule=beta_schedule,
+            init_mode=init_mode,   # make sure measure_min_energy_vs_N accepts this
             n_runs=n_runs,
             base_seed=base_seed,
             verbose=verbose,
@@ -430,3 +392,8 @@ if __name__ == "__main__":
         print("\nResults:")
         for N, m, s in zip(Ns_out, means, stds):
             print(f"N={N}: {m:.2f} ± {s:.2f}")
+
+    else:
+        raise ValueError(f"Unknown experiment_type: {experiment_type}")
+
+
