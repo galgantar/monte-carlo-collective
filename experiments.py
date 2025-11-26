@@ -388,7 +388,6 @@ if __name__ == "__main__":
             verbose=verbose,
             plot=True,
             out_path=output_path,
-            init_mode=init_mode,
         )
 
         print("\nResults:")
