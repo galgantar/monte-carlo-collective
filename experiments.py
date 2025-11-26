@@ -37,11 +37,11 @@ def exponential_annealing_beta(beta_start, beta_end, n_steps):
     return schedule
 
 
-def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None):
+def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None, init_mode="latin"):
     if seed is not None:
         np.random.seed(seed)
 
-    state = State3DQueens(N, Q=Q, init_mode = "latin")
+    state = State3DQueens(N, Q=Q, init_mode = init_mode)
     current_energy = state.energy(recompute=True)
 
     best_state = state.copy()
@@ -111,17 +111,18 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None):
     }
 
 
-def run_single_chain(N, n_steps, beta_schedule, seed=None, verbose=False):
+def run_single_chain(N, n_steps, beta_schedule, seed=None, verbose=False, init_mode="latin"):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
         beta_schedule=beta_schedule,
         verbose=verbose,
         seed=seed,
+        init_mode=init_mode,
     )
 
 
-def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False):
+def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False, init_mode="latin"):
     all_histories = []
     best_energies = []
     run_times = []
@@ -137,6 +138,7 @@ def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False
             beta_schedule=beta_schedule,
             seed=base_seed + r,
             verbose=verbose,
+            init_mode=init_mode,
         )
         end_time = time.time()
 
@@ -208,6 +210,7 @@ def measure_min_energy_vs_N(
     verbose=True,
     plot=True,
     out_path=None,
+    init_mode="latin",
 ):
     mean_min_energies = []
     std_min_energies = []
@@ -224,6 +227,7 @@ def measure_min_energy_vs_N(
             n_runs=n_runs,
             base_seed=base_seed + 10 * idx,
             verbose=verbose,
+            init_mode=init_mode,
         )
 
         best_energies = np.array(best_energies)
@@ -302,6 +306,7 @@ if __name__ == "__main__":
             beta_schedule=beta_schedule_const,
             n_runs=n_runs,
             base_seed=base_seed,
+            init_mode=init_mode,
             verbose=verbose,
         )
 
@@ -335,6 +340,7 @@ if __name__ == "__main__":
             beta_schedule=beta_schedule_linear,
             n_runs=n_runs,
             base_seed=base_seed,
+            init_mode=init_mode,
             verbose=verbose,
         )
 
@@ -373,6 +379,7 @@ if __name__ == "__main__":
             beta_schedule=beta_schedule_ea,
             n_runs=n_runs,
             base_seed=base_seed,
+            init_mode=init_mode,
             verbose=verbose,
         )
 
@@ -420,6 +427,7 @@ if __name__ == "__main__":
             verbose=verbose,
             plot=True,
             out_path=output_path,
+            init_mode=init_mode,
         )
 
         print("\nResults:")
