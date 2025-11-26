@@ -4,7 +4,7 @@ common:
   n_steps: 200000
   n_runs: 5
   verbose: true
-  initialization: random
+  initialization: klarner
 
 constant_beta:
   N: 5
@@ -13,7 +13,7 @@ constant_beta:
   output_path: "figures/energy_history_metropolis.png"
 
 linear_annealing:
-  N: 5
+  N: 13
   beta_start: 0.1
   beta_end: 10.0
   base_seed: 123

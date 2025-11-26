@@ -6,12 +6,17 @@ import yaml
 
 import math
 
+import math
+
+
 class State3DQueens:
     def __init__(self, N, Q=None, positions=None, init_mode="latin"):
         """
         init_mode:
-            - "latin": k = (i + j) mod N (deterministic Latin-square style)
-            - "klarner": k = (3i + 5j) mod N (requires gcd(N, 210) == 1 for non-attacking theorem)
+            - "latin":  k = (i + j) mod N (deterministic Latin-square style)
+            - "klarner": k = (3i + 5j) mod N if gcd(N, 210) == 1;
+                         otherwise use the largest M < N s.t. gcd(M,210)==1
+                         to build an MxM Klarner core and place the rest randomly.
             - "random": fully random distinct 3D positions
         """
         self.N = N
@@ -27,41 +32,92 @@ class State3DQueens:
                         f"got Q={Q}, N^2={N*N}."
                     )
 
-                # Create full (i,j) grid
-                i_grid, j_grid = np.indices((N, N))  # shape (N,N)
-
                 if init_mode == "latin":
-                    # Latin square: k = (i + j) mod N
+                    # Latin square: full N x N
+                    i_grid, j_grid = np.indices((N, N))
                     k_grid = (i_grid + j_grid) % N
-                else:  # "klarner"
-                    # Klarner construction: k = (3i + 5j) mod N
-                    # For gcd(N, 210) == 1 this is a known non-attacking configuration
-                    if math.gcd(N, 210) != 1:
-                        print(
-                            f"[warning] Klarner construction has no guarantee for N={N} "
-                            f"(gcd(N, 210) = {math.gcd(N,210)}). Using it anyway."
-                        )
-                    k_grid = (3 * i_grid + 5 * j_grid) % N
+                    self.queens = np.stack(
+                        [i_grid.ravel(), j_grid.ravel(), k_grid.ravel()],
+                        axis=1
+                    )
 
-                # Flatten into (Q, 3)
-                i_coords = i_grid.ravel()
-                j_coords = j_grid.ravel()
-                k_coords = k_grid.ravel()
-                self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
+                else:  # init_mode == "klarner"
+                    g = math.gcd(N, 210)
+                    if g == 1:
+                        # Standard Klarner construction on full N x N
+                        i_grid, j_grid = np.indices((N, N))
+                        k_grid = (3 * i_grid + 5 * j_grid) % N
+                        self.queens = np.stack(
+                            [i_grid.ravel(), j_grid.ravel(), k_grid.ravel()],
+                            axis=1
+                        )
+                    else:
+                        # Find largest M < N with gcd(M,210) == 1
+                        M = None
+                        for m in range(N - 1, 0, -1):
+                            if math.gcd(m, 210) == 1:
+                                M = m
+                                break
+                        if M is None:
+                            raise ValueError(
+                                f"Could not find M < {N} with gcd(M,210)==1 "
+                                f"(N={N}, gcd(N,210)={g})."
+                            )
+
+                        print(
+                            f"[warning] Klarner: gcd(N={N},210)={g}≠1; "
+                            f"using Klarner core with M={M} (gcd(M,210)=1) "
+                            f"and placing remaining queens randomly."
+                        )
+
+                        positions = []
+
+                        # 1) Klarner core on M x M, depth M (non-attacking among themselves)
+                        for i in range(M):
+                            for j in range(M):
+                                k = (3 * i + 5 * j) % M
+                                positions.append((i, j, k))
+
+                        used = set(positions)
+                        core_Q = len(positions)  # M^2
+                        remaining = Q - core_Q
+
+                        if remaining < 0:
+                            raise ValueError(
+                                f"Klarner core size M^2={core_Q} exceeds Q={Q}."
+                            )
+
+                        # 2) Place the remaining queens randomly in free 3D cells
+                        if remaining > 0:
+                            N3 = N ** 3
+                            # To avoid building the full list in huge N,
+                            # we just sample until we have enough distinct free cells.
+                            while len(positions) < Q:
+                                i = np.random.randint(0, N)
+                                j = np.random.randint(0, N)
+                                k = np.random.randint(0, N)
+                                pos = (i, j, k)
+                                if pos not in used:
+                                    used.add(pos)
+                                    positions.append(pos)
+
+                        self.queens = np.array(positions, dtype=int)
 
             elif init_mode == "random":
+                # Fully random distinct 3D positions
                 total_cells = N ** 3
                 if Q > total_cells:
-                    raise ValueError("Q cannot exceed N^3.")
+                    raise ValueError(f"Q={Q} cannot exceed N^3={total_cells}.")
 
                 flat_indices = np.random.choice(total_cells, size=Q, replace=False)
                 k_coords = flat_indices % N
                 j_coords = (flat_indices // N) % N
-                i_coords = (flat_indices // (N * N))
+                i_coords = flat_indices // (N * N)
                 self.queens = np.stack([i_coords, j_coords, k_coords], axis=1)
 
             else:
                 raise ValueError(f"Unknown init_mode: {init_mode}")
+
         else:
             positions = np.asarray(positions, dtype=int)
             if positions.shape[1] != 3:
@@ -69,7 +125,7 @@ class State3DQueens:
             self.queens = positions
             self.Q = positions.shape[0]
 
-        # Occupancy set
+        # Build occ_set, energy cache etc. here as in your full class
         self.occ_set = set()
         for (i, j, k) in self.queens:
             pos = (int(i), int(j), int(k))
