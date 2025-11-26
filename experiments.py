@@ -37,7 +37,7 @@ def exponential_annealing_beta(beta_start, beta_end, n_steps):
     return schedule
 
 
-def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None, init_mode="latin"):
+def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, Q=None):
     if seed is not None:
         np.random.seed(seed)
 
@@ -111,10 +111,11 @@ def metropolis_mcmc(N, n_steps, beta_schedule, verbose=True, seed=None, Q=None, 
     }
 
 
-def run_single_chain(N, n_steps, beta_schedule, seed=None, verbose=False, init_mode="latin"):
+def run_single_chain(N, n_steps, init_mode,beta_schedule, seed=None, verbose=False):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
+        init_mode = init_mode,
         beta_schedule=beta_schedule,
         verbose=verbose,
         seed=seed,
@@ -122,7 +123,7 @@ def run_single_chain(N, n_steps, beta_schedule, seed=None, verbose=False, init_m
     )
 
 
-def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False, init_mode="latin"):
+def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False):
     all_histories = []
     best_energies = []
     run_times = []
@@ -135,6 +136,7 @@ def run_experiment(N, n_steps, beta_schedule, n_runs, base_seed=0, verbose=False
         res = run_single_chain(
             N=N,
             n_steps=n_steps,
+            init_mode = init_mode, 
             beta_schedule=beta_schedule,
             seed=base_seed + r,
             verbose=verbose,
@@ -290,6 +292,8 @@ if __name__ == "__main__":
     verbose = common["verbose"]
     init_mode = common["initialization"]
 
+    print(init_mode)
+
     if experiment_type == "constant_beta":
         params = config["constant_beta"]
         N = params["N"]
@@ -337,6 +341,7 @@ if __name__ == "__main__":
         all_hist_la, best_la, times_la = run_experiment(
             N=N,
             n_steps=n_steps,
+            init_mode=init_mode,
             beta_schedule=beta_schedule_linear,
             n_runs=n_runs,
             base_seed=base_seed,
