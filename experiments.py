@@ -111,7 +111,7 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
     }
 
 
-def run_single_chain(N, n_steps, init_mode,beta_schedule, seed=None, verbose=False):
+def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
@@ -119,7 +119,6 @@ def run_single_chain(N, n_steps, init_mode,beta_schedule, seed=None, verbose=Fal
         beta_schedule=beta_schedule,
         verbose=verbose,
         seed=seed,
-        init_mode=init_mode,
     )
 
 
@@ -140,7 +139,6 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             beta_schedule=beta_schedule,
             seed=base_seed + r,
             verbose=verbose,
-            init_mode=init_mode,
         )
         end_time = time.time()
 
@@ -225,11 +223,11 @@ def measure_min_energy_vs_N(
         _, best_energies, _ = run_experiment(
             N=N,
             n_steps=n_steps,
+            init_mode=init_mode,
             beta_schedule=beta_schedule,
             n_runs=n_runs,
             base_seed=base_seed + 10 * idx,
             verbose=verbose,
-            init_mode=init_mode,
         )
 
         best_energies = np.array(best_energies)
@@ -345,7 +343,6 @@ if __name__ == "__main__":
             beta_schedule=beta_schedule_linear,
             n_runs=n_runs,
             base_seed=base_seed,
-            init_mode=init_mode,
             verbose=verbose,
         )
 
