@@ -235,6 +235,7 @@ def measure_min_energy_vs_N(
     Ns,
     n_steps,
     beta_schedule,
+    init_mode = "random", 
     n_runs=5,
     base_seed=100,
     verbose=True,

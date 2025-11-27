@@ -1,8 +1,8 @@
-experiment_type: "single_N"
+experiment_type: "measure_min_energy_vs_N"
 
 common:
-  n_steps: 200000
-  n_runs: 13
+  n_steps: 1000000
+  n_runs: 10
   verbose: true
   initialization: klarner
 
@@ -11,15 +11,15 @@ common:
     type: "linear_annealing"          # or "linear_annealing", "exponential_annealing"
     base_seed: 42             # default base seed for this experiment
     beta_const: 1.0           # used if type == "constant"
-    beta_start: 0.1           # used if type != "constant"
+    beta_start: 3         # used if type != "constant"
     beta_end: 10.0            # used if type != "constant"
 
-  output_path: "figures/energy_history_singleN.png"
+  output_path: "figures/min_energy_vs_N_klarner_linear_annealing.png"
 
 # Per-experiment params for single_N
 single_N:
-  N: 13
+  N: 15
 
 # You can keep this block as-is if you still want the other experiment type:
 measure_min_energy_vs_N:
-  Ns: [3, 4, 5, 6, 7, 8]
+  Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
