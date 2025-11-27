@@ -1,0 +1,3012 @@
+Initialization mode: random
+Experiment type: measure_min_energy_vs_N
+
+Measuring minimal energy as a function of N with linear beta: 3→10.0, init_mode=random, base_seed=42
+
+=== Running N = 3 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=14, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.030
+=== Completed run 1/10 (10.0% of experiment) | time this run: 89.32 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.030
+=== Completed run 2/10 (20.0% of experiment) | time this run: 95.26 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=14, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.029
+=== Completed run 3/10 (30.0% of experiment) | time this run: 93.06 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=14, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.033
+=== Completed run 4/10 (40.0% of experiment) | time this run: 94.66 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.031
+=== Completed run 5/10 (50.0% of experiment) | time this run: 89.56 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=14, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.032
+=== Completed run 6/10 (60.0% of experiment) | time this run: 91.59 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=14, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.033
+=== Completed run 7/10 (70.0% of experiment) | time this run: 93.87 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=14, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.034
+=== Completed run 8/10 (80.0% of experiment) | time this run: 92.29 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=14, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.032
+=== Completed run 9/10 (90.0% of experiment) | time this run: 89.86 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=14, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.033
+=== Completed run 10/10 (100.0% of experiment) | time this run: 90.42 s ===
+
+>>> Mean time per run: 91.99 s
+>>> Total time for 10 runs: 919.89 s
+  → Mean min energy = 13.00 ± 0.00
+
+=== Running N = 4 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 1/10 (10.0% of experiment) | time this run: 89.32 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 2/10 (20.0% of experiment) | time this run: 91.24 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 3/10 (30.0% of experiment) | time this run: 93.65 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=22, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=22, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 4/10 (40.0% of experiment) | time this run: 89.17 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 5/10 (50.0% of experiment) | time this run: 93.31 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.007
+=== Completed run 6/10 (60.0% of experiment) | time this run: 91.65 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=26, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 7/10 (70.0% of experiment) | time this run: 94.27 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=24, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.007
+=== Completed run 8/10 (80.0% of experiment) | time this run: 93.31 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=22, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 9/10 (90.0% of experiment) | time this run: 94.63 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 10/10 (100.0% of experiment) | time this run: 92.92 s ===
+
+>>> Mean time per run: 92.35 s
+>>> Total time for 10 runs: 923.46 s
+  → Mean min energy = 21.00 ± 0.00
+
+=== Running N = 5 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 1/10 (10.0% of experiment) | time this run: 88.83 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=36, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=33, best=32, beta_t=10.000
+[chain] Final energy: 33
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 2/10 (20.0% of experiment) | time this run: 92.14 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=35, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 3/10 (30.0% of experiment) | time this run: 89.20 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=33, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=33, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 4/10 (40.0% of experiment) | time this run: 92.27 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=33, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 5/10 (50.0% of experiment) | time this run: 89.72 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=36, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 6/10 (60.0% of experiment) | time this run: 92.03 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 7/10 (70.0% of experiment) | time this run: 88.76 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=33, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 8/10 (80.0% of experiment) | time this run: 92.76 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=33, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 9/10 (90.0% of experiment) | time this run: 90.51 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 10/10 (100.0% of experiment) | time this run: 88.76 s ===
+
+>>> Mean time per run: 90.50 s
+>>> Total time for 10 runs: 904.98 s
+  → Mean min energy = 32.00 ± 0.00
+
+=== Running N = 6 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=41, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=42, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 90.46 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=43, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=42, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 92.30 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=45, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 88.89 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=43, best=42, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=43, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=42, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=42, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 92.04 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=42, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 88.58 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=43, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 88.54 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=44, best=44, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=44, best=42, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=43, best=42, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=43, best=42, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=42, best=42, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=42, best=42, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=42, best=42, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=42, best=42, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=42, best=42, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=42, best=42, beta_t=10.000
+[chain] Final energy: 42
+[chain] Best energy:   42
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 88.51 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=47, best=44, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 92.24 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=44, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=42, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=42, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 88.85 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=44, best=42, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=44, best=42, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=42, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=42, best=42, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=42, best=42, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=42, best=42, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=42, best=42, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=42, best=42, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=42, best=42, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=42, best=42, beta_t=10.000
+[chain] Final energy: 42
+[chain] Best energy:   42
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 88.84 s ===
+
+>>> Mean time per run: 89.92 s
+>>> Total time for 10 runs: 899.25 s
+  → Mean min energy = 41.20 ± 0.40
+
+=== Running N = 7 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=55, best=52, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=52, best=51, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=51, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 88.76 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=54, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=50, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=51, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=52, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=50, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 92.11 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=49, best=49, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=49, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=49, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=49, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=49, best=49, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=49, best=49, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=49, best=49, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=49, best=49, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=49, best=49, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=49, best=49, beta_t=10.000
+[chain] Final energy: 49
+[chain] Best energy:   49
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 91.39 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=51, best=50, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 92.11 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=51, best=50, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=50, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 88.89 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=51, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=50, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 92.28 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=51, best=50, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=53, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 89.03 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=54, best=53, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 90.37 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=52, best=50, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 90.53 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=54, best=53, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=51, best=51, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=53, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=51, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 92.25 s ===
+
+>>> Mean time per run: 90.77 s
+>>> Total time for 10 runs: 907.71 s
+  → Mean min energy = 50.10 ± 0.54
+
+=== Running N = 8 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=62, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=60, best=60, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=59, best=59, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=59, best=59, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=59, best=59, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=59, best=59, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=59, best=59, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=59, best=59, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=59, best=59, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=59, best=59, beta_t=10.000
+[chain] Final energy: 59
+[chain] Best energy:   59
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 92.44 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=70, best=67, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=64, best=64, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=65, best=63, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=64, best=63, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=63, best=63, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=63, best=63, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=63, best=63, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=63, best=63, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=63, best=63, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=63, best=63, beta_t=10.000
+[chain] Final energy: 63
+[chain] Best energy:   63
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 90.77 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=62, best=61, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=60, best=59, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=60, best=59, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=59, best=59, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=59, best=59, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=59, best=59, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=59, best=59, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=59, best=59, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=59, best=59, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=59, best=59, beta_t=10.000
+[chain] Final energy: 59
+[chain] Best energy:   59
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 93.02 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=62, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=63, best=62, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=61, best=60, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=60, best=60, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=61, best=60, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=60, best=60, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=60, best=60, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=60, best=60, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=60, best=60, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=61, best=60, beta_t=10.000
+[chain] Final energy: 61
+[chain] Best energy:   60
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 94.59 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=71, best=71, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=64, best=62, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=66, best=62, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=63, best=62, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=62, best=62, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=61, best=61, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=61, best=61, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=61, best=61, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=61, best=61, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=61, best=61, beta_t=10.000
+[chain] Final energy: 61
+[chain] Best energy:   61
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 93.24 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=65, best=64, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=66, best=64, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=65, best=64, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=65, best=64, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=64, best=64, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=64, best=64, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=64, best=64, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=64, best=64, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=64, best=64, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=64, best=64, beta_t=10.000
+[chain] Final energy: 64
+[chain] Best energy:   64
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 90.41 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=62, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=61, best=61, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=63, best=61, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=63, best=61, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=62, best=61, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=62, best=61, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=62, best=61, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=62, best=61, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=62, best=61, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=62, best=61, beta_t=10.000
+[chain] Final energy: 62
+[chain] Best energy:   61
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 90.84 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=68, best=65, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=64, best=64, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=65, best=64, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=64, best=63, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=63, best=63, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=63, best=63, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=63, best=63, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=63, best=63, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=63, best=63, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=63, best=63, beta_t=10.000
+[chain] Final energy: 63
+[chain] Best energy:   63
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 91.02 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=67, best=67, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=68, best=63, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=63, best=62, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=64, best=62, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=62, best=62, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=62, best=61, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=62, best=61, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=62, best=61, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=62, best=61, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=62, best=61, beta_t=10.000
+[chain] Final energy: 62
+[chain] Best energy:   61
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 90.67 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=66, best=65, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=63, best=63, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=62, best=62, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=62, best=61, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=61, best=61, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=61, best=61, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=61, best=61, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=61, best=61, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=61, best=61, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=61, best=61, beta_t=10.000
+[chain] Final energy: 61
+[chain] Best energy:   61
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 91.45 s ===
+
+>>> Mean time per run: 91.84 s
+>>> Total time for 10 runs: 918.45 s
+  → Mean min energy = 61.20 ± 1.60
+
+=== Running N = 9 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=83, best=83, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=79, best=79, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=77, best=76, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=74, best=74, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=76, best=74, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=74, best=74, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=74, best=74, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=74, best=74, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=74, best=74, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=74, best=74, beta_t=10.000
+[chain] Final energy: 74
+[chain] Best energy:   74
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 90.77 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=75, best=75, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=72, best=71, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=70, best=69, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=70, best=69, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=70, best=69, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=70, best=69, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=70, best=69, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=69, best=69, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=69, best=69, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=69, best=69, beta_t=10.000
+[chain] Final energy: 69
+[chain] Best energy:   69
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 91.01 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=79, best=79, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=79, best=76, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=76, best=75, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=75, best=75, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=75, best=75, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=75, best=75, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=75, best=75, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=75, best=75, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=75, best=75, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=75, best=75, beta_t=10.000
+[chain] Final energy: 75
+[chain] Best energy:   75
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 94.13 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=84, best=82, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=78, best=77, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=75, best=75, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=76, best=75, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=76, best=75, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=76, best=75, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=73, best=73, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=72, best=72, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=72, best=72, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=72, best=72, beta_t=10.000
+[chain] Final energy: 72
+[chain] Best energy:   72
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 91.03 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=84, best=80, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=78, best=78, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=79, best=78, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=79, best=78, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=79, best=78, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=78, best=78, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=78, best=78, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=78, best=78, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=78, best=78, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=78, best=78, beta_t=10.000
+[chain] Final energy: 78
+[chain] Best energy:   78
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 93.93 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=84, best=81, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=73, best=73, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=73, best=73, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=73, best=73, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=72, best=72, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=71, best=71, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=71, best=71, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=71, best=71, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=71, best=71, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=71, best=71, beta_t=10.000
+[chain] Final energy: 71
+[chain] Best energy:   71
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 92.70 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=78, best=76, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=80, best=76, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=74, best=74, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=72, best=72, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=72, best=72, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=72, best=72, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=72, best=72, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=72, best=72, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=72, best=72, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=72, best=72, beta_t=10.000
+[chain] Final energy: 72
+[chain] Best energy:   72
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 91.40 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=78, best=78, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=77, best=77, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=73, best=73, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=71, best=71, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=71, best=71, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=67, best=67, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=66, best=66, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=66, best=66, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=66, best=66, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=66, best=66, beta_t=10.000
+[chain] Final energy: 66
+[chain] Best energy:   66
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 91.27 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=84, best=81, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=77, best=77, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=77, best=76, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=77, best=76, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=77, best=76, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=77, best=76, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=76, best=76, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=76, best=76, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=76, best=76, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=76, best=76, beta_t=10.000
+[chain] Final energy: 76
+[chain] Best energy:   76
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 94.23 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=85, best=85, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=84, best=82, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=80, best=80, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=80, best=80, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=80, best=80, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=80, best=80, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=80, best=80, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=80, best=80, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=80, best=80, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=80, best=80, beta_t=10.000
+[chain] Final energy: 80
+[chain] Best energy:   80
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 90.76 s ===
+
+>>> Mean time per run: 92.12 s
+>>> Total time for 10 runs: 921.21 s
+  → Mean min energy = 73.30 ± 3.98
+
+=== Running N = 10 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=103, best=102, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=93, best=91, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=91, best=89, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=91, best=89, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=89, best=89, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=89, best=89, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=89, best=89, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=89, best=89, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=89, best=89, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=89, best=89, beta_t=10.000
+[chain] Final energy: 89
+[chain] Best energy:   89
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 95.95 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=100, best=98, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=95, best=95, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=94, best=94, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=94, best=92, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=88, best=88, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=87, best=87, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=87, best=87, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=87, best=87, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=87, best=87, beta_t=10.000
+[chain] Final energy: 87
+[chain] Best energy:   87
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 92.62 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=97, best=97, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=93, best=92, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=91, best=91, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=87, best=87, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=87, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=86, best=86, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=86, best=86, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=86, best=86, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=86, best=86, beta_t=10.000
+[chain] Final energy: 86
+[chain] Best energy:   86
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 96.55 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=97, best=95, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=93, best=93, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=93, best=92, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=92, best=92, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=90, best=89, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=89, best=89, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=89, best=89, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=89, best=89, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=89, best=89, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=89, best=89, beta_t=10.000
+[chain] Final energy: 89
+[chain] Best energy:   89
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 92.23 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=97, best=97, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=94, best=94, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=92, best=92, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=92, best=92, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=92, best=91, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=91, best=91, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=91, best=91, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=92, best=91, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=92, best=91, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=92, best=91, beta_t=10.000
+[chain] Final energy: 92
+[chain] Best energy:   91
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 93.84 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=107, best=102, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=93, best=93, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=94, best=92, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=93, best=92, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=91, best=91, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=91, best=90, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=91, best=90, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=91, best=90, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=91, best=90, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=91, best=90, beta_t=10.000
+[chain] Final energy: 91
+[chain] Best energy:   90
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 92.40 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=96, best=94, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=90, best=89, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=87, best=86, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=85, best=85, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=84, best=84, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=84, best=84, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=84, best=84, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=84, best=84, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=84, best=84, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=84, best=84, beta_t=10.000
+[chain] Final energy: 84
+[chain] Best energy:   84
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 94.60 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=104, best=103, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=97, best=96, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=96, best=95, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=94, best=94, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=94, best=94, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=93, best=93, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=93, best=93, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=93, best=93, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=93, best=93, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=93, best=93, beta_t=10.000
+[chain] Final energy: 93
+[chain] Best energy:   93
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 92.42 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=100, best=96, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=88, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=87, best=86, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=86, best=86, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=86, best=86, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=86, best=86, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=86, best=86, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=86, best=86, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=86, best=86, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=86, best=86, beta_t=10.000
+[chain] Final energy: 86
+[chain] Best energy:   86
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 93.95 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=96, best=96, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=90, best=90, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=89, best=89, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=88, best=88, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=88, best=88, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=87, best=87, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=87, best=87, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=87, best=87, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=87, best=87, beta_t=10.000
+[chain] Final energy: 87
+[chain] Best energy:   87
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 92.41 s ===
+
+>>> Mean time per run: 93.70 s
+>>> Total time for 10 runs: 936.96 s
+  → Mean min energy = 88.20 ± 2.56
+
+=== Running N = 11 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=120, best=119, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=111, best=110, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=107, best=107, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=106, best=106, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=102, best=102, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=101, best=101, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=102, best=101, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=101, best=101, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=101, best=101, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=101, best=101, beta_t=10.000
+[chain] Final energy: 101
+[chain] Best energy:   101
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 95.97 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=108, best=107, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=105, best=103, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=101, best=101, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=99, best=99, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=98, best=98, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=98, best=98, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=96, best=96, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=96, best=96, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=96, best=96, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=96, best=96, beta_t=10.000
+[chain] Final energy: 96
+[chain] Best energy:   96
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 94.09 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=116, best=116, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=111, best=110, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=111, best=110, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=110, best=110, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=111, best=110, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=111, best=110, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=110, best=110, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=110, best=110, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=110, best=110, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=110, best=110, beta_t=10.000
+[chain] Final energy: 110
+[chain] Best energy:   110
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 96.65 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=118, best=118, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=112, best=111, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=110, best=110, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=111, best=110, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=108, best=108, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=107, best=107, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=106, best=106, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=106, best=106, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=105, best=105, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=105, best=105, beta_t=10.000
+[chain] Final energy: 105
+[chain] Best energy:   105
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 93.71 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=114, best=114, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=110, best=110, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=111, best=110, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=109, best=109, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=109, best=109, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=106, best=106, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=106, best=106, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=105, best=105, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=105, best=105, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=105, best=105, beta_t=10.000
+[chain] Final energy: 105
+[chain] Best energy:   105
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 96.88 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=111, best=111, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=110, best=109, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=107, best=107, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=103, best=103, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=103, best=102, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=103, best=102, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=102, best=102, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=101, best=101, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=101, best=101, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=101, best=101, beta_t=10.000
+[chain] Final energy: 101
+[chain] Best energy:   101
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 94.55 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=127, best=125, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=119, best=119, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=112, best=112, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=109, best=109, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=109, best=109, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=108, best=107, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=108, best=107, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=108, best=107, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=107, best=107, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=107, best=107, beta_t=10.000
+[chain] Final energy: 107
+[chain] Best energy:   107
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 97.83 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=118, best=118, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=106, best=105, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=103, best=103, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=101, best=101, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=101, best=101, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=100, best=100, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=100, best=100, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=99, best=99, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=99, best=99, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=98, best=98, beta_t=10.000
+[chain] Final energy: 98
+[chain] Best energy:   98
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 94.06 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=122, best=121, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=109, best=109, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=108, best=105, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=105, best=105, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=105, best=105, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=104, best=104, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=104, best=104, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=104, best=104, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=103, best=103, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=103, best=103, beta_t=10.000
+[chain] Final energy: 103
+[chain] Best energy:   103
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 94.32 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=130, best=126, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=125, best=122, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=119, best=119, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=118, best=117, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=115, best=115, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=112, best=112, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=111, best=111, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=111, best=111, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=112, best=111, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=111, best=111, beta_t=10.000
+[chain] Final energy: 111
+[chain] Best energy:   111
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 93.98 s ===
+
+>>> Mean time per run: 95.20 s
+>>> Total time for 10 runs: 952.05 s
+  → Mean min energy = 103.70 ± 4.63
+
+=== Running N = 12 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=151, best=151, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=139, best=138, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=141, best=136, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=135, best=135, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=135, best=135, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=135, best=135, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=133, best=133, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=133, best=133, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=133, best=133, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=133, best=133, beta_t=10.000
+[chain] Final energy: 133
+[chain] Best energy:   133
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 97.18 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=146, best=145, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=130, best=130, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=128, best=128, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=127, best=127, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=126, best=126, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=125, best=125, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=124, best=124, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=124, best=124, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=124, best=124, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=124, best=124, beta_t=10.000
+[chain] Final energy: 124
+[chain] Best energy:   124
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 97.01 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=145, best=144, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=138, best=137, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=134, best=134, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=129, best=129, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=129, best=128, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=126, best=126, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=125, best=125, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=122, best=122, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=122, best=122, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=122, best=122, beta_t=10.000
+[chain] Final energy: 122
+[chain] Best energy:   122
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 96.81 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=135, best=135, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=127, best=127, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=127, best=126, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=127, best=126, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=125, best=125, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=123, best=123, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=123, best=123, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=120, best=120, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=120, best=120, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=120, best=120, beta_t=10.000
+[chain] Final energy: 120
+[chain] Best energy:   120
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 97.92 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=151, best=151, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=138, best=138, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=128, best=128, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=124, best=124, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=124, best=124, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=123, best=123, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=122, best=122, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=122, best=122, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=122, best=122, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=122, best=122, beta_t=10.000
+[chain] Final energy: 122
+[chain] Best energy:   122
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 97.33 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=131, best=131, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=125, best=125, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=122, best=122, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=120, best=120, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=120, best=120, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=120, best=120, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=120, best=120, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=120, best=120, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=120, best=120, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=120, best=120, beta_t=10.000
+[chain] Final energy: 120
+[chain] Best energy:   120
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 98.72 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=145, best=141, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=139, best=139, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=134, best=134, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=130, best=129, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=129, best=129, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=122, best=122, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=122, best=122, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=122, best=122, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=122, best=122, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=122, best=122, beta_t=10.000
+[chain] Final energy: 122
+[chain] Best energy:   122
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 97.60 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=147, best=144, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=134, best=134, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=131, best=131, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=133, best=131, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=132, best=131, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=132, best=131, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=129, best=129, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=129, best=129, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=128, best=128, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=128, best=128, beta_t=10.000
+[chain] Final energy: 128
+[chain] Best energy:   128
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 99.51 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=155, best=150, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=134, best=134, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=134, best=133, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=130, best=130, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=130, best=130, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=127, best=127, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=127, best=127, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=127, best=127, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=125, best=125, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=125, best=125, beta_t=10.000
+[chain] Final energy: 125
+[chain] Best energy:   125
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 96.77 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=152, best=151, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=145, best=145, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=140, best=140, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=140, best=139, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=138, best=137, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=136, best=136, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=136, best=136, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=133, best=133, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=133, best=133, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=132, best=132, beta_t=10.000
+[chain] Final energy: 132
+[chain] Best energy:   132
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 100.85 s ===
+
+>>> Mean time per run: 97.97 s
+>>> Total time for 10 runs: 979.71 s
+  → Mean min energy = 124.80 ± 4.47
+
+=== Running N = 13 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=163, best=163, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=158, best=156, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=150, best=150, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=146, best=146, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=142, best=142, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=141, best=141, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=137, best=137, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=137, best=137, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=137, best=137, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=137, best=137, beta_t=10.000
+[chain] Final energy: 137
+[chain] Best energy:   137
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 98.52 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=155, best=155, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=151, best=151, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=149, best=148, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=146, best=145, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=141, best=141, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=140, best=140, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=139, best=139, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=137, best=137, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=137, best=137, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=138, best=137, beta_t=10.000
+[chain] Final energy: 138
+[chain] Best energy:   137
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 98.66 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=160, best=160, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=152, best=151, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=149, best=149, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=144, best=144, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=144, best=144, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=144, best=144, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=143, best=143, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=143, best=143, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=142, best=142, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=142, best=142, beta_t=10.000
+[chain] Final energy: 142
+[chain] Best energy:   142
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 98.84 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=162, best=162, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=151, best=151, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=151, best=149, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=148, best=148, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=146, best=146, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=146, best=146, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=145, best=145, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=145, best=145, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=144, best=144, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=144, best=144, beta_t=10.000
+[chain] Final energy: 144
+[chain] Best energy:   144
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 99.01 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=171, best=169, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=155, best=155, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=151, best=151, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=148, best=147, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=147, best=146, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=145, best=145, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=144, best=144, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=144, best=144, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=144, best=144, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=144, best=144, beta_t=10.000
+[chain] Final energy: 144
+[chain] Best energy:   144
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 100.23 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=167, best=167, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=168, best=163, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=158, best=158, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=155, best=155, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=150, best=150, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=149, best=149, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=148, best=148, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=146, best=146, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=145, best=145, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=145, best=145, beta_t=10.000
+[chain] Final energy: 145
+[chain] Best energy:   145
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 99.55 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=179, best=172, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=165, best=163, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=155, best=155, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=151, best=151, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=147, best=147, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=145, best=145, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=145, best=145, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=146, best=145, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=145, best=145, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=143, best=143, beta_t=10.000
+[chain] Final energy: 143
+[chain] Best energy:   143
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 100.80 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=180, best=180, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=172, best=172, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=162, best=162, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=156, best=156, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=153, best=153, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=153, best=153, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=151, best=151, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=151, best=150, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=149, best=149, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=148, best=148, beta_t=10.000
+[chain] Final energy: 148
+[chain] Best energy:   148
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 98.52 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=164, best=164, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=155, best=155, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=152, best=150, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=148, best=147, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=145, best=145, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=144, best=144, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=145, best=143, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=142, best=142, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=141, best=141, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=141, best=141, beta_t=10.000
+[chain] Final energy: 141
+[chain] Best energy:   141
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 99.03 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=169, best=168, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=158, best=157, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=152, best=152, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=149, best=149, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=148, best=148, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=147, best=147, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=147, best=147, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=147, best=147, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=146, best=146, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=144, best=144, beta_t=10.000
+[chain] Final energy: 144
+[chain] Best energy:   144
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 100.38 s ===
+
+>>> Mean time per run: 99.35 s
+>>> Total time for 10 runs: 993.54 s
+  → Mean min energy = 142.50 ± 3.26
+
+=== Running N = 14 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=202, best=200, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=197, best=197, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=192, best=191, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=189, best=188, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=187, best=187, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=183, best=183, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=183, best=183, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=183, best=183, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=177, best=177, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=176, best=176, beta_t=10.000
+[chain] Final energy: 176
+[chain] Best energy:   176
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 99.59 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=206, best=203, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=186, best=186, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=179, best=179, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=175, best=175, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=168, best=168, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=167, best=167, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=167, best=167, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=166, best=166, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=166, best=166, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=166, best=166, beta_t=10.000
+[chain] Final energy: 166
+[chain] Best energy:   166
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 99.53 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=200, best=199, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=183, best=183, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=180, best=180, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=177, best=177, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=175, best=175, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=173, best=173, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=173, best=173, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=173, best=173, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=173, best=173, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=173, best=173, beta_t=10.000
+[chain] Final energy: 173
+[chain] Best energy:   173
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 99.67 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=189, best=189, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=177, best=175, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=171, best=170, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=166, best=166, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=167, best=166, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=166, best=166, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=164, best=164, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=163, best=163, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=163, best=163, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=163, best=163, beta_t=10.000
+[chain] Final energy: 163
+[chain] Best energy:   163
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 100.91 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=207, best=207, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=195, best=193, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=187, best=186, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=184, best=184, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=181, best=180, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=175, best=175, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=174, best=174, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=173, best=173, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=172, best=172, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=172, best=172, beta_t=10.000
+[chain] Final energy: 172
+[chain] Best energy:   172
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 99.74 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=202, best=202, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=178, best=178, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=169, best=169, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=168, best=167, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=166, best=166, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=164, best=164, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=162, best=162, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=162, best=162, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=162, best=162, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=162, best=162, beta_t=10.000
+[chain] Final energy: 162
+[chain] Best energy:   162
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 99.72 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=201, best=201, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=190, best=189, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=181, best=181, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=168, best=168, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=162, best=162, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=160, best=160, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=160, best=160, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=160, best=160, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=160, best=160, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=158, best=158, beta_t=10.000
+[chain] Final energy: 158
+[chain] Best energy:   158
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 99.73 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=207, best=207, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=185, best=185, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=180, best=179, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=178, best=177, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=177, best=177, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=175, best=175, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=174, best=174, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=172, best=172, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=171, best=171, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=170, best=170, beta_t=10.000
+[chain] Final energy: 170
+[chain] Best energy:   170
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 100.05 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=197, best=197, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=185, best=184, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=176, best=176, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=174, best=174, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=174, best=174, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=174, best=174, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=174, best=174, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=173, best=173, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=173, best=173, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=173, best=173, beta_t=10.000
+[chain] Final energy: 173
+[chain] Best energy:   173
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 100.57 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=202, best=202, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=189, best=188, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=184, best=183, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=180, best=180, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=181, best=179, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=178, best=178, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=175, best=175, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=174, best=174, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=173, best=173, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=171, best=171, beta_t=10.000
+[chain] Final energy: 171
+[chain] Best energy:   171
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 100.26 s ===
+
+>>> Mean time per run: 99.98 s
+>>> Total time for 10 runs: 999.78 s
+  → Mean min energy = 168.40 ± 5.54
+
+=== Running N = 15 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=238, best=233, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=220, best=220, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=211, best=211, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=207, best=206, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=201, best=201, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=198, best=198, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=197, best=197, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=194, best=194, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=193, best=193, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=193, best=193, beta_t=10.000
+[chain] Final energy: 193
+[chain] Best energy:   193
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 102.01 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=236, best=233, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=215, best=215, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=210, best=210, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=208, best=208, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=202, best=201, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=199, best=199, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=199, best=199, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=198, best=198, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=196, best=196, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=193, best=193, beta_t=10.000
+[chain] Final energy: 193
+[chain] Best energy:   193
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 100.98 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=227, best=227, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=215, best=214, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=211, best=211, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=209, best=209, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=207, best=206, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=203, best=203, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=201, best=201, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=200, best=200, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=199, best=199, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=199, best=199, beta_t=10.000
+[chain] Final energy: 199
+[chain] Best energy:   199
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 101.60 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=236, best=236, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=219, best=219, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=215, best=212, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=213, best=212, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=210, best=210, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=208, best=208, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=208, best=208, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=208, best=208, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=205, best=205, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=203, best=203, beta_t=10.000
+[chain] Final energy: 203
+[chain] Best energy:   203
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 101.34 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=233, best=232, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=227, best=227, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=211, best=210, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=207, best=206, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=204, best=204, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=204, best=204, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=202, best=202, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=200, best=200, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=200, best=200, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=199, best=199, beta_t=10.000
+[chain] Final energy: 199
+[chain] Best energy:   199
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 100.82 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=228, best=227, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=218, best=217, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=207, best=207, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=203, best=203, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=201, best=201, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=196, best=196, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=195, best=195, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=194, best=194, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=194, best=194, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=193, best=193, beta_t=10.000
+[chain] Final energy: 193
+[chain] Best energy:   193
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 101.08 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=235, best=235, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=216, best=216, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=205, best=203, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=202, best=202, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=202, best=202, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=199, best=199, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=196, best=196, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=196, best=196, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=195, best=195, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=195, best=195, beta_t=10.000
+[chain] Final energy: 195
+[chain] Best energy:   195
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 101.19 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=224, best=224, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=219, best=219, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=210, best=210, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=197, best=197, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=195, best=195, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=194, best=194, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=193, best=193, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=193, best=193, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=193, best=193, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=192, best=192, beta_t=10.000
+[chain] Final energy: 192
+[chain] Best energy:   192
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 101.40 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=236, best=234, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=223, best=223, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=212, best=212, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=213, best=212, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=209, best=209, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=205, best=205, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=201, best=201, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=200, best=200, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=200, best=200, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=200, best=200, beta_t=10.000
+[chain] Final energy: 200
+[chain] Best energy:   200
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 101.02 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=238, best=235, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=230, best=228, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=221, best=220, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=210, best=210, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=204, best=204, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=198, best=198, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=198, best=197, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=196, best=196, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=196, best=196, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=195, best=195, beta_t=10.000
+[chain] Final energy: 195
+[chain] Best energy:   195
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 101.09 s ===
+
+>>> Mean time per run: 101.25 s
+>>> Total time for 10 runs: 1012.53 s
+  → Mean min energy = 196.20 ± 3.57
+
+=== Running N = 16 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=265, best=265, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=249, best=247, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=233, best=233, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=227, best=227, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=224, best=223, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=220, best=220, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=216, best=216, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=215, best=215, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=213, best=213, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=213, best=213, beta_t=10.000
+[chain] Final energy: 213
+[chain] Best energy:   213
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 104.01 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=262, best=262, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=242, best=242, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=229, best=229, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=221, best=221, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=219, best=219, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=216, best=216, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=216, best=216, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=216, best=216, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=214, best=214, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=213, best=213, beta_t=10.000
+[chain] Final energy: 213
+[chain] Best energy:   213
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 104.88 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=267, best=267, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=240, best=240, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=232, best=232, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=231, best=231, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=229, best=229, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=226, best=226, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=225, best=225, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=221, best=221, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=220, best=220, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=219, best=219, beta_t=10.000
+[chain] Final energy: 219
+[chain] Best energy:   219
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 104.07 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=267, best=266, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=250, best=250, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=241, best=241, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=240, best=240, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=238, best=237, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=234, best=234, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=233, best=233, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=233, best=233, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=231, best=231, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=230, best=230, beta_t=10.000
+[chain] Final energy: 230
+[chain] Best energy:   230
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 104.13 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=274, best=273, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=249, best=249, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=233, best=233, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=232, best=231, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=228, best=228, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=225, best=225, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=222, best=222, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=221, best=221, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=219, best=219, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=218, best=218, beta_t=10.000
+[chain] Final energy: 218
+[chain] Best energy:   218
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 104.18 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=265, best=265, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=255, best=254, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=249, best=247, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=241, best=241, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=238, best=238, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=233, best=233, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=230, best=230, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=228, best=228, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=225, best=225, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=222, best=222, beta_t=10.000
+[chain] Final energy: 222
+[chain] Best energy:   222
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 104.60 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=257, best=257, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=242, best=242, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=236, best=235, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=231, best=231, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=227, best=227, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=222, best=222, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=214, best=214, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=212, best=212, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=211, best=211, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=211, best=211, beta_t=10.000
+[chain] Final energy: 211
+[chain] Best energy:   211
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 105.47 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=268, best=268, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=245, best=245, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=237, best=237, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=234, best=234, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=233, best=233, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=230, best=230, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=229, best=229, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=229, best=229, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=225, best=225, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=221, best=221, beta_t=10.000
+[chain] Final energy: 221
+[chain] Best energy:   221
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 104.58 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=278, best=278, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=253, best=253, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=242, best=242, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=238, best=238, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=232, best=232, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=228, best=228, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=226, best=226, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=224, best=224, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=224, best=224, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=224, best=224, beta_t=10.000
+[chain] Final energy: 224
+[chain] Best energy:   224
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 104.08 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=273, best=272, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=252, best=252, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=245, best=245, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=234, best=234, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=231, best=231, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=228, best=228, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=226, best=226, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=223, best=223, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=222, best=222, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=221, best=221, beta_t=10.000
+[chain] Final energy: 221
+[chain] Best energy:   221
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 104.51 s ===
+
+>>> Mean time per run: 104.45 s
+>>> Total time for 10 runs: 1044.51 s
+  → Mean min energy = 219.20 ± 5.47
+
+=== Running N = 17 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=306, best=306, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=282, best=282, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=273, best=273, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=272, best=272, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=267, best=267, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=264, best=264, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=262, best=262, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=261, best=261, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=258, best=258, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=255, best=255, beta_t=10.000
+[chain] Final energy: 255
+[chain] Best energy:   255
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 106.22 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=304, best=304, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=285, best=285, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=273, best=271, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=260, best=260, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=257, best=257, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=254, best=254, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=250, best=250, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=249, best=249, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=249, best=249, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=249, best=249, beta_t=10.000
+[chain] Final energy: 249
+[chain] Best energy:   249
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 108.51 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=303, best=303, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=277, best=277, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=267, best=267, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=258, best=258, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=257, best=257, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=257, best=257, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=256, best=256, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=255, best=255, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=255, best=255, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=254, best=254, beta_t=10.000
+[chain] Final energy: 254
+[chain] Best energy:   254
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 106.02 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=284, best=284, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=269, best=269, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=258, best=258, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=252, best=252, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=247, best=246, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=245, best=245, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=243, best=243, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=242, best=242, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=239, best=239, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=237, best=237, beta_t=10.000
+[chain] Final energy: 237
+[chain] Best energy:   237
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 106.37 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=310, best=306, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=281, best=281, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=263, best=263, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=250, best=250, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=244, best=244, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=244, best=244, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=244, best=244, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=244, best=244, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=244, best=244, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=244, best=244, beta_t=10.000
+[chain] Final energy: 244
+[chain] Best energy:   244
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 106.28 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=302, best=302, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=285, best=285, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=271, best=271, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=265, best=265, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=264, best=264, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=261, best=261, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=260, best=260, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=257, best=257, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=256, best=256, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=255, best=255, beta_t=10.000
+[chain] Final energy: 255
+[chain] Best energy:   255
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 106.20 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=301, best=299, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=273, best=273, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=269, best=267, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=268, best=267, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=261, best=261, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=256, best=256, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=255, best=255, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=252, best=252, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=252, best=252, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=252, best=252, beta_t=10.000
+[chain] Final energy: 252
+[chain] Best energy:   252
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 105.79 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=309, best=309, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=291, best=291, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=278, best=277, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=270, best=269, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=262, best=262, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=260, best=260, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=260, best=260, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=256, best=256, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=254, best=254, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=254, best=254, beta_t=10.000
+[chain] Final energy: 254
+[chain] Best energy:   254
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 105.76 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=308, best=308, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=279, best=279, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=269, best=266, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=267, best=266, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=263, best=263, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=258, best=258, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=257, best=257, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=256, best=256, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=256, best=256, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=252, best=252, beta_t=10.000
+[chain] Final energy: 252
+[chain] Best energy:   252
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 106.89 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=306, best=306, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=274, best=274, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=264, best=264, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=259, best=259, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=254, best=254, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=249, best=249, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=244, best=244, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=242, best=242, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=240, best=240, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=239, best=239, beta_t=10.000
+[chain] Final energy: 239
+[chain] Best energy:   239
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 106.05 s ===
+
+>>> Mean time per run: 106.41 s
+>>> Total time for 10 runs: 1064.09 s
+  → Mean min energy = 249.10 ± 6.39
+
+=== Running N = 18 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=349, best=349, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=302, best=302, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=296, best=295, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=283, best=283, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=277, best=277, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=268, best=268, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=264, best=264, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=261, best=261, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=260, best=260, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=258, best=258, beta_t=10.000
+[chain] Final energy: 258
+[chain] Best energy:   258
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 108.28 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=359, best=358, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=326, best=324, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=311, best=311, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=305, best=305, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=302, best=302, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=298, best=298, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=291, best=291, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=289, best=289, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=287, best=287, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=283, best=283, beta_t=10.000
+[chain] Final energy: 283
+[chain] Best energy:   283
+[chain] Acceptance rate: 0.003
+=== Completed run 2/10 (20.0% of experiment) | time this run: 108.15 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=364, best=358, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=327, best=327, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=312, best=312, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=301, best=301, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=298, best=298, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=293, best=293, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=292, best=292, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=292, best=292, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=292, best=292, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=292, best=292, beta_t=10.000
+[chain] Final energy: 292
+[chain] Best energy:   292
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 109.92 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=360, best=357, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=322, best=322, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=310, best=310, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=307, best=306, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=304, best=304, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=299, best=299, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=297, best=297, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=293, best=293, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=291, best=291, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=289, best=289, beta_t=10.000
+[chain] Final energy: 289
+[chain] Best energy:   289
+[chain] Acceptance rate: 0.003
+=== Completed run 4/10 (40.0% of experiment) | time this run: 108.62 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=350, best=350, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=321, best=320, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=304, best=304, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=298, best=297, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=292, best=292, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=289, best=289, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=288, best=288, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=285, best=285, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=283, best=283, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=282, best=282, beta_t=10.000
+[chain] Final energy: 282
+[chain] Best energy:   282
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 108.59 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=357, best=357, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=329, best=327, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=312, best=312, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=309, best=309, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=303, best=303, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=301, best=301, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=295, best=295, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=291, best=291, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=286, best=286, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=287, best=286, beta_t=10.000
+[chain] Final energy: 287
+[chain] Best energy:   286
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 108.35 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=355, best=355, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=321, best=318, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=305, best=305, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=289, best=289, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=286, best=286, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=281, best=281, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=278, best=278, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=269, best=269, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=266, best=266, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=265, best=265, beta_t=10.000
+[chain] Final energy: 265
+[chain] Best energy:   265
+[chain] Acceptance rate: 0.003
+=== Completed run 7/10 (70.0% of experiment) | time this run: 108.51 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=354, best=354, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=329, best=329, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=313, best=313, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=310, best=309, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=301, best=301, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=298, best=298, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=294, best=294, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=290, best=290, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=284, best=284, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=281, best=281, beta_t=10.000
+[chain] Final energy: 281
+[chain] Best energy:   281
+[chain] Acceptance rate: 0.003
+=== Completed run 8/10 (80.0% of experiment) | time this run: 108.61 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=350, best=350, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=325, best=325, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=317, best=315, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=311, best=311, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=309, best=308, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=306, best=306, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=305, best=305, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=304, best=304, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=301, best=301, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=297, best=297, beta_t=10.000
+[chain] Final energy: 297
+[chain] Best energy:   297
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 108.33 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=357, best=357, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=326, best=326, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=313, best=313, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=311, best=311, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=308, best=308, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=302, best=302, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=297, best=297, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=294, best=294, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=291, best=291, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=285, best=285, beta_t=10.000
+[chain] Final energy: 285
+[chain] Best energy:   285
+[chain] Acceptance rate: 0.003
+=== Completed run 10/10 (100.0% of experiment) | time this run: 108.17 s ===
+
+>>> Mean time per run: 108.55 s
+>>> Total time for 10 runs: 1085.53 s
+  → Mean min energy = 281.80 ± 11.25
+
+=== Running N = 19 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=406, best=402, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=370, best=370, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=351, best=350, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=348, best=348, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=345, best=345, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=337, best=337, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=335, best=334, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=328, best=328, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=327, best=327, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=325, best=325, beta_t=10.000
+[chain] Final energy: 325
+[chain] Best energy:   325
+[chain] Acceptance rate: 0.003
+=== Completed run 1/10 (10.0% of experiment) | time this run: 111.72 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=392, best=392, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=366, best=365, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=354, best=354, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=343, best=343, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=331, best=330, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=324, best=324, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=318, best=318, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=314, best=314, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=311, best=311, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=308, best=308, beta_t=10.000
+[chain] Final energy: 308
+[chain] Best energy:   308
+[chain] Acceptance rate: 0.003
+=== Completed run 2/10 (20.0% of experiment) | time this run: 116.79 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=416, best=416, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=368, best=368, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=350, best=349, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=345, best=344, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=337, best=337, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=331, best=331, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=327, best=327, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=323, best=323, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=322, best=322, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=317, best=317, beta_t=10.000
+[chain] Final energy: 317
+[chain] Best energy:   317
+[chain] Acceptance rate: 0.003
+=== Completed run 3/10 (30.0% of experiment) | time this run: 111.24 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=395, best=395, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=364, best=364, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=344, best=343, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=335, best=335, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=330, best=330, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=329, best=329, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=323, best=323, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=322, best=322, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=321, best=321, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=318, best=318, beta_t=10.000
+[chain] Final energy: 318
+[chain] Best energy:   318
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 116.01 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=395, best=393, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=352, best=351, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=344, best=343, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=331, best=331, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=327, best=327, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=324, best=324, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=322, best=322, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=320, best=320, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=314, best=314, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=312, best=312, beta_t=10.000
+[chain] Final energy: 312
+[chain] Best energy:   312
+[chain] Acceptance rate: 0.003
+=== Completed run 5/10 (50.0% of experiment) | time this run: 111.90 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=392, best=392, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=358, best=358, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=343, best=342, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=339, best=339, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=330, best=330, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=327, best=327, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=320, best=320, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=317, best=317, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=314, best=314, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=314, best=314, beta_t=10.000
+[chain] Final energy: 314
+[chain] Best energy:   314
+[chain] Acceptance rate: 0.003
+=== Completed run 6/10 (60.0% of experiment) | time this run: 115.58 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=400, best=399, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=367, best=367, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=351, best=351, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=342, best=342, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=332, best=332, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=326, best=326, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=324, best=324, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=323, best=323, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=322, best=322, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=319, best=319, beta_t=10.000
+[chain] Final energy: 319
+[chain] Best energy:   319
+[chain] Acceptance rate: 0.003
+=== Completed run 7/10 (70.0% of experiment) | time this run: 111.37 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=394, best=391, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=358, best=357, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=338, best=338, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=328, best=328, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=321, best=321, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=315, best=315, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=313, best=313, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=311, best=311, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=305, best=305, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=303, best=303, beta_t=10.000
+[chain] Final energy: 303
+[chain] Best energy:   303
+[chain] Acceptance rate: 0.003
+=== Completed run 8/10 (80.0% of experiment) | time this run: 115.03 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=398, best=398, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=346, best=346, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=333, best=333, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=324, best=324, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=318, best=318, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=317, best=317, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=314, best=314, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=309, best=309, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=309, best=309, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=308, best=308, beta_t=10.000
+[chain] Final energy: 308
+[chain] Best energy:   308
+[chain] Acceptance rate: 0.003
+=== Completed run 9/10 (90.0% of experiment) | time this run: 112.10 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=401, best=401, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=365, best=365, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=336, best=336, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=329, best=329, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=325, best=325, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=323, best=323, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=317, best=317, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=312, best=312, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=307, best=307, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=303, best=303, beta_t=10.000
+[chain] Final energy: 303
+[chain] Best energy:   303
+[chain] Acceptance rate: 0.003
+=== Completed run 10/10 (100.0% of experiment) | time this run: 111.74 s ===
+
+>>> Mean time per run: 113.35 s
+>>> Total time for 10 runs: 1133.48 s
+  → Mean min energy = 312.70 ± 6.87
+
+=== Running N = 20 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=460, best=459, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=398, best=398, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=385, best=385, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=375, best=375, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=367, best=367, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=364, best=364, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=360, best=360, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=358, best=358, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=355, best=355, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=354, best=354, beta_t=10.000
+[chain] Final energy: 354
+[chain] Best energy:   354
+[chain] Acceptance rate: 0.003
+=== Completed run 1/10 (10.0% of experiment) | time this run: 113.71 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=441, best=441, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=398, best=398, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=384, best=384, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=378, best=377, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=366, best=366, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=361, best=361, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=356, best=356, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=352, best=352, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=350, best=350, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=347, best=347, beta_t=10.000
+[chain] Final energy: 347
+[chain] Best energy:   347
+[chain] Acceptance rate: 0.003
+=== Completed run 2/10 (20.0% of experiment) | time this run: 113.61 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=444, best=444, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=400, best=400, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=374, best=374, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=369, best=369, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=364, best=364, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=360, best=360, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=354, best=354, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=353, best=353, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=347, best=347, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=345, best=345, beta_t=10.000
+[chain] Final energy: 345
+[chain] Best energy:   345
+[chain] Acceptance rate: 0.003
+=== Completed run 3/10 (30.0% of experiment) | time this run: 114.02 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=452, best=451, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=392, best=392, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=374, best=374, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=364, best=364, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=354, best=354, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=350, best=349, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=345, best=345, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=340, best=340, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=337, best=337, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=334, best=334, beta_t=10.000
+[chain] Final energy: 334
+[chain] Best energy:   334
+[chain] Acceptance rate: 0.003
+=== Completed run 4/10 (40.0% of experiment) | time this run: 113.80 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=445, best=445, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=407, best=407, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=385, best=385, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=373, best=373, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=363, best=363, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=361, best=361, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=357, best=357, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=349, best=349, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=347, best=347, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=347, best=347, beta_t=10.000
+[chain] Final energy: 347
+[chain] Best energy:   347
+[chain] Acceptance rate: 0.003
+=== Completed run 5/10 (50.0% of experiment) | time this run: 113.60 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=445, best=445, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=403, best=403, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=385, best=385, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=370, best=370, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=368, best=367, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=360, best=360, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=355, best=355, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=354, best=354, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=351, best=351, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=352, best=351, beta_t=10.000
+[chain] Final energy: 352
+[chain] Best energy:   351
+[chain] Acceptance rate: 0.003
+=== Completed run 6/10 (60.0% of experiment) | time this run: 117.08 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=443, best=442, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=395, best=395, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=379, best=379, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=375, best=375, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=363, best=363, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=362, best=362, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=356, best=356, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=353, best=353, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=351, best=351, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=350, best=350, beta_t=10.000
+[chain] Final energy: 350
+[chain] Best energy:   350
+[chain] Acceptance rate: 0.003
+=== Completed run 7/10 (70.0% of experiment) | time this run: 114.12 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=452, best=452, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=419, best=419, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=389, best=389, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=378, best=377, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=371, best=370, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=365, best=365, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=364, best=364, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=360, best=360, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=358, best=358, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=352, best=352, beta_t=10.000
+[chain] Final energy: 352
+[chain] Best energy:   352
+[chain] Acceptance rate: 0.003
+=== Completed run 8/10 (80.0% of experiment) | time this run: 113.89 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=444, best=442, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=411, best=411, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=391, best=391, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=378, best=378, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=369, best=369, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=365, best=365, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=363, best=363, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=362, best=362, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=360, best=360, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=359, best=359, beta_t=10.000
+[chain] Final energy: 359
+[chain] Best energy:   359
+[chain] Acceptance rate: 0.003
+=== Completed run 9/10 (90.0% of experiment) | time this run: 113.65 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=454, best=453, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=402, best=402, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=385, best=385, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=369, best=369, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=360, best=360, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=354, best=354, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=349, best=349, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=347, best=347, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=346, best=346, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=346, best=346, beta_t=10.000
+[chain] Final energy: 346
+[chain] Best energy:   346
+[chain] Acceptance rate: 0.003
+=== Completed run 10/10 (100.0% of experiment) | time this run: 113.63 s ===
+
+>>> Mean time per run: 114.11 s
+>>> Total time for 10 runs: 1141.09 s
+  → Mean min energy = 348.50 ± 6.28
+
+Results:
+N=3: 13.00 ± 0.00
+N=4: 21.00 ± 0.00
+N=5: 32.00 ± 0.00
+N=6: 41.20 ± 0.40
+N=7: 50.10 ± 0.54
+N=8: 61.20 ± 1.60
+N=9: 73.30 ± 3.98
+N=10: 88.20 ± 2.56
+N=11: 103.70 ± 4.63
+N=12: 124.80 ± 4.47
+N=13: 142.50 ± 3.26
+N=14: 168.40 ± 5.54
+N=15: 196.20 ± 3.57
+N=16: 219.20 ± 5.47
+N=17: 249.10 ± 6.39
+N=18: 281.80 ± 11.25
+N=19: 312.70 ± 6.87
+N=20: 348.50 ± 6.28

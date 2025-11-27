@@ -1,0 +1,3152 @@
+Initialization mode: klarner
+Experiment type: measure_min_energy_vs_N
+
+Measuring minimal energy as a function of N with linear beta: 3→10.0, init_mode=klarner, base_seed=42
+
+=== Running N = 3 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.032
+=== Completed run 1/10 (10.0% of experiment) | time this run: 89.61 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.031
+=== Completed run 2/10 (20.0% of experiment) | time this run: 90.07 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.030
+=== Completed run 3/10 (30.0% of experiment) | time this run: 89.14 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=14, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.032
+=== Completed run 4/10 (40.0% of experiment) | time this run: 88.99 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.033
+=== Completed run 5/10 (50.0% of experiment) | time this run: 89.09 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.031
+=== Completed run 6/10 (60.0% of experiment) | time this run: 89.24 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.031
+=== Completed run 7/10 (70.0% of experiment) | time this run: 89.32 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=15, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.031
+=== Completed run 8/10 (80.0% of experiment) | time this run: 89.28 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=13, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=13, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=13, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.032
+=== Completed run 9/10 (90.0% of experiment) | time this run: 89.34 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=3,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=14, best=13, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=13, best=13, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=14, best=13, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=13, best=13, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=14, best=13, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=13, best=13, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=13, best=13, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=13, best=13, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=13, best=13, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=13, best=13, beta_t=10.000
+[chain] Final energy: 13
+[chain] Best energy:   13
+[chain] Acceptance rate: 0.032
+=== Completed run 10/10 (100.0% of experiment) | time this run: 89.16 s ===
+
+>>> Mean time per run: 89.32 s
+>>> Total time for 10 runs: 893.24 s
+  → Mean min energy = 13.00 ± 0.00
+
+=== Running N = 4 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 1/10 (10.0% of experiment) | time this run: 89.34 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 2/10 (20.0% of experiment) | time this run: 88.97 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 3/10 (30.0% of experiment) | time this run: 89.09 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=22, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 4/10 (40.0% of experiment) | time this run: 89.23 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=23, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 5/10 (50.0% of experiment) | time this run: 89.21 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=24, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 6/10 (60.0% of experiment) | time this run: 89.13 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=23, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=21, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 7/10 (70.0% of experiment) | time this run: 89.41 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=22, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=22, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.007
+=== Completed run 8/10 (80.0% of experiment) | time this run: 89.11 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=21, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=22, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=21, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.007
+=== Completed run 9/10 (90.0% of experiment) | time this run: 89.15 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=4,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=22, best=21, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=21, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=21, best=21, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=21, best=21, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=21, best=21, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=22, best=21, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=21, best=21, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=21, best=21, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=21, best=21, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=21, best=21, beta_t=10.000
+[chain] Final energy: 21
+[chain] Best energy:   21
+[chain] Acceptance rate: 0.008
+=== Completed run 10/10 (100.0% of experiment) | time this run: 89.09 s ===
+
+>>> Mean time per run: 89.17 s
+>>> Total time for 10 runs: 891.72 s
+  → Mean min energy = 21.00 ± 0.00
+
+=== Running N = 5 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=34, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 1/10 (10.0% of experiment) | time this run: 88.87 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=33, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 2/10 (20.0% of experiment) | time this run: 88.55 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=33, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 3/10 (30.0% of experiment) | time this run: 88.51 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 4/10 (40.0% of experiment) | time this run: 88.60 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=34, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=33, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 5/10 (50.0% of experiment) | time this run: 88.92 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=33, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=33, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=33, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 6/10 (60.0% of experiment) | time this run: 88.61 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=34, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 7/10 (70.0% of experiment) | time this run: 88.67 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=32, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=33, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.004
+=== Completed run 8/10 (80.0% of experiment) | time this run: 88.51 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=33, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=36, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 9/10 (90.0% of experiment) | time this run: 88.59 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=5,210)=5≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=35, best=32, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=32, best=32, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=32, best=32, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=32, best=32, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=32, best=32, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=32, best=32, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=32, best=32, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=32, best=32, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=32, best=32, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=32, best=32, beta_t=10.000
+[chain] Final energy: 32
+[chain] Best energy:   32
+[chain] Acceptance rate: 0.005
+=== Completed run 10/10 (100.0% of experiment) | time this run: 88.64 s ===
+
+>>> Mean time per run: 88.65 s
+>>> Total time for 10 runs: 886.48 s
+  → Mean min energy = 32.00 ± 0.00
+
+=== Running N = 6 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=41, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=42, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 88.19 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=46, best=43, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 88.38 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=44, best=43, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=43, best=43, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=43, best=43, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=43, best=43, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=43, best=43, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=44, best=43, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=43, best=43, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=43, best=43, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=43, best=43, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=43, best=43, beta_t=10.000
+[chain] Final energy: 43
+[chain] Best energy:   43
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 88.35 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=42, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=43, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 88.34 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=43, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=42, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=42, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 88.33 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=43, best=42, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=43, best=42, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=43, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 88.29 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=41, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 88.45 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=42, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=42, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 88.46 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=46, best=44, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=44, best=43, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=45, best=43, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=43, best=43, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=43, best=43, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=43, best=43, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=43, best=43, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=43, best=43, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=43, best=43, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=43, best=43, beta_t=10.000
+[chain] Final energy: 43
+[chain] Best energy:   43
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 88.74 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=6,210)=6≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=42, best=41, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=42, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=42, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=41, best=41, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=41, best=41, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=41, best=41, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=41, best=41, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=41, best=41, beta_t=10.000
+[chain] Final energy: 41
+[chain] Best energy:   41
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 88.74 s ===
+
+>>> Mean time per run: 88.43 s
+>>> Total time for 10 runs: 884.26 s
+  → Mean min energy = 41.40 ± 0.80
+
+=== Running N = 7 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=52, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=49, best=49, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=49, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=49, best=49, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=49, best=49, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=49, best=49, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=49, best=49, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=49, best=49, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=49, best=49, beta_t=10.000
+[chain] Final energy: 49
+[chain] Best energy:   49
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 90.92 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=54, best=52, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=49, best=49, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=49, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=49, best=49, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=49, best=49, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=49, best=49, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=49, best=49, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=49, best=49, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=49, best=49, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=49, best=49, beta_t=10.000
+[chain] Final energy: 49
+[chain] Best energy:   49
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 91.10 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=54, best=54, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=53, best=52, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=53, best=52, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=52, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 89.20 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=51, best=50, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=54, best=50, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 88.77 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=57, best=54, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=53, best=51, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=52, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=52, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 88.87 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=53, best=52, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=50, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=50, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=50, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=50, best=50, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=50, best=50, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=50, best=50, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=50, best=50, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=50, best=50, beta_t=10.000
+[chain] Final energy: 50
+[chain] Best energy:   50
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 88.83 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=51, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=51, best=51, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=51, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 89.08 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=53, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=53, best=51, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=52, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=52, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 88.96 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=51, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=51, best=51, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=51, best=51, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=51, best=51, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=51, best=51, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=51, best=51, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=51, best=51, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=51, best=51, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=51, best=51, beta_t=10.000
+[chain] Final energy: 51
+[chain] Best energy:   51
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 89.39 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=7,210)=7≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=51, best=51, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=51, best=49, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=50, best=49, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=50, best=49, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=50, best=49, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=49, best=49, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=49, best=49, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=49, best=49, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=49, best=49, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=49, best=49, beta_t=10.000
+[chain] Final energy: 49
+[chain] Best energy:   49
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 91.75 s ===
+
+>>> Mean time per run: 89.69 s
+>>> Total time for 10 runs: 896.87 s
+  → Mean min energy = 50.20 ± 0.87
+
+=== Running N = 8 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=54, best=53, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=53, best=53, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=52, best=52, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=53, best=52, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=53, best=52, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=53, best=52, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=53, best=52, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=52, best=52, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=52, best=52, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=52, best=52, beta_t=10.000
+[chain] Final energy: 52
+[chain] Best energy:   52
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 92.09 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=64, best=64, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=62, best=60, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=61, best=60, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=61, best=60, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=61, best=60, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=59, best=59, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=59, best=59, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=59, best=59, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=59, best=59, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=59, best=59, beta_t=10.000
+[chain] Final energy: 59
+[chain] Best energy:   59
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 90.19 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=63, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=63, best=62, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=64, best=62, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=62, best=62, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=64, best=62, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=63, best=62, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=63, best=62, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=63, best=62, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=63, best=62, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=63, best=62, beta_t=10.000
+[chain] Final energy: 63
+[chain] Best energy:   62
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 90.29 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=59, best=58, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=59, best=58, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=59, best=57, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=58, best=57, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=57, best=57, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=57, best=57, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=57, best=57, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=57, best=57, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=57, best=57, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=57, best=57, beta_t=10.000
+[chain] Final energy: 57
+[chain] Best energy:   57
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 90.25 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=62, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=62, best=61, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=61, best=61, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=61, best=60, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=60, best=60, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=60, best=60, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=60, best=60, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=60, best=60, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=60, best=60, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=60, best=60, beta_t=10.000
+[chain] Final energy: 60
+[chain] Best energy:   60
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 90.14 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=68, best=66, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=67, best=66, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=68, best=66, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=65, best=65, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=65, best=65, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=65, best=65, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=65, best=65, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=65, best=65, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=65, best=65, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=65, best=65, beta_t=10.000
+[chain] Final energy: 65
+[chain] Best energy:   65
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 90.00 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=67, best=64, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=65, best=64, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=66, best=64, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=65, best=64, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=65, best=64, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=64, best=64, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=64, best=64, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=64, best=64, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=64, best=64, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=64, best=64, beta_t=10.000
+[chain] Final energy: 64
+[chain] Best energy:   64
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 89.91 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=66, best=65, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=64, best=64, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=66, best=64, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=63, best=63, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=63, best=63, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=62, best=62, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=62, best=62, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=62, best=62, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=62, best=62, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=62, best=62, beta_t=10.000
+[chain] Final energy: 62
+[chain] Best energy:   62
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 90.00 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=63, best=63, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=61, best=59, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=58, best=58, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=58, best=58, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=58, best=58, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=58, best=58, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=60, best=58, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=58, best=58, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=58, best=58, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=58, best=58, beta_t=10.000
+[chain] Final energy: 58
+[chain] Best energy:   58
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 90.20 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=8,210)=2≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=64, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=57, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=55, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=55, best=55, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=55, best=55, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=55, best=55, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=55, best=55, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 90.21 s ===
+
+>>> Mean time per run: 90.33 s
+>>> Total time for 10 runs: 903.28 s
+  → Mean min energy = 59.40 ± 3.85
+
+=== Running N = 9 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=86, best=85, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=81, best=81, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=81, best=81, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=82, best=80, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=79, best=79, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=79, best=79, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=79, best=79, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=79, best=79, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=79, best=79, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=79, best=79, beta_t=10.000
+[chain] Final energy: 79
+[chain] Best energy:   79
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 90.46 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=81, best=80, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=78, best=76, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=74, best=74, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=74, best=74, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=74, best=74, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=74, best=74, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=73, best=73, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=73, best=73, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=73, best=73, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=73, best=73, beta_t=10.000
+[chain] Final energy: 73
+[chain] Best energy:   73
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 90.28 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=85, best=83, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=81, best=78, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=78, best=77, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=76, best=76, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=76, best=76, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=76, best=76, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=76, best=76, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=76, best=76, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=76, best=76, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=76, best=76, beta_t=10.000
+[chain] Final energy: 76
+[chain] Best energy:   76
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 90.39 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=74, best=74, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=68, best=68, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=68, best=68, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=69, best=68, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=68, best=68, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=68, best=68, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=68, best=68, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=68, best=68, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=68, best=68, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=68, best=68, beta_t=10.000
+[chain] Final energy: 68
+[chain] Best energy:   68
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 90.20 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=85, best=83, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=81, best=80, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=81, best=80, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=80, best=80, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=80, best=80, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=80, best=80, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=80, best=80, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=80, best=80, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=80, best=80, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=80, best=80, beta_t=10.000
+[chain] Final energy: 80
+[chain] Best energy:   80
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 90.25 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=79, best=79, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=78, best=78, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=75, best=74, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=76, best=74, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=73, best=73, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=73, best=73, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=73, best=73, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=73, best=73, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=73, best=73, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=73, best=73, beta_t=10.000
+[chain] Final energy: 73
+[chain] Best energy:   73
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 90.21 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=58, best=58, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=53, best=52, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=52, best=52, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=52, best=52, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=52, best=52, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=52, best=52, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=53, best=52, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=52, best=52, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=52, best=52, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=52, best=52, beta_t=10.000
+[chain] Final energy: 52
+[chain] Best energy:   52
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 90.15 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=82, best=81, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=80, best=78, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=80, best=78, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=79, best=78, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=76, best=76, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=76, best=76, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=76, best=76, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=76, best=76, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=76, best=76, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=76, best=76, beta_t=10.000
+[chain] Final energy: 76
+[chain] Best energy:   76
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 90.38 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=80, best=80, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=79, best=78, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=78, best=78, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=77, best=77, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=77, best=77, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=77, best=77, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=77, best=77, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=77, best=77, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=77, best=77, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=77, best=77, beta_t=10.000
+[chain] Final energy: 77
+[chain] Best energy:   77
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 90.48 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=9,210)=3≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=81, best=81, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=81, best=80, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=75, best=75, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=75, best=75, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=76, best=75, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=73, best=73, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=73, best=73, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=73, best=73, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=73, best=73, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=73, best=73, beta_t=10.000
+[chain] Final energy: 73
+[chain] Best energy:   73
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 90.39 s ===
+
+>>> Mean time per run: 90.32 s
+>>> Total time for 10 runs: 903.19 s
+  → Mean min energy = 72.70 ± 7.64
+
+=== Running N = 10 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=95, best=94, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=89, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=38, best=38, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=38, best=37, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=37, best=36, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=36, best=36, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=36, best=36, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=36, best=36, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=36, best=36, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=36, best=36, beta_t=10.000
+[chain] Final energy: 36
+[chain] Best energy:   36
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 91.84 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=103, best=103, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=98, best=96, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=92, best=91, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=92, best=91, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=91, best=91, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=92, best=91, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=93, best=91, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=91, best=91, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=91, best=91, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=91, best=91, beta_t=10.000
+[chain] Final energy: 91
+[chain] Best energy:   91
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 91.76 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=91, best=91, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=90, best=89, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=85, best=84, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=84, best=84, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=85, best=84, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=84, best=84, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=84, best=84, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=84, best=84, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=83, best=83, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=83, best=83, beta_t=10.000
+[chain] Final energy: 83
+[chain] Best energy:   83
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 91.92 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=94, best=94, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=37, best=36, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=36, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=36, best=36, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=36, best=36, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=36, best=36, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=36, best=36, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=36, best=36, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=36, best=36, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=36, best=36, beta_t=10.000
+[chain] Final energy: 36
+[chain] Best energy:   36
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 91.91 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=42, best=42, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=38, best=36, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=36, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=37, best=36, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=36, best=36, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=36, best=36, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=36, best=36, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=36, best=36, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=36, best=36, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=36, best=36, beta_t=10.000
+[chain] Final energy: 36
+[chain] Best energy:   36
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 91.92 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=100, best=100, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=94, best=93, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=92, best=92, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=88, best=88, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=89, best=88, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=83, best=83, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=83, best=83, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=83, best=83, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=83, best=83, beta_t=10.000
+[chain] Final energy: 83
+[chain] Best energy:   83
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 91.83 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=100, best=99, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=93, best=92, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=91, best=91, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=90, best=90, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=90, best=90, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=90, best=90, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=90, best=90, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=90, best=90, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=89, best=89, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=89, best=89, beta_t=10.000
+[chain] Final energy: 89
+[chain] Best energy:   89
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 91.86 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=96, best=96, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=95, best=93, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=91, best=91, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=90, best=90, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=90, best=90, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=89, best=89, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=87, best=87, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=87, best=87, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=87, best=87, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=87, best=87, beta_t=10.000
+[chain] Final energy: 87
+[chain] Best energy:   87
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 91.91 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=89, best=88, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=89, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=88, best=88, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=88, best=87, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=87, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=87, best=87, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=87, best=87, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=87, best=87, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=87, best=87, beta_t=10.000
+[chain] Final energy: 87
+[chain] Best energy:   87
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 91.92 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=10,210)=10≠1; using Klarner core with M=1 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=98, best=96, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=93, best=93, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=93, best=93, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=93, best=93, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=93, best=93, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=93, best=93, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=93, best=93, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=93, best=93, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=92, best=92, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=92, best=92, beta_t=10.000
+[chain] Final energy: 92
+[chain] Best energy:   92
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 91.87 s ===
+
+>>> Mean time per run: 91.87 s
+>>> Total time for 10 runs: 918.74 s
+  → Mean min energy = 72.00 ± 23.73
+
+=== Running N = 11 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 1/10 (10.0% of experiment) | time this run: 93.36 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 2/10 (20.0% of experiment) | time this run: 93.42 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 3/10 (30.0% of experiment) | time this run: 93.47 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 4/10 (40.0% of experiment) | time this run: 93.42 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 5/10 (50.0% of experiment) | time this run: 93.38 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 6/10 (60.0% of experiment) | time this run: 93.54 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 7/10 (70.0% of experiment) | time this run: 93.59 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 8/10 (80.0% of experiment) | time this run: 93.43 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 9/10 (90.0% of experiment) | time this run: 93.45 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 10/10 (100.0% of experiment) | time this run: 93.52 s ===
+
+>>> Mean time per run: 93.46 s
+>>> Total time for 10 runs: 934.57 s
+  → Mean min energy = 0.00 ± 0.00
+
+=== Running N = 12 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=24, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 96.55 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=24, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 96.17 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=23, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 96.56 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=23, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=24, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 96.72 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=25, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 97.03 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=24, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 98.23 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=24, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 97.11 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=24, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=24, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=24, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 96.65 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=23, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=23, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 96.74 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=12,210)=6≠1; using Klarner core with M=11 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=24, best=23, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=23, best=23, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=23, best=23, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=23, best=23, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=23, best=23, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=23, best=23, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=24, best=23, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=23, best=23, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=23, best=23, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=23, best=23, beta_t=10.000
+[chain] Final energy: 23
+[chain] Best energy:   23
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 96.31 s ===
+
+>>> Mean time per run: 96.81 s
+>>> Total time for 10 runs: 968.07 s
+  → Mean min energy = 23.00 ± 0.00
+
+=== Running N = 13 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 1/10 (10.0% of experiment) | time this run: 97.70 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 2/10 (20.0% of experiment) | time this run: 97.45 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 3/10 (30.0% of experiment) | time this run: 97.68 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 4/10 (40.0% of experiment) | time this run: 97.69 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 5/10 (50.0% of experiment) | time this run: 97.31 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 6/10 (60.0% of experiment) | time this run: 97.54 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 7/10 (70.0% of experiment) | time this run: 97.52 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 8/10 (80.0% of experiment) | time this run: 97.51 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 9/10 (90.0% of experiment) | time this run: 97.46 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 10/10 (100.0% of experiment) | time this run: 97.60 s ===
+
+>>> Mean time per run: 97.55 s
+>>> Total time for 10 runs: 975.46 s
+  → Mean min energy = 0.00 ± 0.00
+
+=== Running N = 14 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=34, best=33, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=28, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 98.69 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=28, best=28, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=28, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=28, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 98.94 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=27, best=27, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=28, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 98.89 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=29, best=29, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=27, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 98.50 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=28, best=27, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=27, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=28, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 98.71 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=27, best=27, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=27, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 98.96 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=27, best=27, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=27, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 99.07 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=30, best=28, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=27, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=28, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 99.48 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=29, best=27, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=28, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=28, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=28, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 101.73 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=14,210)=14≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=34, best=34, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=29, best=27, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=27, best=27, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=27, best=27, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=27, best=27, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=27, best=27, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=27, best=27, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=27, best=27, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=27, best=27, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=27, best=27, beta_t=10.000
+[chain] Final energy: 27
+[chain] Best energy:   27
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 100.33 s ===
+
+>>> Mean time per run: 99.33 s
+>>> Total time for 10 runs: 993.30 s
+  → Mean min energy = 27.00 ± 0.00
+
+=== Running N = 15 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=61, best=59, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=58, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=57, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=56, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=56, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=56, best=56, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=55, best=55, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 100.76 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=61, best=60, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=57, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=56, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=56, best=56, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=56, best=56, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=56, best=56, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=56, best=56, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=56, best=56, beta_t=10.000
+[chain] Final energy: 56
+[chain] Best energy:   56
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 101.03 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=59, best=59, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=55, best=55, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=55, best=55, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=54, best=54, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=54, best=54, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=54, best=54, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=54, best=54, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=54, best=54, beta_t=10.000
+[chain] Final energy: 54
+[chain] Best energy:   54
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 100.61 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=57, best=57, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=56, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=57, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=56, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=56, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=56, best=56, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=56, best=56, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 100.57 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=59, best=59, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=56, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=56, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=55, best=55, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=55, best=55, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=56, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 100.61 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=57, best=57, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=55, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=55, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=56, best=55, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=55, best=55, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=55, best=55, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=55, best=55, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 100.71 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=57, best=57, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=56, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=57, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=56, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=56, best=56, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=56, best=56, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=56, best=56, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=56, best=56, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=56, best=56, beta_t=10.000
+[chain] Final energy: 56
+[chain] Best energy:   56
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 100.70 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=59, best=56, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=57, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=56, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=57, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=56, best=56, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=56, best=56, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 100.77 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=62, best=62, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=56, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=56, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=56, best=56, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=56, best=56, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=55, best=55, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=55, best=55, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 100.74 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=15,210)=15≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=58, best=58, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=56, best=55, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=55, best=55, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=55, best=55, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=56, best=55, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=55, best=55, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=55, best=55, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=55, best=55, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=55, best=55, beta_t=10.000
+[chain] Final energy: 55
+[chain] Best energy:   55
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 100.93 s ===
+
+>>> Mean time per run: 100.74 s
+>>> Total time for 10 runs: 1007.44 s
+  → Mean min energy = 55.10 ± 0.54
+
+=== Running N = 16 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=96, best=96, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=90, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=87, best=87, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=87, best=86, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=86, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=86, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=85, best=85, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=85, best=85, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=85, best=85, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=85, best=85, beta_t=10.000
+[chain] Final energy: 85
+[chain] Best energy:   85
+[chain] Acceptance rate: 0.002
+=== Completed run 1/10 (10.0% of experiment) | time this run: 103.34 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=111, best=111, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=92, best=92, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=89, best=87, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=89, best=87, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=87, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=86, best=86, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=86, best=86, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=85, best=85, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=85, best=85, beta_t=10.000
+[chain] Final energy: 85
+[chain] Best energy:   85
+[chain] Acceptance rate: 0.002
+=== Completed run 2/10 (20.0% of experiment) | time this run: 103.47 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=108, best=108, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=88, best=87, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=87, best=86, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=88, best=86, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=86, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=85, best=85, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=84, best=84, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=84, best=84, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=84, best=84, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=84, best=84, beta_t=10.000
+[chain] Final energy: 84
+[chain] Best energy:   84
+[chain] Acceptance rate: 0.002
+=== Completed run 3/10 (30.0% of experiment) | time this run: 103.35 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=109, best=109, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=91, best=90, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=90, best=87, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=87, best=87, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=86, best=86, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=86, best=86, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=86, best=86, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=85, best=85, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=84, best=84, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=84, best=84, beta_t=10.000
+[chain] Final energy: 84
+[chain] Best energy:   84
+[chain] Acceptance rate: 0.002
+=== Completed run 4/10 (40.0% of experiment) | time this run: 103.62 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=101, best=101, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=88, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=88, best=87, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=86, best=86, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=86, best=86, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=86, best=86, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=86, best=86, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=86, best=86, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=85, best=85, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=85, best=85, beta_t=10.000
+[chain] Final energy: 85
+[chain] Best energy:   85
+[chain] Acceptance rate: 0.002
+=== Completed run 5/10 (50.0% of experiment) | time this run: 103.53 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=101, best=101, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=87, best=86, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=89, best=86, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=87, best=86, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=85, best=85, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=85, best=85, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=85, best=85, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=85, best=85, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=85, best=85, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=85, best=85, beta_t=10.000
+[chain] Final energy: 85
+[chain] Best energy:   85
+[chain] Acceptance rate: 0.002
+=== Completed run 6/10 (60.0% of experiment) | time this run: 103.09 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=100, best=100, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=89, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=88, best=88, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=87, best=87, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=87, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=87, best=87, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=88, best=87, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=87, best=87, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=86, best=86, beta_t=10.000
+[chain] Final energy: 86
+[chain] Best energy:   86
+[chain] Acceptance rate: 0.002
+=== Completed run 7/10 (70.0% of experiment) | time this run: 103.52 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=95, best=94, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=89, best=87, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=89, best=87, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=87, best=87, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=87, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=86, best=86, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=85, best=85, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=85, best=85, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=85, best=85, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=85, best=85, beta_t=10.000
+[chain] Final energy: 85
+[chain] Best energy:   85
+[chain] Acceptance rate: 0.002
+=== Completed run 8/10 (80.0% of experiment) | time this run: 103.67 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=98, best=98, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=90, best=90, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=89, best=88, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=88, best=88, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=87, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=88, best=87, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=87, best=87, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=87, best=87, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=87, best=87, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=87, best=87, beta_t=10.000
+[chain] Final energy: 87
+[chain] Best energy:   87
+[chain] Acceptance rate: 0.002
+=== Completed run 9/10 (90.0% of experiment) | time this run: 103.63 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=16,210)=2≠1; using Klarner core with M=13 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=99, best=98, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=88, best=88, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=89, best=88, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=88, best=86, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=87, best=86, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=87, best=86, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=85, best=85, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=86, best=85, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=86, best=85, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=85, best=85, beta_t=10.000
+[chain] Final energy: 85
+[chain] Best energy:   85
+[chain] Acceptance rate: 0.002
+=== Completed run 10/10 (100.0% of experiment) | time this run: 103.91 s ===
+
+>>> Mean time per run: 103.51 s
+>>> Total time for 10 runs: 1035.14 s
+  → Mean min energy = 85.10 ± 0.83
+
+=== Running N = 17 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 1/10 (10.0% of experiment) | time this run: 106.10 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 2/10 (20.0% of experiment) | time this run: 108.81 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 3/10 (30.0% of experiment) | time this run: 106.27 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 4/10 (40.0% of experiment) | time this run: 105.29 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 5/10 (50.0% of experiment) | time this run: 105.26 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 6/10 (60.0% of experiment) | time this run: 105.22 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 7/10 (70.0% of experiment) | time this run: 105.25 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 8/10 (80.0% of experiment) | time this run: 105.33 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 9/10 (90.0% of experiment) | time this run: 105.54 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 10/10 (100.0% of experiment) | time this run: 105.93 s ===
+
+>>> Mean time per run: 105.90 s
+>>> Total time for 10 runs: 1059.01 s
+  → Mean min energy = 0.00 ± 0.00
+
+=== Running N = 18 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=65, best=65, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=52, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=35, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=35, best=35, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 108.35 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=52, best=52, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=40, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=35, best=35, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=36, best=35, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 107.74 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=59, best=59, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=45, best=45, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=36, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=37, best=36, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 107.70 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=49, best=49, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=39, best=39, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=35, best=35, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=35, best=35, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 107.52 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=56, best=56, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=37, best=36, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=35, best=35, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=35, best=35, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 107.57 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=58, best=56, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=37, best=37, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=37, best=36, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 107.58 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=50, best=49, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=38, best=38, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=36, best=36, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 107.72 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=53, best=53, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=39, best=38, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=36, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=35, best=35, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 107.66 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=54, best=53, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=41, best=41, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=35, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=35, best=35, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=35, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 107.62 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=18,210)=6≠1; using Klarner core with M=17 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=56, best=55, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=39, best=38, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=36, best=36, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=36, best=36, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=36, best=35, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=35, best=35, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=35, best=35, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=35, best=35, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=35, best=35, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=35, best=35, beta_t=10.000
+[chain] Final energy: 35
+[chain] Best energy:   35
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 107.62 s ===
+
+>>> Mean time per run: 107.71 s
+>>> Total time for 10 runs: 1077.09 s
+  → Mean min energy = 35.00 ± 0.00
+
+=== Running N = 19 ===
+
+=== Run 1/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 1/10 (10.0% of experiment) | time this run: 110.92 s ===
+
+=== Run 2/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 2/10 (20.0% of experiment) | time this run: 110.33 s ===
+
+=== Run 3/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 3/10 (30.0% of experiment) | time this run: 110.20 s ===
+
+=== Run 4/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 4/10 (40.0% of experiment) | time this run: 110.35 s ===
+
+=== Run 5/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 5/10 (50.0% of experiment) | time this run: 110.29 s ===
+
+=== Run 6/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 6/10 (60.0% of experiment) | time this run: 110.91 s ===
+
+=== Run 7/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 7/10 (70.0% of experiment) | time this run: 110.89 s ===
+
+=== Run 8/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 8/10 (80.0% of experiment) | time this run: 110.93 s ===
+
+=== Run 9/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 9/10 (90.0% of experiment) | time this run: 110.71 s ===
+
+=== Run 10/10 ===
+[chain] 100000/1000000 steps (10.0%) | E=0, best=0, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=0, best=0, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=0, best=0, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=0, best=0, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=0, best=0, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=0, best=0, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=0, best=0, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=0, best=0, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=0, best=0, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=0, best=0, beta_t=10.000
+[chain] Final energy: 0
+[chain] Best energy:   0
+[chain] Acceptance rate: 0.000
+=== Completed run 10/10 (100.0% of experiment) | time this run: 110.74 s ===
+
+>>> Mean time per run: 110.63 s
+>>> Total time for 10 runs: 1106.26 s
+  → Mean min energy = 0.00 ± 0.00
+
+=== Running N = 20 ===
+
+=== Run 1/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=65, best=65, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=45, best=45, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=40, best=40, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=39, best=39, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=39, best=39, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=39, best=39, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 1/10 (10.0% of experiment) | time this run: 112.53 s ===
+
+=== Run 2/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=88, best=88, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=60, best=60, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=47, best=47, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=43, best=43, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=39, best=39, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 2/10 (20.0% of experiment) | time this run: 112.59 s ===
+
+=== Run 3/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=75, best=74, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=56, best=56, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=42, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=40, best=40, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=39, best=39, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=39, best=39, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 3/10 (30.0% of experiment) | time this run: 113.73 s ===
+
+=== Run 4/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=72, best=72, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=52, best=52, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=42, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=40, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=40, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=39, best=39, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 4/10 (40.0% of experiment) | time this run: 112.67 s ===
+
+=== Run 5/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=82, best=82, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=55, best=55, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=43, best=43, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=40, best=40, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=40, best=40, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=39, best=39, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=40, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 5/10 (50.0% of experiment) | time this run: 112.74 s ===
+
+=== Run 6/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=59, best=59, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=53, best=51, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=42, best=42, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=40, best=40, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=40, best=40, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 6/10 (60.0% of experiment) | time this run: 112.95 s ===
+
+=== Run 7/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=74, best=74, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=54, best=54, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=43, best=43, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=43, best=42, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=40, best=40, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=40, best=40, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 7/10 (70.0% of experiment) | time this run: 112.74 s ===
+
+=== Run 8/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=74, best=74, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=47, best=47, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=43, best=43, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=40, best=40, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=40, best=40, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=40, best=40, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 8/10 (80.0% of experiment) | time this run: 112.74 s ===
+
+=== Run 9/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=67, best=67, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=48, best=48, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=41, best=41, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=42, best=40, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=42, best=40, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=40, best=40, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 9/10 (90.0% of experiment) | time this run: 112.94 s ===
+
+=== Run 10/10 ===
+[warning] Klarner: gcd(N=20,210)=10≠1; using Klarner core with M=19 (gcd(M,210)=1) and placing remaining queens randomly.
+[chain] 100000/1000000 steps (10.0%) | E=80, best=80, beta_t=3.700
+[chain] 200000/1000000 steps (20.0%) | E=57, best=57, beta_t=4.400
+[chain] 300000/1000000 steps (30.0%) | E=43, best=43, beta_t=5.100
+[chain] 400000/1000000 steps (40.0%) | E=41, best=41, beta_t=5.800
+[chain] 500000/1000000 steps (50.0%) | E=41, best=41, beta_t=6.500
+[chain] 600000/1000000 steps (60.0%) | E=40, best=40, beta_t=7.200
+[chain] 700000/1000000 steps (70.0%) | E=39, best=39, beta_t=7.900
+[chain] 800000/1000000 steps (80.0%) | E=39, best=39, beta_t=8.600
+[chain] 900000/1000000 steps (90.0%) | E=39, best=39, beta_t=9.300
+[chain] 1000000/1000000 steps (100.0%) | E=39, best=39, beta_t=10.000
+[chain] Final energy: 39
+[chain] Best energy:   39
+[chain] Acceptance rate: 0.001
+=== Completed run 10/10 (100.0% of experiment) | time this run: 112.86 s ===
+
+>>> Mean time per run: 112.85 s
+>>> Total time for 10 runs: 1128.49 s
+  → Mean min energy = 39.00 ± 0.00
+
+Results:
+N=3: 13.00 ± 0.00
+N=4: 21.00 ± 0.00
+N=5: 32.00 ± 0.00
+N=6: 41.40 ± 0.80
+N=7: 50.20 ± 0.87
+N=8: 59.40 ± 3.85
+N=9: 72.70 ± 7.64
+N=10: 72.00 ± 23.73
+N=11: 0.00 ± 0.00
+N=12: 23.00 ± 0.00
+N=13: 0.00 ± 0.00
+N=14: 27.00 ± 0.00
+N=15: 55.10 ± 0.54
+N=16: 85.10 ± 0.83
+N=17: 0.00 ± 0.00
+N=18: 35.00 ± 0.00
+N=19: 0.00 ± 0.00
+N=20: 39.00 ± 0.00
