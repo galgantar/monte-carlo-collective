@@ -141,7 +141,7 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
     }
 
 
-def run_single_chain(N, n_steps, init_mode,beta_schedule, seed=None, verbose=False):
+def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
