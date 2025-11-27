@@ -141,7 +141,7 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
     }
 
 
-def run_single_chain(N, n_steps, init_mode,beta_schedule, seed=None, verbose=False):
+def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
@@ -241,6 +241,7 @@ def measure_min_energy_vs_N(
     verbose=True,
     plot=True,
     out_path=None,
+    init_mode="latin",
 ):
     mean_min_energies = []
     std_min_energies = []
