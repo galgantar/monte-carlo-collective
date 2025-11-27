@@ -241,7 +241,6 @@ def measure_min_energy_vs_N(
     verbose=True,
     plot=True,
     out_path=None,
-    init_mode="latin",
 ):
     mean_min_energies = []
     std_min_energies = []
