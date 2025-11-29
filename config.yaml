@@ -1,25 +1,22 @@
-experiment_type: "measure_min_energy_vs_N"
+experiment_type: "single_N"
 
 common:
-  n_steps: 1000000
-  n_runs: 10
+  n_steps: 10000
+  n_runs: 30
   verbose: true
   initialization: random
 
-  # Global beta scheduling config
   betta_scheduling:
-    type: "linear_annealing"          # or "linear_annealing", "exponential_annealing"
-    base_seed: 42             # default base seed for this experiment
-    beta_const: 1.0           # used if type == "constant"
-    beta_start: 3         # used if type != "constant"
-    beta_end: 10.0            # used if type != "constant"
+    type: ["linear_annealing", "exponential_annealing", "constant"]
+    base_seed: 42
+    beta_const: 3.0
+    beta_start: 1
+    beta_end: 10.0
 
-  output_path: "figures/min_energy_vs_N_random_linear_annealing.png"
-
-# Per-experiment params for single_N
+  output_path: "figures/energy_history_singleN.png"
 single_N:
   N: 15
 
-# You can keep this block as-is if you still want the other experiment type:
 measure_min_energy_vs_N:
-  Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  init_modes: ["random", "klarner","latin"]
