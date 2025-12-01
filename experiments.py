@@ -3,6 +3,7 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 import yaml
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 from mcmc import State3DQueens
 
@@ -36,10 +37,31 @@ def exponential_annealing_beta(beta_start, beta_end, n_steps):
 
     return schedule
 
+def build_schedule_from_params(sched_type, n_steps, beta_const=None, beta_start=None, beta_end=None):
+    """
+    Build a beta schedule from parameters. This function is picklable and can be used
+    in multiprocessing contexts.
+    """
+    if sched_type == "constant":
+        if beta_const is None:
+            raise ValueError("beta_const required for constant schedule")
+        return constant_beta(beta_const)
+    elif sched_type == "linear_annealing":
+        if beta_start is None or beta_end is None:
+            raise ValueError("beta_start and beta_end required for linear_annealing schedule")
+        return linear_annealing_beta(beta_start, beta_end, n_steps)
+    elif sched_type == "exponential_annealing":
+        if beta_start is None or beta_end is None:
+            raise ValueError("beta_start and beta_end required for exponential_annealing schedule")
+        return exponential_annealing_beta(beta_start, beta_end, n_steps)
+    else:
+        raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
+
+
 def build_schedule_from_common(common_cfg, n_steps):
     """
     Build a beta schedule (and base_seed) from common['betta_scheduling'].
-    Returns a single schedule, base_seed, and description.
+    Returns a single schedule, base_seed, description, and schedule_params.
     """
     sched_cfg = common_cfg["betta_scheduling"]
     sched_type = sched_cfg["type"]
@@ -47,22 +69,30 @@ def build_schedule_from_common(common_cfg, n_steps):
 
     if sched_type == "constant":
         beta_const = sched_cfg["beta_const"]
-        beta_schedule = constant_beta(beta_const)
+        schedule_params = {"type": "constant", "beta_const": beta_const}
         desc = f"constant beta={beta_const}"
     elif sched_type == "linear_annealing":
         beta_start = sched_cfg["beta_start"]
         beta_end = sched_cfg["beta_end"]
-        beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps)
+        schedule_params = {"type": "linear_annealing", "beta_start": beta_start, "beta_end": beta_end}
         desc = f"linear beta: {beta_start}→{beta_end}"
     elif sched_type == "exponential_annealing":
         beta_start = sched_cfg["beta_start"]
         beta_end = sched_cfg["beta_end"]
-        beta_schedule = exponential_annealing_beta(beta_start, beta_end, n_steps)
+        schedule_params = {"type": "exponential_annealing", "beta_start": beta_start, "beta_end": beta_end}
         desc = f"exp beta: {beta_start}→{beta_end}"
     else:
         raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
-    return beta_schedule, base_seed, desc
+    beta_schedule = build_schedule_from_params(
+        sched_type=sched_type,
+        n_steps=n_steps,
+        beta_const=schedule_params.get("beta_const"),
+        beta_start=schedule_params.get("beta_start"),
+        beta_end=schedule_params.get("beta_end"),
+    )
+
+    return beta_schedule, base_seed, desc, schedule_params
 
 
 def build_schedules_from_types(sched_types, sched_cfg, n_steps):
@@ -74,26 +104,34 @@ def build_schedules_from_types(sched_types, sched_cfg, n_steps):
     
     for sched_type in sched_types:
         if sched_type == "constant":
-            beta_schedule = constant_beta(beta_const)
+            schedule_params = {"type": "constant", "beta_const": beta_const}
             desc = f"constant beta={beta_const}"
             label = f"Constant β={beta_const}"
         elif sched_type == "linear_annealing":
-            beta_schedule = linear_annealing_beta(beta_start, beta_end, n_steps)
+            schedule_params = {"type": "linear_annealing", "beta_start": beta_start, "beta_end": beta_end}
             desc = f"linear beta: {beta_start}→{beta_end}"
             label = f"Linear {beta_start}→{beta_end}"
         elif sched_type == "exponential_annealing":
-            beta_schedule = exponential_annealing_beta(beta_start, beta_end, n_steps)
+            schedule_params = {"type": "exponential_annealing", "beta_start": beta_start, "beta_end": beta_end}
             desc = f"exp beta: {beta_start}→{beta_end}"
             label = f"Exponential {beta_start}→{beta_end}"
         else:
             raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
-        schedules.append((beta_schedule, base_seed, desc, label))
+        beta_schedule = build_schedule_from_params(
+            sched_type=sched_type,
+            n_steps=n_steps,
+            beta_const=schedule_params.get("beta_const"),
+            beta_start=schedule_params.get("beta_start"),
+            beta_end=schedule_params.get("beta_end"),
+        )
+
+        schedules.append((beta_schedule, base_seed, desc, label, schedule_params))
     
     return schedules
 
 
-def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, Q=None):
+def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, Q=None, run_idx=None):
     if seed is not None:
         np.random.seed(seed)
 
@@ -108,6 +146,8 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
 
     if verbose and n_steps > 0:
         next_report = max(1, n_steps // 10)
+
+    prefix = f"[chain #{run_idx}]" if run_idx is not None else "[chain]"
 
     for step in range(n_steps):
         beta_t = beta_schedule(step)
@@ -148,15 +188,15 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         if verbose and (step + 1) % next_report == 0:
             frac = (step + 1) / n_steps
             print(
-                f"[chain] {step + 1}/{n_steps} steps "
+                f"{prefix} {step + 1}/{n_steps} steps "
                 f"({frac*100:.1f}%) | E={current_energy}, best={best_energy}, "
                 f"beta_t={beta_t:.3f}"
             )
 
     if verbose and n_steps > 0:
-        print(f"[chain] Final energy: {current_energy}")
-        print(f"[chain] Best energy:   {best_energy}")
-        print(f"[chain] Acceptance rate: {accepted / n_steps:.3f}")
+        print(f"{prefix} Final energy: {current_energy}")
+        print(f"{prefix} Best energy:   {best_energy}")
+        print(f"{prefix} Acceptance rate: {accepted / n_steps:.3f}")
 
     return {
         "final_state": state,
@@ -167,7 +207,7 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
     }
 
 
-def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False):
+def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False, run_idx=None):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
@@ -175,48 +215,147 @@ def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=Fa
         beta_schedule=beta_schedule,
         verbose=verbose,
         seed=seed,
+        run_idx=run_idx,
     )
 
 
-def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False):
+def run_single_chain_multithread(args):
+    """Wrapper function for parallel execution of a single chain."""
+    (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx) = args
+    beta_schedule = build_schedule_from_params(
+        sched_type=schedule_params["type"],
+        n_steps=n_steps,
+        beta_const=schedule_params.get("beta_const"),
+        beta_start=schedule_params.get("beta_start"),
+        beta_end=schedule_params.get("beta_end"),
+    )
+    start_time = time.time()
+    res = run_single_chain(
+        N=N,
+        n_steps=n_steps,
+        init_mode=init_mode,
+        beta_schedule=beta_schedule,
+        seed=seed,
+        verbose=verbose,
+        run_idx=run_idx,
+    )
+    end_time = time.time()
+    duration = end_time - start_time
+    return {
+        "run_idx": run_idx,
+        "energy_history": res["energy_history"],
+        "best_energy": res["best_energy"],
+        "duration": duration,
+    }
+
+
+def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False, n_workers=None, schedule_params=None):
+    """
+    Run multiple MCMC chains in parallel or sequentially.
+    
+    Args:
+        n_workers: Number of parallel workers. If None, uses CPU count for parallel execution.
+        schedule_params: Dict with schedule parameters for parallel execution. Required when n_runs > 1.
+            Must contain:
+            - "type": "constant", "linear_annealing", or "exponential_annealing"
+            - "beta_const": for constant schedules
+            - "beta_start", "beta_end": for annealing schedules
+        schedule_params is required for parallel execution because schedule functions are closures
+        that can't be pickled for multiprocessing.
+    """
     all_histories = []
     best_energies = []
     run_times = []
-
-    for r in range(n_runs):
+    
+    if n_runs > 1:
+        if schedule_params is None:
+            raise ValueError(f"schedule_params is required for parallel execution when n_runs > 1")
+        run_args = [
+            (N, n_steps, init_mode, schedule_params, base_seed + r, verbose, r)
+            for r in range(n_runs)
+        ]
+        
         if verbose:
-            print(f"\n=== Run {r+1}/{n_runs} ===")
+            print(f"\n>>> Running {n_runs} chains in parallel...")
+        
+        start_total = time.time()
+        with ProcessPoolExecutor(max_workers=n_workers) as executor:
+            future_to_run = {
+                executor.submit(run_single_chain_multithread, args): r
+                for r, args in enumerate(run_args)
+            }
+            
+            results = [None] * n_runs
+            completed = 0
+            
+            for future in as_completed(future_to_run):
+                run_idx = future_to_run[future]
+                try:
+                    result = future.result()
+                    result["run_idx"] = run_idx
+                    results[run_idx] = result
+                    completed += 1
+                    
+                    if verbose:
+                        print(
+                            f"=== Completed run {completed}/{n_runs} "
+                            f"({completed*100/n_runs:.1f}% of experiment) | "
+                            f"time this run: {result['duration']:.2f} s ==="
+                        )
+                except Exception as exc:
+                    print(f"Run {run_idx} generated an exception: {exc}")
+                    raise
+        
+        end_total = time.time()
+        total_time = end_total - start_total
+        
+        results.sort(key=lambda x: x["run_idx"])
+        
+        for result in results:
+            all_histories.append(result["energy_history"])
+            best_energies.append(result["best_energy"])
+            run_times.append(result["duration"])
+        
+        if verbose and n_runs > 0:
+            mean_time = np.mean(run_times)
+            print(f"\n>>> Mean time per run: {mean_time:.2f} s")
+            print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
+    else:
+        for r in range(n_runs):
+            if verbose:
+                print(f"\n=== Run {r+1}/{n_runs} ===")
 
-        start_time = time.time()
-        res = run_single_chain(
-            N=N,
-            n_steps=n_steps,
-            init_mode = init_mode, 
-            beta_schedule=beta_schedule,
-            seed=base_seed + r,
-            verbose=verbose,
-        )
-        end_time = time.time()
-
-        duration = end_time - start_time
-        run_times.append(duration)
-
-        all_histories.append(res["energy_history"])
-        best_energies.append(res["best_energy"])
-
-        if verbose:
-            frac_runs = (r + 1) / n_runs
-            print(
-                f"=== Completed run {r+1}/{n_runs} "
-                f"({frac_runs*100:.1f}% of experiment) | "
-                f"time this run: {duration:.2f} s ==="
+            start_time = time.time()
+            res = run_single_chain(
+                N=N,
+                n_steps=n_steps,
+                init_mode = init_mode, 
+                beta_schedule=beta_schedule,
+                seed=base_seed + r,
+                verbose=verbose,
+                run_idx=r,
             )
+            end_time = time.time()
 
-    if verbose and n_runs > 0:
-        mean_time = np.mean(run_times)
-        total_time = np.sum(run_times)
-        print(f"\n>>> Mean time per run: {mean_time:.2f} s")
-        print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
+            duration = end_time - start_time
+            run_times.append(duration)
+
+            all_histories.append(res["energy_history"])
+            best_energies.append(res["best_energy"])
+
+            if verbose:
+                frac_runs = (r + 1) / n_runs
+                print(
+                    f"=== Completed run {r+1}/{n_runs} "
+                    f"({frac_runs*100:.1f}% of experiment) | "
+                    f"time this run: {duration:.2f} s ==="
+                )
+
+        if verbose and n_runs > 0:
+            mean_time = np.mean(run_times)
+            total_time = np.sum(run_times)
+            print(f"\n>>> Mean time per run: {mean_time:.2f} s")
+            print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
 
     return all_histories, best_energies, run_times
 
@@ -279,6 +418,7 @@ def measure_min_energy_vs_N(
     Ns,
     n_steps,
     beta_schedule,
+    schedule_params=None,
     init_modes = ["random"], 
     n_runs=5,
     base_seed=100,
@@ -314,6 +454,7 @@ def measure_min_energy_vs_N(
                 n_runs=n_runs,
                 base_seed=base_seed + 10 * idx + init_mode_offset,
                 verbose=verbose,
+                schedule_params=schedule_params,
             )
 
             best_energies = np.array(best_energies)
@@ -396,7 +537,6 @@ if __name__ == "__main__":
     print(f"Experiment type: {experiment_type}")
 
     if experiment_type == "single_N":
-        # --- Single N experiment -------------------------------------------
         single_cfg = config["single_N"]
         N = single_cfg["N"]
 
@@ -416,7 +556,7 @@ if __name__ == "__main__":
             all_best_energies_dict = {}
             all_run_times_dict = {}
             
-            for beta_schedule, base_seed, sched_desc, label in schedules:
+            for beta_schedule, base_seed, sched_desc, label, schedule_params in schedules:
                 if verbose:
                     print(f"\n{'='*60}")
                     print(f"Schedule: {label} ({sched_desc})")
@@ -430,6 +570,7 @@ if __name__ == "__main__":
                     n_runs=n_runs,
                     base_seed=base_seed,
                     verbose=verbose,
+                    schedule_params=schedule_params,
                 )
                 
                 all_histories_dict[label] = all_histories
@@ -449,7 +590,7 @@ if __name__ == "__main__":
                 schedule_labels=list(all_histories_dict.keys())
             )
         else:
-            beta_schedule, base_seed, sched_desc = build_schedule_from_common(
+            beta_schedule, base_seed, sched_desc, schedule_params = build_schedule_from_common(
                 common, n_steps
             )
 
@@ -466,6 +607,7 @@ if __name__ == "__main__":
                 n_runs=n_runs,
                 base_seed=base_seed,
                 verbose=verbose,
+                schedule_params=schedule_params,
             )
 
             mean_time = np.mean(run_times)
@@ -476,15 +618,13 @@ if __name__ == "__main__":
             plot_energy_histories(all_histories, title=title, out_path=output_path)
 
     elif experiment_type == "measure_min_energy_vs_N":
-        # --- Minimal energy vs N experiment --------------------------------
         params = config["measure_min_energy_vs_N"]
         Ns = params["Ns"]
 
         n_steps_exp = n_steps
         output_path = common_output_path
 
-        # Schedule from *common* (no per-experiment beta branches)
-        beta_schedule, base_seed, sched_desc = build_schedule_from_common(
+        beta_schedule, base_seed, sched_desc, schedule_params = build_schedule_from_common(
             common, n_steps_exp
         )
 
@@ -504,6 +644,7 @@ if __name__ == "__main__":
             Ns=Ns,
             n_steps=n_steps_exp,
             beta_schedule=beta_schedule,
+            schedule_params=schedule_params,
             init_modes=init_modes,
             n_runs=n_runs,
             base_seed=base_seed,
