@@ -143,6 +143,9 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
 
     accepted = 0
     energy_history = [current_energy]
+    
+    accepted_steps = []
+    rejected_steps = []
 
     if verbose and n_steps > 0:
         next_report = max(1, n_steps // 10)
@@ -170,8 +173,14 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         proposed_energy = current_energy + delta_E
 
         accept_prob = min(1.0, np.exp(-beta_t * delta_E))
+        was_accepted = np.random.random() < accept_prob
 
-        if np.random.random() < accept_prob:
+        if was_accepted:
+            accepted_steps.append(step)
+        else:
+            rejected_steps.append(step)
+
+        if was_accepted:
             state.propose_move(q_idx, (i_new, j_new, k_new))
             current_energy = proposed_energy
             state._energy = current_energy
@@ -204,6 +213,8 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         "best_state": best_state,
         "best_energy": best_energy,
         "energy_history": energy_history,
+        "accepted_steps": accepted_steps,
+        "rejected_steps": rejected_steps,
     }
 
 
@@ -246,6 +257,8 @@ def run_single_chain_multithread(args):
         "energy_history": res["energy_history"],
         "best_energy": res["best_energy"],
         "duration": duration,
+        "accepted_steps": res["accepted_steps"],
+        "rejected_steps": res["rejected_steps"],
     }
 
 
@@ -266,6 +279,8 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
     all_histories = []
     best_energies = []
     run_times = []
+    all_accepted_steps = []
+    all_rejected_steps = []
     
     if n_runs > 1:
         if schedule_params is None:
@@ -315,6 +330,8 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             all_histories.append(result["energy_history"])
             best_energies.append(result["best_energy"])
             run_times.append(result["duration"])
+            all_accepted_steps.append(result["accepted_steps"])
+            all_rejected_steps.append(result["rejected_steps"])
         
         if verbose and n_runs > 0:
             mean_time = np.mean(run_times)
@@ -342,6 +359,8 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
 
             all_histories.append(res["energy_history"])
             best_energies.append(res["best_energy"])
+            all_accepted_steps.append(res["accepted_steps"])
+            all_rejected_steps.append(res["rejected_steps"])
 
             if verbose:
                 frac_runs = (r + 1) / n_runs
@@ -357,7 +376,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             print(f"\n>>> Mean time per run: {mean_time:.2f} s")
             print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
 
-    return all_histories, best_energies, run_times
+    return all_histories, best_energies, run_times, all_accepted_steps, all_rejected_steps
 
 
 def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=None):
@@ -402,6 +421,7 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
     plt.xlabel("Step", fontsize=12)
     plt.ylabel("Energy", fontsize=12)
     plt.title(title, fontsize=14, fontweight='bold')
+    plt.yscale('log')
     plt.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
     plt.legend(fontsize=10, framealpha=0.9, loc='best')
     
@@ -413,6 +433,207 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
         plt.close()
     else:
         plt.show()
+
+
+def plot_acceptance_rates_binned(all_accepted_steps_list, all_rejected_steps_list, n_steps, n_bins=100, title=None, out_path=None, schedule_labels=None):
+    """
+    Plot acceptance rates (ratio of accepted to total moves) in bins.
+    
+    Args:
+        all_accepted_steps_list: List of lists, each containing step indices where moves were accepted
+        all_rejected_steps_list: List of lists, each containing step indices where moves were rejected
+        n_steps: Total number of steps
+        n_bins: Number of bins to use for binning steps
+        title: Plot title
+        out_path: Path to save the plot
+        schedule_labels: Labels for each schedule (should match energy history plot)
+    """
+    plt.figure(figsize=(12, 7))
+    
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+    
+    bin_edges = np.linspace(0, n_steps, n_bins + 1)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+    
+    bin_edges[-1] = n_steps
+    
+    for idx, (accepted_steps_runs, rejected_steps_runs) in enumerate(zip(all_accepted_steps_list, all_rejected_steps_list)):
+        all_accepted = []
+        all_rejected = []
+        
+        for accepted, rejected in zip(accepted_steps_runs, rejected_steps_runs):
+            all_accepted.extend(accepted)
+            all_rejected.extend(rejected)
+        
+        all_accepted = np.array(all_accepted)
+        all_rejected = np.array(all_rejected)
+        
+        acceptance_rates = []
+        for i in range(len(bin_edges) - 1):
+            bin_start = bin_edges[i]
+            bin_end = bin_edges[i + 1]
+            
+            if i == len(bin_edges) - 2:
+                accepted_in_bin = np.sum((all_accepted >= bin_start) & (all_accepted <= bin_end))
+                rejected_in_bin = np.sum((all_rejected >= bin_start) & (all_rejected <= bin_end))
+            else:
+                accepted_in_bin = np.sum((all_accepted >= bin_start) & (all_accepted < bin_end))
+                rejected_in_bin = np.sum((all_rejected >= bin_start) & (all_rejected < bin_end))
+            
+            total_in_bin = accepted_in_bin + rejected_in_bin
+            
+            if total_in_bin > 0:
+                rate = accepted_in_bin / total_in_bin
+            else:
+                rate = np.nan
+            
+            acceptance_rates.append(rate)
+        
+        acceptance_rates = np.array(acceptance_rates)
+        
+        if schedule_labels:
+            label = schedule_labels[idx]
+        else:
+            label = f"Schedule {idx+1}"
+        
+        color = colors[idx % len(colors)]
+        
+        valid_mask = ~np.isnan(acceptance_rates)
+        plt.plot(
+            bin_centers[valid_mask],
+            acceptance_rates[valid_mask],
+            linewidth=2.5,
+            label=label,
+            color=color,
+        )
+    
+    plt.xlabel("Step", fontsize=12)
+    plt.ylabel("Acceptance Rate", fontsize=12)
+    if title:
+        plt.title(title, fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
+    plt.legend(fontsize=10, framealpha=0.9, loc='best')
+    
+    plt.tight_layout()
+    
+    if out_path is not None:
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        plt.savefig(out_path, bbox_inches="tight", dpi=150)
+        plt.close()
+    else:
+        plt.show()
+
+
+def run_beta_start_end_pairs(
+    N,
+    n_steps,
+    beta_start_ends,
+    annealing_type="linear_annealing",
+    init_mode="random",
+    n_runs=5,
+    base_seed=0,
+    verbose=True,
+    plot=True,
+    out_path=None,
+    out_path_acceptance=None,
+):
+    """
+    Run experiments for multiple beta_start/beta_end pairs with fixed annealing schedule.
+    
+    Args:
+        N: Board size
+        n_steps: Number of MCMC steps
+        beta_start_ends: List of [beta_start, beta_end] pairs, e.g., [[0.1, 1.0], [2.0, 5.0]]
+        annealing_type: Type of annealing schedule ("linear_annealing" or "exponential_annealing")
+        init_mode: Initialization mode
+        n_runs: Number of runs per pair
+        base_seed: Base seed for random number generation
+        verbose: Whether to print progress
+        plot: Whether to plot results
+        out_path: Path to save the energy history plot
+        out_path_acceptance: Path to save the acceptance rate plot
+    """
+    all_histories_dict = {}
+    all_best_energies_dict = {}
+    all_accepted_steps_dict = {}
+    all_rejected_steps_dict = {}
+    
+    for idx, (beta_start, beta_end) in enumerate(beta_start_ends):
+        if verbose:
+            print(f"\n{'='*60}")
+            print(f"Pair {idx+1}/{len(beta_start_ends)}: beta_start={beta_start}, beta_end={beta_end}")
+            print(f"{'='*60}")
+        
+        schedule_params = {
+            "type": annealing_type,
+            "beta_start": beta_start,
+            "beta_end": beta_end,
+        }
+        
+        beta_schedule = build_schedule_from_params(
+            sched_type=annealing_type,
+            n_steps=n_steps,
+            beta_start=beta_start,
+            beta_end=beta_end,
+        )
+        
+        pair_seed = base_seed + idx * 1000
+        
+        all_histories, best_energies, run_times, accepted_steps, rejected_steps = run_experiment(
+            N=N,
+            n_steps=n_steps,
+            init_mode=init_mode,
+            beta_schedule=beta_schedule,
+            n_runs=n_runs,
+            base_seed=pair_seed,
+            verbose=verbose,
+            schedule_params=schedule_params,
+        )
+        
+        label = f"β: {beta_start}→{beta_end}"
+        all_histories_dict[label] = all_histories
+        all_best_energies_dict[label] = best_energies
+        all_accepted_steps_dict[label] = accepted_steps
+        all_rejected_steps_dict[label] = rejected_steps
+        
+        if verbose:
+            mean_time = np.mean(run_times)
+            mean_best = np.mean(best_energies)
+            std_best = np.std(best_energies)
+            print(f"\n[{label}] Mean time per run: {mean_time:.2f} s")
+            print(f"[{label}] Best energies: {best_energies}")
+            print(f"[{label}] Mean best energy: {mean_best:.2f} ± {std_best:.2f}")
+    
+    schedule_labels = list(all_histories_dict.keys())
+    
+    if plot:
+        title = f"Energy History for Different β Ranges (N={N}, {annealing_type}, init_mode={init_mode})"
+        plot_energy_histories(
+            all_histories_dict,
+            title=title,
+            out_path=out_path,
+            schedule_labels=schedule_labels
+        )
+        
+        if out_path_acceptance is not None:
+            title_acceptance = f"Acceptance Rate for Different β Ranges (N={N}, {annealing_type}, init_mode={init_mode})"
+            accepted_steps_list = [all_accepted_steps_dict[label] for label in schedule_labels]
+            rejected_steps_list = [all_rejected_steps_dict[label] for label in schedule_labels]
+            plot_acceptance_rates_binned(
+                all_accepted_steps_list=accepted_steps_list,
+                all_rejected_steps_list=rejected_steps_list,
+                n_steps=n_steps,
+                n_bins=100,
+                title=title_acceptance,
+                out_path=out_path_acceptance,
+                schedule_labels=schedule_labels
+            )
+    
+    return {
+        "all_histories": all_histories_dict,
+        "all_best_energies": all_best_energies_dict,
+    }
+
 
 def measure_min_energy_vs_N(
     Ns,
@@ -446,7 +667,7 @@ def measure_min_energy_vs_N(
                 print(f"\n=== Running N = {N} (init_mode={init_mode}) ===")
 
             init_mode_offset = sum(ord(c) for c in init_mode) % 1000
-            _, best_energies, _ = run_experiment(
+            _, best_energies, _, _, _ = run_experiment(
                 N=N,
                 n_steps=n_steps,
                 init_mode=init_mode,
@@ -562,7 +783,7 @@ if __name__ == "__main__":
                     print(f"Schedule: {label} ({sched_desc})")
                     print(f"{'='*60}")
                 
-                all_histories, best_energies, run_times = run_experiment(
+                all_histories, best_energies, run_times, _, _ = run_experiment(
                     N=N,
                     n_steps=n_steps,
                     init_mode=init_mode,
@@ -599,7 +820,7 @@ if __name__ == "__main__":
                 f"init_mode={init_mode}, base_seed={base_seed}"
             )
 
-            all_histories, best_energies, run_times = run_experiment(
+            all_histories, best_energies, run_times, _, _ = run_experiment(
                 N=N,
                 n_steps=n_steps,
                 init_mode=init_mode,
@@ -660,6 +881,43 @@ if __name__ == "__main__":
             stds = result_dict["results"][init_mode]["std_min_energies"]
             for N, m, s in zip(result_dict["Ns"], means, stds):
                 print(f"  N={N}: {m:.2f} ± {s:.2f}")
+
+    elif experiment_type == "beta_start_end_pairs":
+        params = config["beta_start_end_pairs"]
+        N = params["N"]
+        beta_start_ends = params["beta_start_ends"]
+        annealing_type = params.get("annealing_type", "linear_annealing")
+        output_path = params.get("output_path", common_output_path)
+        output_path_acceptance = params.get("output_path_acceptance", None)
+        
+        base_seed = common["betta_scheduling"].get("base_seed", 0)
+        
+        print(
+            f"\nRunning experiments for {len(beta_start_ends)} beta_start/beta_end pairs"
+            f" with {annealing_type} annealing"
+        )
+        print(f"N={N}, n_runs={n_runs}, init_mode={init_mode}, base_seed={base_seed}")
+        print(f"Beta pairs: {beta_start_ends}")
+        
+        result_dict = run_beta_start_end_pairs(
+            N=N,
+            n_steps=n_steps,
+            beta_start_ends=beta_start_ends,
+            annealing_type=annealing_type,
+            init_mode=init_mode,
+            n_runs=n_runs,
+            base_seed=base_seed,
+            verbose=verbose,
+            plot=True,
+            out_path=output_path,
+            out_path_acceptance=output_path_acceptance,
+        )
+        
+        print("\nResults summary:")
+        for label, best_energies in result_dict["all_best_energies"].items():
+            mean_best = np.mean(best_energies)
+            std_best = np.std(best_energies)
+            print(f"  {label}: {mean_best:.2f} ± {std_best:.2f}")
 
     else:
         raise ValueError(f"Unknown experiment_type: {experiment_type}")
