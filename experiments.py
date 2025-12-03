@@ -7,6 +7,29 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 
 from mcmc import State3DQueens
 
+import logging
+from datetime import datetime
+
+def setup_logging():
+    # Ensure outputs/ exists
+    log_dir = "outputs"
+    os.makedirs(log_dir, exist_ok=True)
+
+    # Timestamped filename
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    logfile = os.path.join(log_dir, f"run_{timestamp}.log")
+
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.FileHandler(logfile),
+            logging.StreamHandler()
+        ]
+    )
+
+    logging.info(f"Logging initialized → {logfile}")
 
 def constant_beta(beta):
     def schedule(step):
@@ -196,16 +219,16 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
 
         if verbose and (step + 1) % next_report == 0:
             frac = (step + 1) / n_steps
-            print(
+            logging.info(
                 f"{prefix} {step + 1}/{n_steps} steps "
                 f"({frac*100:.1f}%) | E={current_energy}, best={best_energy}, "
                 f"beta_t={beta_t:.3f}"
             )
 
     if verbose and n_steps > 0:
-        print(f"{prefix} Final energy: {current_energy}")
-        print(f"{prefix} Best energy:   {best_energy}")
-        print(f"{prefix} Acceptance rate: {accepted / n_steps:.3f}")
+        logging.info(f"{prefix} Final energy: {current_energy}")
+        logging.info(f"{prefix} Best energy:   {best_energy}")
+        logging.info(f"{prefix} Acceptance rate: {accepted / n_steps:.3f}")
 
     return {
         "final_state": state,
@@ -291,7 +314,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         ]
         
         if verbose:
-            print(f"\n>>> Running {n_runs} chains in parallel...")
+            logging.info(f"\n>>> Running {n_runs} chains in parallel...")
         
         start_total = time.time()
         with ProcessPoolExecutor(max_workers=n_workers) as executor:
@@ -312,13 +335,13 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
                     completed += 1
                     
                     if verbose:
-                        print(
+                        logging.info(
                             f"=== Completed run {completed}/{n_runs} "
                             f"({completed*100/n_runs:.1f}% of experiment) | "
                             f"time this run: {result['duration']:.2f} s ==="
                         )
                 except Exception as exc:
-                    print(f"Run {run_idx} generated an exception: {exc}")
+                    logging.info(f"Run {run_idx} generated an exception: {exc}")
                     raise
         
         end_total = time.time()
@@ -335,12 +358,12 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         
         if verbose and n_runs > 0:
             mean_time = np.mean(run_times)
-            print(f"\n>>> Mean time per run: {mean_time:.2f} s")
-            print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
+            logging.info(f"\n>>> Mean time per run: {mean_time:.2f} s")
+            logging.info(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
     else:
         for r in range(n_runs):
             if verbose:
-                print(f"\n=== Run {r+1}/{n_runs} ===")
+                logging.info(f"\n=== Run {r+1}/{n_runs} ===")
 
             start_time = time.time()
             res = run_single_chain(
@@ -364,7 +387,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
 
             if verbose:
                 frac_runs = (r + 1) / n_runs
-                print(
+                logging.info(
                     f"=== Completed run {r+1}/{n_runs} "
                     f"({frac_runs*100:.1f}% of experiment) | "
                     f"time this run: {duration:.2f} s ==="
@@ -373,8 +396,8 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         if verbose and n_runs > 0:
             mean_time = np.mean(run_times)
             total_time = np.sum(run_times)
-            print(f"\n>>> Mean time per run: {mean_time:.2f} s")
-            print(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
+            logging.info(f"\n>>> Mean time per run: {mean_time:.2f} s")
+            logging.info(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
 
     return all_histories, best_energies, run_times, all_accepted_steps, all_rejected_steps
 
@@ -418,12 +441,12 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
             color=color,
         )
 
-    plt.xlabel("Step", fontsize=12)
-    plt.ylabel("Energy", fontsize=12)
-    plt.title(title, fontsize=14, fontweight='bold')
+    plt.xlabel("Step", fontsize=20)
+    plt.ylabel("Energy", fontsize=20)
+    plt.title(title, fontsize=18, fontweight='bold')
     plt.yscale('log')
     plt.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
-    plt.legend(fontsize=10, framealpha=0.9, loc='best')
+    plt.legend(fontsize=12, framealpha=0.9, loc='best')
     
     plt.tight_layout()
 
@@ -507,12 +530,12 @@ def plot_acceptance_rates_binned(all_accepted_steps_list, all_rejected_steps_lis
             color=color,
         )
     
-    plt.xlabel("Step", fontsize=12)
-    plt.ylabel("Acceptance Rate", fontsize=12)
+    plt.xlabel("Step", fontsize=20)
+    plt.ylabel("Acceptance Rate", fontsize=20)
     if title:
-        plt.title(title, fontsize=14, fontweight='bold')
+        plt.title(title, fontsize=18, fontweight='bold')
     plt.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
-    plt.legend(fontsize=10, framealpha=0.9, loc='best')
+    plt.legend(fontsize=12, framealpha=0.9, loc='best')
     
     plt.tight_layout()
     
@@ -548,7 +571,7 @@ def run_beta_start_end_pairs(
         init_mode: Initialization mode
         n_runs: Number of runs per pair
         base_seed: Base seed for random number generation
-        verbose: Whether to print progress
+        verbose: Whether to logging.info progress
         plot: Whether to plot results
         out_path: Path to save the energy history plot
         out_path_acceptance: Path to save the acceptance rate plot
@@ -560,9 +583,9 @@ def run_beta_start_end_pairs(
     
     for idx, (beta_start, beta_end) in enumerate(beta_start_ends):
         if verbose:
-            print(f"\n{'='*60}")
-            print(f"Pair {idx+1}/{len(beta_start_ends)}: beta_start={beta_start}, beta_end={beta_end}")
-            print(f"{'='*60}")
+            logging.info(f"\n{'='*60}")
+            logging.info(f"Pair {idx+1}/{len(beta_start_ends)}: beta_start={beta_start}, beta_end={beta_end}")
+            logging.info(f"{'='*60}")
         
         schedule_params = {
             "type": annealing_type,
@@ -600,9 +623,9 @@ def run_beta_start_end_pairs(
             mean_time = np.mean(run_times)
             mean_best = np.mean(best_energies)
             std_best = np.std(best_energies)
-            print(f"\n[{label}] Mean time per run: {mean_time:.2f} s")
-            print(f"[{label}] Best energies: {best_energies}")
-            print(f"[{label}] Mean best energy: {mean_best:.2f} ± {std_best:.2f}")
+            logging.info(f"\n[{label}] Mean time per run: {mean_time:.2f} s")
+            logging.info(f"[{label}] Best energies: {best_energies}")
+            logging.info(f"[{label}] Mean best energy: {mean_best:.2f} ± {std_best:.2f}")
     
     schedule_labels = list(all_histories_dict.keys())
     
@@ -654,9 +677,9 @@ def measure_min_energy_vs_N(
     
     for init_mode in init_modes:
         if verbose:
-            print(f"\n{'='*60}")
-            print(f"Running experiments with init_mode = '{init_mode}'")
-            print(f"{'='*60}")
+            logging.info(f"\n{'='*60}")
+            logging.info(f"Running experiments with init_mode = '{init_mode}'")
+            logging.info(f"{'='*60}")
         
         mean_min_energies = []
         std_min_energies = []
@@ -664,7 +687,7 @@ def measure_min_energy_vs_N(
 
         for idx, N in enumerate(Ns):
             if verbose:
-                print(f"\n=== Running N = {N} (init_mode={init_mode}) ===")
+                logging.info(f"\n=== Running N = {N} (init_mode={init_mode}) ===")
 
             init_mode_offset = sum(ord(c) for c in init_mode) % 1000
             _, best_energies, _, _, _ = run_experiment(
@@ -685,7 +708,7 @@ def measure_min_energy_vs_N(
             std_min_energies.append(best_energies.std())
 
             if verbose:
-                print(f"  → Mean min energy = {mean_min_energies[-1]:.2f} ± {std_min_energies[-1]:.2f}")
+                logging.info(f"  → Mean min energy = {mean_min_energies[-1]:.2f} ± {std_min_energies[-1]:.2f}")
 
         results[init_mode] = {
             "mean_min_energies": np.array(mean_min_energies),
@@ -722,12 +745,11 @@ def measure_min_energy_vs_N(
                 color=color,
             )
 
-        plt.xlabel("Board size N")
-        plt.ylabel("Minimal energy reached")
-        plt.title("MCMC: Minimal Energy vs. Board Size N")
+        plt.xlabel("Board size N", fontsize=20)
+        plt.ylabel("Minimal energy reached", fontsize=20)
+        plt.title("MCMC: Minimal Energy vs. Board Size N", fontsize=18, fontweight='bold')
         plt.grid(True, alpha=0.3)
-        plt.legend()
-
+        plt.legend(fontsize=12)
         if out_path is not None:
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
             plt.savefig(out_path, bbox_inches="tight")
@@ -746,6 +768,8 @@ if __name__ == "__main__":
     with open("config.yaml", "r") as f:
         config = yaml.safe_load(f)
 
+    setup_logging()
+
     experiment_type = config["experiment_type"]
     common = config["common"]
     n_steps = common["n_steps"]
@@ -754,8 +778,8 @@ if __name__ == "__main__":
     init_mode = common["initialization"]
     common_output_path = common["output_path"]
 
-    print(f"Initialization mode: {init_mode}")
-    print(f"Experiment type: {experiment_type}")
+    logging.info(f"Initialization mode: {init_mode}")
+    logging.info(f"Experiment type: {experiment_type}")
 
     if experiment_type == "single_N":
         single_cfg = config["single_N"]
@@ -769,8 +793,8 @@ if __name__ == "__main__":
         if isinstance(sched_type, list):
             schedules = build_schedules_from_types(sched_type, sched_cfg, n_steps)
             
-            print(f"\nRunning {n_runs} runs on N={N} with {len(schedules)} schedule(s), init_mode={init_mode}")
-            print(f"All schedules use: beta_start={sched_cfg['beta_start']}, "
+            logging.info(f"\nRunning {n_runs} runs on N={N} with {len(schedules)} schedule(s), init_mode={init_mode}")
+            logging.info(f"All schedules use: beta_start={sched_cfg['beta_start']}, "
                   f"beta_end={sched_cfg['beta_end']}, base_seed={sched_cfg['base_seed']}")
             
             all_histories_dict = {}
@@ -779,9 +803,9 @@ if __name__ == "__main__":
             
             for beta_schedule, base_seed, sched_desc, label, schedule_params in schedules:
                 if verbose:
-                    print(f"\n{'='*60}")
-                    print(f"Schedule: {label} ({sched_desc})")
-                    print(f"{'='*60}")
+                    logging.info(f"\n{'='*60}")
+                    logging.info(f"Schedule: {label} ({sched_desc})")
+                    logging.info(f"{'='*60}")
                 
                 all_histories, best_energies, run_times, _, _ = run_experiment(
                     N=N,
@@ -800,8 +824,8 @@ if __name__ == "__main__":
                 
                 mean_time = np.mean(run_times)
                 if verbose:
-                    print(f"\n[{label}] Mean time per run: {mean_time:.2f} s")
-                    print(f"[{label}] Best energies: {best_energies}")
+                    logging.info(f"\n[{label}] Mean time per run: {mean_time:.2f} s")
+                    logging.info(f"[{label}] Best energies: {best_energies}")
             
             title = f"Energy History (N={N}, {len(schedules)} schedules)"
             plot_energy_histories(
@@ -815,7 +839,7 @@ if __name__ == "__main__":
                 common, n_steps
             )
 
-            print(
+            logging.info(
                 f"\nRunning {n_runs} runs on N={N} with {sched_desc}, "
                 f"init_mode={init_mode}, base_seed={base_seed}"
             )
@@ -832,8 +856,8 @@ if __name__ == "__main__":
             )
 
             mean_time = np.mean(run_times)
-            print(f"\n[Single_N] Mean time per run: {mean_time:.2f} s")
-            print("[Single_N] Best energies:", best_energies)
+            logging.info(f"\n[Single_N] Mean time per run: {mean_time:.2f} s")
+            logging.info("[Single_N] Best energies:", best_energies)
 
             title = f"Energy History (N={N}, {sched_desc})"
             plot_energy_histories(all_histories, title=title, out_path=output_path)
@@ -856,7 +880,7 @@ if __name__ == "__main__":
         else:
             init_modes = [init_mode]
 
-        print(
+        logging.info(
             "\nMeasuring minimal energy as a function of N with "
             f"{sched_desc}, init_modes={init_modes}, base_seed={base_seed}"
         )
@@ -874,13 +898,13 @@ if __name__ == "__main__":
             out_path=output_path,
         )
 
-        print("\nResults:")
+        logging.info("\nResults:")
         for init_mode in init_modes:
-            print(f"\n{init_mode}:")
+            logging.info(f"\n{init_mode}:")
             means = result_dict["results"][init_mode]["mean_min_energies"]
             stds = result_dict["results"][init_mode]["std_min_energies"]
             for N, m, s in zip(result_dict["Ns"], means, stds):
-                print(f"  N={N}: {m:.2f} ± {s:.2f}")
+                logging.info(f"  N={N}: {m:.2f} ± {s:.2f}")
 
     elif experiment_type == "beta_start_end_pairs":
         params = config["beta_start_end_pairs"]
@@ -892,12 +916,12 @@ if __name__ == "__main__":
         
         base_seed = common["betta_scheduling"].get("base_seed", 0)
         
-        print(
+        logging.info(
             f"\nRunning experiments for {len(beta_start_ends)} beta_start/beta_end pairs"
             f" with {annealing_type} annealing"
         )
-        print(f"N={N}, n_runs={n_runs}, init_mode={init_mode}, base_seed={base_seed}")
-        print(f"Beta pairs: {beta_start_ends}")
+        logging.info(f"N={N}, n_runs={n_runs}, init_mode={init_mode}, base_seed={base_seed}")
+        logging.info(f"Beta pairs: {beta_start_ends}")
         
         result_dict = run_beta_start_end_pairs(
             N=N,
@@ -913,11 +937,11 @@ if __name__ == "__main__":
             out_path_acceptance=output_path_acceptance,
         )
         
-        print("\nResults summary:")
+        logging.info("\nResults summary:")
         for label, best_energies in result_dict["all_best_energies"].items():
             mean_best = np.mean(best_energies)
             std_best = np.std(best_energies)
-            print(f"  {label}: {mean_best:.2f} ± {std_best:.2f}")
+            logging.info(f"  {label}: {mean_best:.2f} ± {std_best:.2f}")
 
     else:
         raise ValueError(f"Unknown experiment_type: {experiment_type}")
