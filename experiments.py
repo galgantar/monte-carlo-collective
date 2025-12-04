@@ -60,6 +60,24 @@ def exponential_annealing_beta(beta_start, beta_end, n_steps):
 
     return schedule
 
+def logarithmic_annealing_beta(beta_start, beta_end, n_steps):
+    """
+    Logarithmic annealing: beta grows quickly early, then slows down.
+    β(step) = β_start + (β_end - β_start) * log(1 + step) / log(1 + n_steps)
+    """
+    if n_steps <= 1:
+        def schedule(_):
+            return beta_end
+        return schedule
+
+    log_norm = np.log(1 + n_steps)  # denominator (constant)
+
+    def schedule(step):
+        step = np.clip(step, 0, n_steps)
+        return beta_start + (beta_end - beta_start) * (np.log(1 + step) / log_norm)
+
+    return schedule
+
 def build_schedule_from_params(sched_type, n_steps, beta_const=None, beta_start=None, beta_end=None):
     """
     Build a beta schedule from parameters. This function is picklable and can be used
@@ -77,6 +95,10 @@ def build_schedule_from_params(sched_type, n_steps, beta_const=None, beta_start=
         if beta_start is None or beta_end is None:
             raise ValueError("beta_start and beta_end required for exponential_annealing schedule")
         return exponential_annealing_beta(beta_start, beta_end, n_steps)
+    elif sched_type == "logarithmic_annealing":
+        if beta_start is None or beta_end is None:
+            raise ValueError("beta_start and beta_end required for logarithmic_annealing schedule")
+        return logarithmic_annealing_beta(beta_start, beta_end, n_steps)
     else:
         raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
@@ -104,6 +126,11 @@ def build_schedule_from_common(common_cfg, n_steps):
         beta_end = sched_cfg["beta_end"]
         schedule_params = {"type": "exponential_annealing", "beta_start": beta_start, "beta_end": beta_end}
         desc = f"exp beta: {beta_start}→{beta_end}"
+    elif sched_type == "logarithmic_annealing":
+        beta_start = sched_cfg["beta_start"]
+        beta_end = sched_cfg["beta_end"]
+        schedule_params = {"type": "logarithmic_annealing", "beta_start": beta_start, "beta_end": beta_end}
+        desc = f"log beta: {beta_start}→{beta_end}"
     else:
         raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
@@ -138,6 +165,10 @@ def build_schedules_from_types(sched_types, sched_cfg, n_steps):
             schedule_params = {"type": "exponential_annealing", "beta_start": beta_start, "beta_end": beta_end}
             desc = f"exp beta: {beta_start}→{beta_end}"
             label = f"Exponential {beta_start}→{beta_end}"
+        elif sched_type == "logarithmic_annealing":
+            schedule_params = {"type": "logarithmic_annealing", "beta_start": beta_start, "beta_end": beta_end}
+            desc = f"log beta: {beta_start}→{beta_end}"
+            label = f"Logarithmic {beta_start}→{beta_end}"
         else:
             raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
@@ -567,7 +598,7 @@ def run_beta_start_end_pairs(
         N: Board size
         n_steps: Number of MCMC steps
         beta_start_ends: List of [beta_start, beta_end] pairs, e.g., [[0.1, 1.0], [2.0, 5.0]]
-        annealing_type: Type of annealing schedule ("linear_annealing" or "exponential_annealing")
+        annealing_type: Type of annealing schedule ("linear_annealing", "logarithmic_annealing", or "exponential_annealing")
         init_mode: Initialization mode
         n_runs: Number of runs per pair
         base_seed: Base seed for random number generation
