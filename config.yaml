@@ -1,4 +1,4 @@
-experiment_type: "measure_min_energy_vs_N""
+experiment_type: "measure_min_energy_vs_N"
 
 common:
   n_steps: 1000000
@@ -10,13 +10,20 @@ common:
     type: "linear_annealing"
     base_seed: 42
     beta_const: 3.0
-    beta_start: 1
-    beta_end: 10.0
+    beta_start: 0.5
+    beta_end: 3.0
 
-  output_path: "figures/multiple_N_Miquel.png"
+  output_path: "figures/energy_history_N3to13.png"
 single_N:
-  N: 15
+  N: 20
 
 measure_min_energy_vs_N:
-  Ns: [3,5,7,9,11,13,15,17,19]
-  init_modes: ["random", "klarner","latin"]
+  Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  init_modes: ["random"]
+
+beta_start_end_pairs:
+  N: 20
+  beta_start_ends: [[0.5, 3.0], [0.1, 5.0], [1.0, 5.0], [5.0, 20.0]]
+  annealing_type: "linear_annealing"
+  output_path: "figures/energy_history_beta_pairs.png"
+  output_path_acceptance: "figures/acceptance_rate_beta_pairs.png"
