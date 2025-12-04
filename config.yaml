@@ -1,28 +1,28 @@
-experiment_type: "single_N"
+experiment_type: "measure_min_energy_vs_N"
 
 common:
-  n_steps: 3000000
+  n_steps: 1000000
   n_runs: 20
   verbose: true
   initialization: random
 
   betta_scheduling:
-    type: ["linear_annealing", "exponential_annealing", "logarithmic_annealing", "constant"]
+    type: "linear_annealing"
     base_seed: 42
     beta_const: 3.0
     beta_start: 0.5
     beta_end: 3.0
 
-  output_path: "figures/energy_history_singleN.png"
+  output_path: "figures/energy_history_N3to13.png"
 single_N:
   N: 20
 
 measure_min_energy_vs_N:
   Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  init_modes: ["random", "klarner","latin"]
+  init_modes: ["random"]
 
 beta_start_end_pairs:
-  N: 12
+  N: 20
   beta_start_ends: [[0.5, 3.0], [0.1, 5.0], [1.0, 5.0], [5.0, 20.0]]
   annealing_type: "linear_annealing"
   output_path: "figures/energy_history_beta_pairs.png"

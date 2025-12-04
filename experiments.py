@@ -261,6 +261,11 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         logging.info(f"{prefix} Best energy:   {best_energy}")
         logging.info(f"{prefix} Acceptance rate: {accepted / n_steps:.3f}")
 
+    # --- NEW: steps until best energy is first reached ---
+    energy_arr = np.array(energy_history)
+    # index of first occurrence of the minimal energy
+    steps_to_best = int(np.argmin(energy_arr))   # 0 = initial state, 1 = after first move, etc.
+
     return {
         "final_state": state,
         "final_energy": current_energy,
@@ -269,6 +274,7 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         "energy_history": energy_history,
         "accepted_steps": accepted_steps,
         "rejected_steps": rejected_steps,
+        "steps_to_best": steps_to_best,   # NEW
     }
 
 
@@ -313,6 +319,7 @@ def run_single_chain_multithread(args):
         "duration": duration,
         "accepted_steps": res["accepted_steps"],
         "rejected_steps": res["rejected_steps"],
+        "steps_to_best": res["steps_to_best"],
     }
 
 
@@ -335,6 +342,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
     run_times = []
     all_accepted_steps = []
     all_rejected_steps = []
+    all_steps_to_best = []   # NEW
     
     if n_runs > 1:
         if schedule_params is None:
@@ -386,6 +394,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             run_times.append(result["duration"])
             all_accepted_steps.append(result["accepted_steps"])
             all_rejected_steps.append(result["rejected_steps"])
+            all_steps_to_best.append(result["steps_to_best"])  # NEW
         
         if verbose and n_runs > 0:
             mean_time = np.mean(run_times)
@@ -415,6 +424,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             best_energies.append(res["best_energy"])
             all_accepted_steps.append(res["accepted_steps"])
             all_rejected_steps.append(res["rejected_steps"])
+            all_steps_to_best.append(res["steps_to_best"])  # NEW
 
             if verbose:
                 frac_runs = (r + 1) / n_runs
@@ -430,7 +440,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             logging.info(f"\n>>> Mean time per run: {mean_time:.2f} s")
             logging.info(f">>> Total time for {n_runs} runs: {total_time:.2f} s")
 
-    return all_histories, best_energies, run_times, all_accepted_steps, all_rejected_steps
+    return all_histories, best_energies, run_times, all_accepted_steps, all_rejected_steps, all_steps_to_best
 
 
 def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=None):
@@ -633,7 +643,7 @@ def run_beta_start_end_pairs(
         
         pair_seed = base_seed + idx * 1000
         
-        all_histories, best_energies, run_times, accepted_steps, rejected_steps = run_experiment(
+        all_histories, best_energies, run_times, accepted_steps, rejected_steps, steps_to_best = run_experiment(
             N=N,
             n_steps=n_steps,
             init_mode=init_mode,
@@ -654,9 +664,13 @@ def run_beta_start_end_pairs(
             mean_time = np.mean(run_times)
             mean_best = np.mean(best_energies)
             std_best = np.std(best_energies)
+            mean_steps = np.mean(steps_to_best)
+            std_steps = np.std(steps_to_best)
             logging.info(f"\n[{label}] Mean time per run: {mean_time:.2f} s")
             logging.info(f"[{label}] Best energies: {best_energies}")
             logging.info(f"[{label}] Mean best energy: {mean_best:.2f} ± {std_best:.2f}")
+            logging.info(f"[{label}] Steps to best: {steps_to_best}")
+            logging.info(f"[{label}] Mean steps to best: {mean_steps:.1f} ± {std_steps:.1f}")
     
     schedule_labels = list(all_histories_dict.keys())
     
@@ -694,7 +708,7 @@ def measure_min_energy_vs_N(
     n_steps,
     beta_schedule,
     schedule_params=None,
-    init_modes = ["random"], 
+    init_modes=["random"],
     n_runs=5,
     base_seed=100,
     verbose=True,
@@ -703,25 +717,30 @@ def measure_min_energy_vs_N(
 ):
     if isinstance(init_modes, str):
         init_modes = [init_modes]
-    
+
     results = {}
-    
+
     for init_mode in init_modes:
         if verbose:
             logging.info(f"\n{'='*60}")
             logging.info(f"Running experiments with init_mode = '{init_mode}'")
             logging.info(f"{'='*60}")
-        
+
         mean_min_energies = []
         std_min_energies = []
         all_min_energies = []
+
+        # NEW: convergence statistics
+        mean_steps_to_best = []
+        std_steps_to_best = []
+        all_steps_to_best = []
 
         for idx, N in enumerate(Ns):
             if verbose:
                 logging.info(f"\n=== Running N = {N} (init_mode={init_mode}) ===")
 
             init_mode_offset = sum(ord(c) for c in init_mode) % 1000
-            _, best_energies, _, _, _ = run_experiment(
+            _, best_energies, _, _, _, steps_to_best = run_experiment(
                 N=N,
                 n_steps=n_steps,
                 init_mode=init_mode,
@@ -733,31 +752,48 @@ def measure_min_energy_vs_N(
             )
 
             best_energies = np.array(best_energies)
+            steps_to_best = np.array(steps_to_best)
+
             all_min_energies.append(best_energies)
 
             mean_min_energies.append(best_energies.mean())
             std_min_energies.append(best_energies.std())
 
-            if verbose:
-                logging.info(f"  → Mean min energy = {mean_min_energies[-1]:.2f} ± {std_min_energies[-1]:.2f}")
+            # --- convergence stats per N (just use the local lists) ---
+            all_steps_to_best.append(steps_to_best)
+            mean_steps_to_best.append(steps_to_best.mean())
+            std_steps_to_best.append(steps_to_best.std())
 
+            if verbose:
+                logging.info(
+                    f"  → Mean min energy = {mean_min_energies[-1]:.2f} ± {std_min_energies[-1]:.2f}"
+                )
+                logging.info(
+                    f"  → Steps to best: mean = {mean_steps_to_best[-1]:.1f} ± {std_steps_to_best[-1]:.1f}"
+                )
+
+        # At the end of all Ns for this init_mode, store everything in results
         results[init_mode] = {
             "mean_min_energies": np.array(mean_min_energies),
             "std_min_energies": np.array(std_min_energies),
             "all_min_energies": all_min_energies,
+            "mean_steps_to_best": np.array(mean_steps_to_best),
+            "std_steps_to_best": np.array(std_steps_to_best),
+            "all_steps_to_best": all_steps_to_best,
         }
 
     if plot:
-        plt.figure(figsize=(10, 6))
         Ns_arr = np.array(Ns)
-        
         colors = plt.cm.tab10(np.linspace(0, 1, len(init_modes)))
-        
+
+        # ---- Plot minimal energy vs N ----
+        plt.figure(figsize=(10, 6))
+
         for idx, init_mode in enumerate(init_modes):
             mean_energies = results[init_mode]["mean_min_energies"]
             std_energies = results[init_mode]["std_min_energies"]
             color = colors[idx]
-            
+
             plt.plot(
                 Ns_arr,
                 mean_energies,
@@ -767,7 +803,7 @@ def measure_min_energy_vs_N(
                 color=color,
                 label=f"{init_mode}",
             )
-            
+
             plt.fill_between(
                 Ns_arr,
                 mean_energies - std_energies,
@@ -778,12 +814,52 @@ def measure_min_energy_vs_N(
 
         plt.xlabel("Board size N", fontsize=20)
         plt.ylabel("Minimal energy reached", fontsize=20)
-        plt.title("MCMC: Minimal Energy vs. Board Size N", fontsize=18, fontweight='bold')
+        plt.title("MCMC: Minimal Energy vs. Board Size N", fontsize=18, fontweight="bold")
         plt.grid(True, alpha=0.3)
         plt.legend(fontsize=12)
         if out_path is not None:
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
             plt.savefig(out_path, bbox_inches="tight")
+            plt.close()
+        else:
+            plt.show()
+
+        # ---- Plot convergence steps vs N ----
+        plt.figure(figsize=(10, 6))
+        colors = plt.cm.tab10(np.linspace(0, 1, len(init_modes)))
+
+        for idx, init_mode in enumerate(init_modes):
+            mean_steps = results[init_mode]["mean_steps_to_best"]
+            std_steps = results[init_mode]["std_steps_to_best"]
+            color = colors[idx]
+
+            plt.plot(
+                Ns_arr,
+                mean_steps,
+                "o-",
+                linewidth=2,
+                markersize=6,
+                color=color,
+                label=f"{init_mode}",
+            )
+            plt.fill_between(
+                Ns_arr,
+                mean_steps - std_steps,
+                mean_steps + std_steps,
+                alpha=0.2,
+                color=color,
+            )
+
+        plt.xlabel("Board size N", fontsize=20)
+        plt.ylabel("Steps to best energy", fontsize=20)
+        plt.title("MCMC: Steps to Best Energy vs. Board Size N", fontsize=18, fontweight="bold")
+        plt.grid(True, alpha=0.3)
+        plt.legend(fontsize=12)
+        if out_path is not None:
+            base, ext = os.path.splitext(out_path)
+            conv_path = base + "_convergence" + (ext if ext else ".png")
+            os.makedirs(os.path.dirname(conv_path), exist_ok=True)
+            plt.savefig(conv_path, bbox_inches="tight")
             plt.close()
         else:
             plt.show()
@@ -875,7 +951,7 @@ if __name__ == "__main__":
                 f"init_mode={init_mode}, base_seed={base_seed}"
             )
 
-            all_histories, best_energies, run_times, _, _ = run_experiment(
+            all_histories, best_energies, run_times, _, _ , steps_to_best= run_experiment(
                 N=N,
                 n_steps=n_steps,
                 init_mode=init_mode,
