@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=MONTE_CARLO
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu     
+#SBATCH --cpus-per-task=8  
+#SBATCH --gres=gpu
 #SBATCH --time=120:00:00
 #SBATCH --mem-per-cpu=100G
 #SBATCH --output=slurm/%x-%A-%a-%j.out
