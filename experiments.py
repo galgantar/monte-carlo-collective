@@ -2,6 +2,7 @@ import os
 import time
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 import yaml
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
@@ -603,6 +604,17 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
         mean_energy = energies.mean(axis=0)
         std_energy = energies.std(axis=0)
         color = colors[idx % len(colors)]
+
+        # ---- Save CSV for this schedule ----
+        os.makedirs("results", exist_ok=True)
+
+        df = pd.DataFrame({
+            "step": steps,
+            "mean_energy": mean_energy,
+            "std_energy": std_energy
+        })
+
+        df.to_csv(f"results/{label}.csv", index=False)
         
         steps = np.arange(n_steps_plus1)
         plt.plot(
@@ -698,6 +710,16 @@ def plot_acceptance_rates_binned(all_accepted_steps_list, all_rejected_steps_lis
             label = schedule_labels[idx]
         else:
             label = f"Schedule {idx+1}"
+        
+        # ---- Save CSV for this schedule ----
+        os.makedirs("results", exist_ok=True)
+
+        df = pd.DataFrame({
+            "bin_center": bin_centers,
+            "acceptance_rate": acceptance_rates
+        })
+
+        df.to_csv(f"results/acceptance_rates_{label}.csv", index=False)
         
         color = colors[idx % len(colors)]
         
@@ -932,6 +954,17 @@ def measure_min_energy_vs_N(
             std_energies = results[init_mode]["std_min_energies"]
             color = colors[idx]
 
+            # ---- Save minimal energy results to CSV ----
+            os.makedirs("results", exist_ok=True)
+
+            df_energy = pd.DataFrame({
+                "N": Ns_arr,
+                init_mode + "_mean_min_energy": mean_energies,
+                init_mode + "_std_min_energy": std_energies
+            })
+
+            df_energy.to_csv(f"results/min_energy_vs_N_{init_mode}.csv", index=False)
+
             plt.plot(
                 Ns_arr,
                 mean_energies,
@@ -969,6 +1002,17 @@ def measure_min_energy_vs_N(
             mean_steps = results[init_mode]["mean_steps_to_best"]
             std_steps = results[init_mode]["std_steps_to_best"]
             color = colors[idx]
+
+            # ---- Save convergence results to CSV ----
+            os.makedirs("results", exist_ok=True)
+
+            df_steps = pd.DataFrame({
+                "N": Ns_arr,
+                init_mode + "_mean_steps_to_best": mean_steps,
+                init_mode + "_std_steps_to_best": std_steps
+            })
+
+            df_steps.to_csv(f"results/steps_to_best_vs_N_{init_mode}.csv", index=False)
 
             plt.plot(
                 Ns_arr,
