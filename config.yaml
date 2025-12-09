@@ -1,29 +1,30 @@
 experiment_type: "measure_min_energy_vs_N"
 
 common:
-  n_steps: 1000000
-  n_runs: 20
+  n_steps: 1500000
+  n_runs: 10
   verbose: true
   initialization: random
+  mcmc_type: "board"
 
   betta_scheduling:
     type: "linear_annealing"
     base_seed: 42
-    beta_const: 3.0
-    beta_start: 0.5
+    beta_const: 5.0
+    beta_start: 1.0
     beta_end: 3.0
 
-  output_path: "figures/energy_history_N3to13.png"
+  output_path: "figures/energy_history_N3to15.png"
 single_N:
-  N: 20
+  N: 12
 
 measure_min_energy_vs_N:
-  Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  init_modes: ["random"]
+  Ns: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  init_modes: ["random", "klarner", "latin"]
 
 beta_start_end_pairs:
-  N: 20
-  beta_start_ends: [[0.5, 3.0], [0.1, 5.0], [1.0, 5.0], [5.0, 20.0]]
+  N: 12
+  beta_start_ends: [[0.5, 3.0], [0.1, 5.0], [1.0, 5.0]]
   annealing_type: "linear_annealing"
   output_path: "figures/energy_history_beta_pairs.png"
   output_path_acceptance: "figures/acceptance_rate_beta_pairs.png"

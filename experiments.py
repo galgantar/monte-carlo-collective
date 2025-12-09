@@ -6,20 +6,18 @@ import yaml
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 from mcmc import State3DQueens
+from mcmc_board import State3DQueensBoard
 
 import logging
 from datetime import datetime
 
 def setup_logging():
-    # Ensure outputs/ exists
     log_dir = "outputs"
     os.makedirs(log_dir, exist_ok=True)
 
-    # Timestamped filename
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     logfile = os.path.join(log_dir, f"run_{timestamp}.log")
 
-    # Configure logging
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
@@ -70,7 +68,7 @@ def logarithmic_annealing_beta(beta_start, beta_end, n_steps):
             return beta_end
         return schedule
 
-    log_norm = np.log(1 + n_steps)  # denominator (constant)
+    log_norm = np.log(1 + n_steps)
 
     def schedule(step):
         step = np.clip(step, 0, n_steps)
@@ -261,10 +259,8 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         logging.info(f"{prefix} Best energy:   {best_energy}")
         logging.info(f"{prefix} Acceptance rate: {accepted / n_steps:.3f}")
 
-    # --- NEW: steps until best energy is first reached ---
     energy_arr = np.array(energy_history)
-    # index of first occurrence of the minimal energy
-    steps_to_best = int(np.argmin(energy_arr))   # 0 = initial state, 1 = after first move, etc.
+    steps_to_best = int(np.argmin(energy_arr))
 
     return {
         "final_state": state,
@@ -274,7 +270,97 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
         "energy_history": energy_history,
         "accepted_steps": accepted_steps,
         "rejected_steps": rejected_steps,
-        "steps_to_best": steps_to_best,   # NEW
+        "steps_to_best": steps_to_best,
+    }
+
+
+def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, run_idx=None):
+    """MCMC for board-constrained version (one queen per (i,j) pair)."""
+    if seed is not None:
+        np.random.seed(seed)
+
+    state = State3DQueensBoard(N, init_mode=init_mode)
+    current_energy = state.energy(recompute=True)
+
+    best_state = state.copy()
+    best_energy = current_energy
+
+    accepted = 0
+    energy_history = [current_energy]
+    
+    accepted_steps = []
+    rejected_steps = []
+
+    if verbose and n_steps > 0:
+        next_report = max(1, n_steps // 10)
+
+    prefix = f"[chain #{run_idx}]" if run_idx is not None else "[chain]"
+
+    for step in range(n_steps):
+        beta_t = beta_schedule(step)
+
+        i = np.random.randint(0, N)
+        j = np.random.randint(0, N)
+        old_k = state.heights[i, j]
+
+        old_conflicts = state.conflicts_for_position(i, j, old_k)
+
+        new_k = np.random.randint(0, N)
+        while new_k == old_k:
+            new_k = np.random.randint(0, N)
+
+        new_conflicts = state.conflicts_for_position(i, j, new_k)
+
+        delta_E = new_conflicts - old_conflicts
+        proposed_energy = current_energy + delta_E
+
+        accept_prob = min(1.0, np.exp(-beta_t * delta_E))
+        was_accepted = np.random.random() < accept_prob
+
+        if was_accepted:
+            accepted_steps.append(step)
+        else:
+            rejected_steps.append(step)
+
+        if was_accepted:
+            state.propose_move(i, j, new_k)
+            current_energy = proposed_energy
+            state._energy = current_energy
+            accepted += 1
+
+            if current_energy < best_energy:
+                best_state = state.copy()
+                best_energy = current_energy
+        else:
+            pass
+
+        energy_history.append(current_energy)
+
+        if verbose and (step + 1) % next_report == 0:
+            frac = (step + 1) / n_steps
+            logging.info(
+                f"{prefix} {step + 1}/{n_steps} steps "
+                f"({frac*100:.1f}%) | E={current_energy}, best={best_energy}, "
+                f"beta_t={beta_t:.3f}"
+            )
+
+    if verbose and n_steps > 0:
+        logging.info(f"{prefix} Final energy: {current_energy}")
+        logging.info(f"{prefix} Best energy:   {best_energy}")
+        logging.info(f"{prefix} Acceptance rate: {accepted / n_steps:.3f}")
+
+    energy_arr = np.array(energy_history)
+    steps_to_best = int(np.argmin(energy_arr))
+
+    return {
+        "final_state": state,
+        "final_energy": current_energy,
+        "best_state": best_state,
+        "best_energy": best_energy,
+        "energy_history": energy_history,
+        "accepted_steps": accepted_steps,
+        "rejected_steps": rejected_steps,
+        "steps_to_best": steps_to_best,
     }
 
 
@@ -290,8 +376,20 @@ def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=Fa
     )
 
 
+def run_single_chain_board(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False, run_idx=None):
+    return metropolis_mcmc_board(
+        N=N,
+        n_steps=n_steps,
+        init_mode=init_mode,
+        beta_schedule=beta_schedule,
+        verbose=verbose,
+        seed=seed,
+        run_idx=run_idx,
+    )
+
+
 def run_single_chain_multithread(args):
-    """Wrapper function for parallel execution of a single chain."""
+    """Wrapper function for parallel execution of a single chain (full_3d)."""
     (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx) = args
     beta_schedule = build_schedule_from_params(
         sched_type=schedule_params["type"],
@@ -323,7 +421,40 @@ def run_single_chain_multithread(args):
     }
 
 
-def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False, n_workers=None, schedule_params=None):
+def run_single_chain_board_multithread(args):
+    """Wrapper function for parallel execution of a single chain (board)."""
+    (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx) = args
+    beta_schedule = build_schedule_from_params(
+        sched_type=schedule_params["type"],
+        n_steps=n_steps,
+        beta_const=schedule_params.get("beta_const"),
+        beta_start=schedule_params.get("beta_start"),
+        beta_end=schedule_params.get("beta_end"),
+    )
+    start_time = time.time()
+    res = run_single_chain_board(
+        N=N,
+        n_steps=n_steps,
+        init_mode=init_mode,
+        beta_schedule=beta_schedule,
+        seed=seed,
+        verbose=verbose,
+        run_idx=run_idx,
+    )
+    end_time = time.time()
+    duration = end_time - start_time
+    return {
+        "run_idx": run_idx,
+        "energy_history": res["energy_history"],
+        "best_energy": res["best_energy"],
+        "duration": duration,
+        "accepted_steps": res["accepted_steps"],
+        "rejected_steps": res["rejected_steps"],
+        "steps_to_best": res["steps_to_best"],
+    }
+
+
+def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False, n_workers=None, schedule_params=None, mcmc_type="full_3d"):
     """
     Run multiple MCMC chains in parallel or sequentially.
     
@@ -336,13 +467,21 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             - "beta_start", "beta_end": for annealing schedules
         schedule_params is required for parallel execution because schedule functions are closures
         that can't be pickled for multiprocessing.
+        mcmc_type: "full_3d" (uses mcmc.py) or "board" (uses mcmc_board.py)
     """
     all_histories = []
     best_energies = []
     run_times = []
     all_accepted_steps = []
     all_rejected_steps = []
-    all_steps_to_best = []   # NEW
+    all_steps_to_best = []
+    
+    if mcmc_type == "board":
+        chain_runner = run_single_chain_board
+        multithread_runner = run_single_chain_board_multithread
+    else:
+        chain_runner = run_single_chain
+        multithread_runner = run_single_chain_multithread
     
     if n_runs > 1:
         if schedule_params is None:
@@ -353,12 +492,12 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         ]
         
         if verbose:
-            logging.info(f"\n>>> Running {n_runs} chains in parallel...")
+            logging.info(f"\n>>> Running {n_runs} chains in parallel ({mcmc_type})...")
         
         start_total = time.time()
         with ProcessPoolExecutor(max_workers=n_workers) as executor:
             future_to_run = {
-                executor.submit(run_single_chain_multithread, args): r
+                executor.submit(multithread_runner, args): r
                 for r, args in enumerate(run_args)
             }
             
@@ -394,7 +533,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             run_times.append(result["duration"])
             all_accepted_steps.append(result["accepted_steps"])
             all_rejected_steps.append(result["rejected_steps"])
-            all_steps_to_best.append(result["steps_to_best"])  # NEW
+            all_steps_to_best.append(result["steps_to_best"])
         
         if verbose and n_runs > 0:
             mean_time = np.mean(run_times)
@@ -406,10 +545,10 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
                 logging.info(f"\n=== Run {r+1}/{n_runs} ===")
 
             start_time = time.time()
-            res = run_single_chain(
+            res = chain_runner(
                 N=N,
                 n_steps=n_steps,
-                init_mode = init_mode, 
+                init_mode=init_mode,
                 beta_schedule=beta_schedule,
                 seed=base_seed + r,
                 verbose=verbose,
@@ -424,7 +563,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
             best_energies.append(res["best_energy"])
             all_accepted_steps.append(res["accepted_steps"])
             all_rejected_steps.append(res["rejected_steps"])
-            all_steps_to_best.append(res["steps_to_best"])  # NEW
+            all_steps_to_best.append(res["steps_to_best"])
 
             if verbose:
                 frac_runs = (r + 1) / n_runs
@@ -600,6 +739,7 @@ def run_beta_start_end_pairs(
     plot=True,
     out_path=None,
     out_path_acceptance=None,
+    mcmc_type="full_3d",
 ):
     """
     Run experiments for multiple beta_start/beta_end pairs with fixed annealing schedule.
@@ -652,6 +792,7 @@ def run_beta_start_end_pairs(
             base_seed=pair_seed,
             verbose=verbose,
             schedule_params=schedule_params,
+            mcmc_type=mcmc_type,
         )
         
         label = f"β: {beta_start}→{beta_end}"
@@ -702,7 +843,6 @@ def run_beta_start_end_pairs(
         "all_best_energies": all_best_energies_dict,
     }
 
-
 def measure_min_energy_vs_N(
     Ns,
     n_steps,
@@ -714,6 +854,7 @@ def measure_min_energy_vs_N(
     verbose=True,
     plot=True,
     out_path=None,
+    mcmc_type="full_3d",
 ):
     if isinstance(init_modes, str):
         init_modes = [init_modes]
@@ -730,7 +871,6 @@ def measure_min_energy_vs_N(
         std_min_energies = []
         all_min_energies = []
 
-        # NEW: convergence statistics
         mean_steps_to_best = []
         std_steps_to_best = []
         all_steps_to_best = []
@@ -749,6 +889,7 @@ def measure_min_energy_vs_N(
                 base_seed=base_seed + 10 * idx + init_mode_offset,
                 verbose=verbose,
                 schedule_params=schedule_params,
+                mcmc_type=mcmc_type,
             )
 
             best_energies = np.array(best_energies)
@@ -759,7 +900,6 @@ def measure_min_energy_vs_N(
             mean_min_energies.append(best_energies.mean())
             std_min_energies.append(best_energies.std())
 
-            # --- convergence stats per N (just use the local lists) ---
             all_steps_to_best.append(steps_to_best)
             mean_steps_to_best.append(steps_to_best.mean())
             std_steps_to_best.append(steps_to_best.std())
@@ -772,7 +912,6 @@ def measure_min_energy_vs_N(
                     f"  → Steps to best: mean = {mean_steps_to_best[-1]:.1f} ± {std_steps_to_best[-1]:.1f}"
                 )
 
-        # At the end of all Ns for this init_mode, store everything in results
         results[init_mode] = {
             "mean_min_energies": np.array(mean_min_energies),
             "std_min_energies": np.array(std_min_energies),
@@ -786,7 +925,6 @@ def measure_min_energy_vs_N(
         Ns_arr = np.array(Ns)
         colors = plt.cm.tab10(np.linspace(0, 1, len(init_modes)))
 
-        # ---- Plot minimal energy vs N ----
         plt.figure(figsize=(10, 6))
 
         for idx, init_mode in enumerate(init_modes):
@@ -824,7 +962,6 @@ def measure_min_energy_vs_N(
         else:
             plt.show()
 
-        # ---- Plot convergence steps vs N ----
         plt.figure(figsize=(10, 6))
         colors = plt.cm.tab10(np.linspace(0, 1, len(init_modes)))
 
@@ -884,9 +1021,11 @@ if __name__ == "__main__":
     verbose = common["verbose"]
     init_mode = common["initialization"]
     common_output_path = common["output_path"]
+    mcmc_type = common.get("mcmc_type", "board")
 
     logging.info(f"Initialization mode: {init_mode}")
     logging.info(f"Experiment type: {experiment_type}")
+    logging.info(f"MCMC type: {mcmc_type}")
 
     if experiment_type == "single_N":
         single_cfg = config["single_N"]
@@ -923,6 +1062,7 @@ if __name__ == "__main__":
                     base_seed=base_seed,
                     verbose=verbose,
                     schedule_params=schedule_params,
+                    mcmc_type=mcmc_type,
                 )
                 
                 all_histories_dict[label] = all_histories
@@ -960,11 +1100,12 @@ if __name__ == "__main__":
                 base_seed=base_seed,
                 verbose=verbose,
                 schedule_params=schedule_params,
+                mcmc_type=mcmc_type,
             )
 
             mean_time = np.mean(run_times)
             logging.info(f"\n[Single_N] Mean time per run: {mean_time:.2f} s")
-            logging.info("[Single_N] Best energies:", best_energies)
+            logging.info(f"[Single_N] Best energies: {best_energies}")
 
             title = f"Energy History (N={N}, {sched_desc})"
             plot_energy_histories(all_histories, title=title, out_path=output_path)
@@ -1003,6 +1144,7 @@ if __name__ == "__main__":
             verbose=verbose,
             plot=True,
             out_path=output_path,
+            mcmc_type=mcmc_type,
         )
 
         logging.info("\nResults:")
@@ -1042,6 +1184,7 @@ if __name__ == "__main__":
             plot=True,
             out_path=output_path,
             out_path_acceptance=output_path_acceptance,
+            mcmc_type=mcmc_type,
         )
         
         logging.info("\nResults summary:")
