@@ -1053,7 +1053,7 @@ if __name__ == "__main__":
                     logging.info(f"Schedule: {label} ({sched_desc})")
                     logging.info(f"{'='*60}")
                 
-                all_histories, best_energies, run_times, _, _ = run_experiment(
+                all_histories, best_energies, run_times, _, _, _ = run_experiment(
                     N=N,
                     n_steps=n_steps,
                     init_mode=init_mode,
