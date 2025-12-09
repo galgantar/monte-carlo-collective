@@ -605,6 +605,10 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
         std_energy = energies.std(axis=0)
         color = colors[idx % len(colors)]
 
+        df.to_csv(f"results/{label}.csv", index=False)
+        
+        steps = np.arange(n_steps_plus1)
+
         # ---- Save CSV for this schedule ----
         os.makedirs("results", exist_ok=True)
 
@@ -613,10 +617,7 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
             "mean_energy": mean_energy,
             "std_energy": std_energy
         })
-
-        df.to_csv(f"results/{label}.csv", index=False)
         
-        steps = np.arange(n_steps_plus1)
         plt.plot(
             steps,
             mean_energy,
