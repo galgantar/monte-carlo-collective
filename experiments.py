@@ -184,7 +184,7 @@ def build_schedules_from_types(sched_types, sched_cfg, n_steps):
     return schedules
 
 
-def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, Q=None, run_idx=None):
+def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, Q=None, run_idx=None, early_stop_patience=None):
     if seed is not None:
         np.random.seed(seed)
 
@@ -275,7 +275,7 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
     }
 
 
-def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, run_idx=None):
+def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, run_idx=None, early_stop_patience=None):
     """MCMC for board-constrained version (one queen per (i,j) pair)."""
     if seed is not None:
         np.random.seed(seed)
@@ -291,6 +291,9 @@ def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, se
     
     accepted_steps = []
     rejected_steps = []
+
+    # --- Early stopping bookkeeping ---
+    no_improvement_steps = 0
 
     if verbose and n_steps > 0:
         next_report = max(1, n_steps // 10)
@@ -332,8 +335,20 @@ def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, se
             if current_energy < best_energy:
                 best_state = state.copy()
                 best_energy = current_energy
+                no_improvement_steps = 0
+            else:
+                no_improvement_steps += 1
         else:
-            pass
+            no_improvement_steps += 1 # Rejected move counts toward non-improvement
+
+        if no_improvement_steps >= early_stop_patience:
+            if verbose:
+                logging.info(
+                    f"{prefix} Early stop at step {step}: "
+                    f"no improvement for {early_stop_patience} steps. "
+                    f"Current E={current_energy}, best={best_energy}"
+                )
+            break
 
         energy_history.append(current_energy)
 
@@ -365,7 +380,7 @@ def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, se
     }
 
 
-def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False, run_idx=None):
+def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False, run_idx=None, early_stop_patience=None):
     return metropolis_mcmc(
         N=N,
         n_steps=n_steps,
@@ -374,10 +389,11 @@ def run_single_chain(N, n_steps, init_mode, beta_schedule, seed=None, verbose=Fa
         verbose=verbose,
         seed=seed,
         run_idx=run_idx,
+        early_stop_patience=early_stop_patience,
     )
 
 
-def run_single_chain_board(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False, run_idx=None):
+def run_single_chain_board(N, n_steps, init_mode, beta_schedule, seed=None, verbose=False, run_idx=None, early_stop_patience=None):
     return metropolis_mcmc_board(
         N=N,
         n_steps=n_steps,
@@ -386,12 +402,13 @@ def run_single_chain_board(N, n_steps, init_mode, beta_schedule, seed=None, verb
         verbose=verbose,
         seed=seed,
         run_idx=run_idx,
+        early_stop_patience=early_stop_patience
     )
 
 
 def run_single_chain_multithread(args):
     """Wrapper function for parallel execution of a single chain (full_3d)."""
-    (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx) = args
+    (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx, early_stop_patience) = args
     beta_schedule = build_schedule_from_params(
         sched_type=schedule_params["type"],
         n_steps=n_steps,
@@ -408,6 +425,7 @@ def run_single_chain_multithread(args):
         seed=seed,
         verbose=verbose,
         run_idx=run_idx,
+        early_stop_patience=early_stop_patience,
     )
     end_time = time.time()
     duration = end_time - start_time
@@ -424,7 +442,7 @@ def run_single_chain_multithread(args):
 
 def run_single_chain_board_multithread(args):
     """Wrapper function for parallel execution of a single chain (board)."""
-    (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx) = args
+    (N, n_steps, init_mode, schedule_params, seed, verbose, run_idx, early_stop_patience) = args
     beta_schedule = build_schedule_from_params(
         sched_type=schedule_params["type"],
         n_steps=n_steps,
@@ -441,6 +459,7 @@ def run_single_chain_board_multithread(args):
         seed=seed,
         verbose=verbose,
         run_idx=run_idx,
+        early_stop_patience=early_stop_patience,
     )
     end_time = time.time()
     duration = end_time - start_time
@@ -455,7 +474,7 @@ def run_single_chain_board_multithread(args):
     }
 
 
-def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False, n_workers=None, schedule_params=None, mcmc_type="full_3d"):
+def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, verbose=False, n_workers=None, schedule_params=None, mcmc_type="full_3d", early_stop_patience=100000):
     """
     Run multiple MCMC chains in parallel or sequentially.
     
@@ -488,7 +507,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         if schedule_params is None:
             raise ValueError(f"schedule_params is required for parallel execution when n_runs > 1")
         run_args = [
-            (N, n_steps, init_mode, schedule_params, base_seed + r, verbose, r)
+            (N, n_steps, init_mode, schedule_params, base_seed + r, verbose, r, early_stop_patience)
             for r in range(n_runs)
         ]
         
@@ -1067,6 +1086,7 @@ if __name__ == "__main__":
     init_mode = common["initialization"]
     common_output_path = common["output_path"]
     mcmc_type = common.get("mcmc_type", "board")
+    early_stop_patience = common.get("early_stop_patience", 100000)
 
     logging.info(f"Initialization mode: {init_mode}")
     logging.info(f"Experiment type: {experiment_type}")

@@ -1,14 +1,15 @@
 experiment_type: "measure_min_energy_vs_N"
 
 common:
-  n_steps: 1500000
-  n_runs: 10
+  n_steps: 1000000
+  n_runs: 20
   verbose: true
   initialization: random
   mcmc_type: "board"
+  early_stop_patience: 100000
 
   betta_scheduling:
-    type: "linear_annealing"
+    type: "exponential_annealing"
     base_seed: 42
     beta_const: 5.0
     beta_start: 1.0
