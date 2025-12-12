@@ -62,7 +62,7 @@ def exponential_annealing_beta(beta_start, beta_end, n_steps):
 def logarithmic_annealing_beta(beta_start, beta_end, n_steps):
     """
     Logarithmic annealing: beta grows quickly early, then slows down.
-    β(step) = β_start + (β_end - β_start) * log(1 + step) / log(1 + n_steps)
+    beta(step) = beta_start + (beta_end - beta_start) * log(1 + step) / log(1 + n_steps)
     """
     if n_steps <= 1:
         def schedule(_):
@@ -155,7 +155,7 @@ def build_schedules_from_types(sched_types, sched_cfg, n_steps):
         if sched_type == "constant":
             schedule_params = {"type": "constant", "beta_const": beta_const}
             desc = f"constant beta={beta_const}"
-            label = f"Constant β={beta_const}"
+            label = f"Constant beta={beta_const}"
         elif sched_type == "linear_annealing":
             schedule_params = {"type": "linear_annealing", "beta_start": beta_start, "beta_end": beta_end}
             desc = f"linear beta: {beta_start}→{beta_end}"
@@ -277,6 +277,9 @@ def metropolis_mcmc(N, n_steps, init_mode, beta_schedule, verbose=True, seed=Non
 
 def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, seed=None, run_idx=None, early_stop_patience=None):
     """MCMC for board-constrained version (one queen per (i,j) pair)."""
+    if early_stop_patience in (None, 'None', 'null'):
+        early_stop_patience = None
+    
     if seed is not None:
         np.random.seed(seed)
 
@@ -292,7 +295,6 @@ def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, se
     accepted_steps = []
     rejected_steps = []
 
-    # --- Early stopping bookkeeping ---
     no_improvement_steps = 0
 
     if verbose and n_steps > 0:
@@ -339,9 +341,9 @@ def metropolis_mcmc_board(N, n_steps, init_mode, beta_schedule, verbose=True, se
             else:
                 no_improvement_steps += 1
         else:
-            no_improvement_steps += 1 # Rejected move counts toward non-improvement
+            no_improvement_steps += 1
 
-        if no_improvement_steps >= early_stop_patience:
+        if early_stop_patience is not None and no_improvement_steps >= early_stop_patience:
             if verbose:
                 logging.info(
                     f"{prefix} Early stop at step {step}: "
@@ -623,12 +625,9 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
         mean_energy = energies.mean(axis=0)
         std_energy = energies.std(axis=0)
         color = colors[idx % len(colors)]
-
-        df.to_csv(f"results/{label}.csv", index=False)
         
         steps = np.arange(n_steps_plus1)
 
-        # ---- Save CSV for this schedule ----
         os.makedirs("results", exist_ok=True)
 
         df = pd.DataFrame({
@@ -636,6 +635,8 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
             "mean_energy": mean_energy,
             "std_energy": std_energy
         })
+        
+        df.to_csv(f"results/{label}.csv", index=False)
         
         plt.plot(
             steps,
@@ -731,7 +732,6 @@ def plot_acceptance_rates_binned(all_accepted_steps_list, all_rejected_steps_lis
         else:
             label = f"Schedule {idx+1}"
         
-        # ---- Save CSV for this schedule ----
         os.makedirs("results", exist_ok=True)
 
         df = pd.DataFrame({
@@ -782,6 +782,7 @@ def run_beta_start_end_pairs(
     out_path=None,
     out_path_acceptance=None,
     mcmc_type="full_3d",
+    early_stop_patience=100000,
 ):
     """
     Run experiments for multiple beta_start/beta_end pairs with fixed annealing schedule.
@@ -835,9 +836,10 @@ def run_beta_start_end_pairs(
             verbose=verbose,
             schedule_params=schedule_params,
             mcmc_type=mcmc_type,
+            early_stop_patience=early_stop_patience,
         )
         
-        label = f"β: {beta_start}→{beta_end}"
+        label = f"beta: {beta_start}→{beta_end}"
         all_histories_dict[label] = all_histories
         all_best_energies_dict[label] = best_energies
         all_accepted_steps_dict[label] = accepted_steps
@@ -858,7 +860,7 @@ def run_beta_start_end_pairs(
     schedule_labels = list(all_histories_dict.keys())
     
     if plot:
-        title = f"Energy History for Different β Ranges (N={N}, {annealing_type}, init_mode={init_mode})"
+        title = f"Energy History for Different beta Ranges (N={N}, {annealing_type}, init_mode={init_mode})"
         plot_energy_histories(
             all_histories_dict,
             title=title,
@@ -867,7 +869,7 @@ def run_beta_start_end_pairs(
         )
         
         if out_path_acceptance is not None:
-            title_acceptance = f"Acceptance Rate for Different β Ranges (N={N}, {annealing_type}, init_mode={init_mode})"
+            title_acceptance = f"Acceptance Rate for Different beta Ranges (N={N}, {annealing_type}, init_mode={init_mode})"
             accepted_steps_list = [all_accepted_steps_dict[label] for label in schedule_labels]
             rejected_steps_list = [all_rejected_steps_dict[label] for label in schedule_labels]
             plot_acceptance_rates_binned(
@@ -897,6 +899,7 @@ def measure_min_energy_vs_N(
     plot=True,
     out_path=None,
     mcmc_type="full_3d",
+    early_stop_patience=100000,
 ):
     if isinstance(init_modes, str):
         init_modes = [init_modes]
@@ -932,6 +935,7 @@ def measure_min_energy_vs_N(
                 verbose=verbose,
                 schedule_params=schedule_params,
                 mcmc_type=mcmc_type,
+                early_stop_patience=early_stop_patience,
             )
 
             best_energies = np.array(best_energies)
@@ -974,7 +978,6 @@ def measure_min_energy_vs_N(
             std_energies = results[init_mode]["std_min_energies"]
             color = colors[idx]
 
-            # ---- Save minimal energy results to CSV ----
             os.makedirs("results", exist_ok=True)
 
             df_energy = pd.DataFrame({
@@ -1023,7 +1026,6 @@ def measure_min_energy_vs_N(
             std_steps = results[init_mode]["std_steps_to_best"]
             color = colors[idx]
 
-            # ---- Save convergence results to CSV ----
             os.makedirs("results", exist_ok=True)
 
             df_steps = pd.DataFrame({
@@ -1087,6 +1089,8 @@ if __name__ == "__main__":
     common_output_path = common["output_path"]
     mcmc_type = common.get("mcmc_type", "board")
     early_stop_patience = common.get("early_stop_patience", 100000)
+    if early_stop_patience == 'None':
+        early_stop_patience = None
 
     logging.info(f"Initialization mode: {init_mode}")
     logging.info(f"Experiment type: {experiment_type}")
@@ -1128,6 +1132,7 @@ if __name__ == "__main__":
                     verbose=verbose,
                     schedule_params=schedule_params,
                     mcmc_type=mcmc_type,
+                    early_stop_patience=early_stop_patience,
                 )
                 
                 all_histories_dict[label] = all_histories
@@ -1166,6 +1171,7 @@ if __name__ == "__main__":
                 verbose=verbose,
                 schedule_params=schedule_params,
                 mcmc_type=mcmc_type,
+                early_stop_patience=early_stop_patience,
             )
 
             mean_time = np.mean(run_times)
@@ -1210,6 +1216,7 @@ if __name__ == "__main__":
             plot=True,
             out_path=output_path,
             mcmc_type=mcmc_type,
+            early_stop_patience=early_stop_patience,
         )
 
         logging.info("\nResults:")
@@ -1250,6 +1257,7 @@ if __name__ == "__main__":
             out_path=output_path,
             out_path_acceptance=output_path_acceptance,
             mcmc_type=mcmc_type,
+            early_stop_patience=early_stop_patience,
         )
         
         logging.info("\nResults summary:")
