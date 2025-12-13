@@ -1,12 +1,12 @@
-experiment_type: "measure_min_energy_vs_N"
+experiment_type: "compare_beta_end"
 
 common:
   n_steps: 1000000
-  n_runs: 20
+  n_runs: 10
   verbose: true
   initialization: random
   mcmc_type: "board"
-  early_stop_patience: 100000
+  early_stop_patience: None
 
   betta_scheduling:
     type: "exponential_annealing"
@@ -29,3 +29,10 @@ beta_start_end_pairs:
   annealing_type: "linear_annealing"
   output_path: "figures/energy_history_beta_pairs.png"
   output_path_acceptance: "figures/acceptance_rate_beta_pairs.png"
+
+compare_beta_end:
+  Ns: [12, 18]
+  beta_start_ends: [[1.0, 3.0], [1.0, 5.0]]
+  annealing_type: "exponential_annealing"
+  output_path: "figures/energy_history_compare_beta_end.png"
+
