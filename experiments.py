@@ -887,6 +887,203 @@ def run_beta_start_end_pairs(
         "all_best_energies": all_best_energies_dict,
     }
 
+def plot_energy_histories_side_by_side(all_histories_dict_N1, all_histories_dict_N2, N1, N2, title, out_path=None, schedule_labels=None, annealing_type="linear_annealing", init_mode="random"):
+    """
+    Plot energy histories for two N values side by side.
+    """
+    if schedule_labels is None:
+        schedule_labels = list(all_histories_dict_N1.keys())
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 7))
+    
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+    
+    # Plot for N1
+    for idx, label in enumerate(schedule_labels):
+        if label not in all_histories_dict_N1:
+            continue
+            
+        histories = all_histories_dict_N1[label]
+        n_steps_plus1 = len(histories[0])
+        
+        energies = np.array(histories)
+        mean_energy = energies.mean(axis=0)
+        std_energy = energies.std(axis=0)
+        color = colors[idx % len(colors)]
+        
+        steps = np.arange(n_steps_plus1)
+        
+        ax1.plot(
+            steps,
+            mean_energy,
+            linewidth=2.5,
+            label=label,
+            color=color,
+        )
+        
+        ax1.fill_between(
+            steps,
+            np.maximum(mean_energy - std_energy, 1e-10),
+            mean_energy + std_energy,
+            alpha=0.25,
+            color=color,
+        )
+    
+    ax1.set_xlabel("Step", fontsize=20)
+    ax1.set_ylabel("Energy", fontsize=20)
+    ax1.set_title(f"N={N1}", fontsize=18, fontweight='bold')
+    ax1.set_yscale('log')
+    ax1.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
+    ax1.legend(fontsize=12, framealpha=0.9, loc='best')
+    
+    # Plot for N2
+    for idx, label in enumerate(schedule_labels):
+        if label not in all_histories_dict_N2:
+            continue
+            
+        histories = all_histories_dict_N2[label]
+        n_steps_plus1 = len(histories[0])
+        
+        energies = np.array(histories)
+        mean_energy = energies.mean(axis=0)
+        std_energy = energies.std(axis=0)
+        color = colors[idx % len(colors)]
+        
+        steps = np.arange(n_steps_plus1)
+        
+        ax2.plot(
+            steps,
+            mean_energy,
+            linewidth=2.5,
+            label=label,
+            color=color,
+        )
+        
+        ax2.fill_between(
+            steps,
+            np.maximum(mean_energy - std_energy, 1e-10),
+            mean_energy + std_energy,
+            alpha=0.25,
+            color=color,
+        )
+    
+    ax2.set_xlabel("Step", fontsize=20)
+    ax2.set_ylabel("Energy", fontsize=20)
+    ax2.set_title(f"N={N2}", fontsize=18, fontweight='bold')
+    ax2.set_yscale('log')
+    ax2.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
+    ax2.legend(fontsize=12, framealpha=0.9, loc='best')
+    
+    fig.suptitle(title, fontsize=20, fontweight='bold', y=1.02)
+    plt.tight_layout()
+    
+    if out_path is not None:
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        fig.savefig(out_path, bbox_inches="tight", dpi=150)
+        plt.close(fig)
+    else:
+        plt.show()
+
+def run_compare_beta_end(
+    Ns,
+    n_steps,
+    beta_start_ends,
+    annealing_type="linear_annealing",
+    init_mode="random",
+    n_runs=5,
+    base_seed=0,
+    verbose=True,
+    plot=True,
+    out_path=None,
+    mcmc_type="full_3d",
+    early_stop_patience=100000,
+):
+    """
+    Run beta_start_end_pairs experiment for two N values and plot side by side.
+    
+    Args:
+        Ns: List of two N values [N1, N2]
+        n_steps: Number of MCMC steps
+        beta_start_ends: List of [beta_start, beta_end] pairs
+        annealing_type: Type of annealing schedule
+        init_mode: Initialization mode
+        n_runs: Number of runs per pair
+        base_seed: Base seed for random number generation
+        verbose: Whether to log progress
+        plot: Whether to plot results
+        out_path: Path to save the plot
+    """
+    if len(Ns) != 2:
+        raise ValueError("Ns must contain exactly 2 values")
+    
+    N1, N2 = Ns[0], Ns[1]
+    
+    # Run experiment for N1
+    if verbose:
+        logging.info(f"\n{'='*60}")
+        logging.info(f"Running experiments for N={N1}")
+        logging.info(f"{'='*60}")
+    
+    result_dict_N1 = run_beta_start_end_pairs(
+        N=N1,
+        n_steps=n_steps,
+        beta_start_ends=beta_start_ends,
+        annealing_type=annealing_type,
+        init_mode=init_mode,
+        n_runs=n_runs,
+        base_seed=base_seed,
+        verbose=verbose,
+        plot=False,  # Don't plot individually
+        out_path=None,
+        out_path_acceptance=None,
+        mcmc_type=mcmc_type,
+        early_stop_patience=early_stop_patience,
+    )
+    
+    # Run experiment for N2
+    if verbose:
+        logging.info(f"\n{'='*60}")
+        logging.info(f"Running experiments for N={N2}")
+        logging.info(f"{'='*60}")
+    
+    result_dict_N2 = run_beta_start_end_pairs(
+        N=N2,
+        n_steps=n_steps,
+        beta_start_ends=beta_start_ends,
+        annealing_type=annealing_type,
+        init_mode=init_mode,
+        n_runs=n_runs,
+        base_seed=base_seed + 10000,  # Different seed offset for N2
+        verbose=verbose,
+        plot=False,  # Don't plot individually
+        out_path=None,
+        out_path_acceptance=None,
+        mcmc_type=mcmc_type,
+        early_stop_patience=early_stop_patience,
+    )
+    
+    if plot:
+        schedule_labels = list(result_dict_N1["all_histories"].keys())
+        title = f"Energy History Comparison ({annealing_type}, init_mode={init_mode})"
+        plot_energy_histories_side_by_side(
+            result_dict_N1["all_histories"],
+            result_dict_N2["all_histories"],
+            N1,
+            N2,
+            title=title,
+            out_path=out_path,
+            schedule_labels=schedule_labels,
+            annealing_type=annealing_type,
+            init_mode=init_mode,
+        )
+    
+    return {
+        "N1": N1,
+        "N2": N2,
+        "result_N1": result_dict_N1,
+        "result_N2": result_dict_N2,
+    }
+
 def measure_min_energy_vs_N(
     Ns,
     n_steps,
@@ -1265,6 +1462,46 @@ if __name__ == "__main__":
             mean_best = np.mean(best_energies)
             std_best = np.std(best_energies)
             logging.info(f"  {label}: {mean_best:.2f} ± {std_best:.2f}")
+
+    elif experiment_type == "compare_beta_end":
+        params = config["compare_beta_end"]
+        Ns = params["Ns"]
+        beta_start_ends = params["beta_start_ends"]
+        annealing_type = params.get("annealing_type", "linear_annealing")
+        output_path = params.get("output_path", "figures/energy_history_compare_beta_end.png")
+        
+        base_seed = common["betta_scheduling"].get("base_seed", 0)
+        
+        logging.info(
+            f"\nRunning compare_beta_end experiment for N={Ns}"
+            f" with {annealing_type} annealing"
+        )
+        logging.info(f"n_runs={n_runs}, init_mode={init_mode}, base_seed={base_seed}")
+        logging.info(f"Beta pairs: {beta_start_ends}")
+        
+        result_dict = run_compare_beta_end(
+            Ns=Ns,
+            n_steps=n_steps,
+            beta_start_ends=beta_start_ends,
+            annealing_type=annealing_type,
+            init_mode=init_mode,
+            n_runs=n_runs,
+            base_seed=base_seed,
+            verbose=verbose,
+            plot=True,
+            out_path=output_path,
+            mcmc_type=mcmc_type,
+            early_stop_patience=early_stop_patience,
+        )
+        
+        logging.info("\nResults summary:")
+        for N_label, result in [("N1", result_dict["result_N1"]), ("N2", result_dict["result_N2"])]:
+            N_value = result_dict[N_label]  # Use uppercase key
+            logging.info(f"\n{N_label} (N={N_value}):")
+            for label, best_energies in result["all_best_energies"].items():
+                mean_best = np.mean(best_energies)
+                std_best = np.std(best_energies)
+                logging.info(f"  {label}: {mean_best:.2f} ± {std_best:.2f}")
 
     else:
         raise ValueError(f"Unknown experiment_type: {experiment_type}")
