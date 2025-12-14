@@ -516,7 +516,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         n_workers: Number of parallel workers. If None, uses CPU count for parallel execution.
         schedule_params: Dict with schedule parameters for parallel execution. Required when n_runs > 1.
             Must contain:
-            - "type": "constant", "linear_annealing", or "exponential_annealing"
+            - "type": "constant", "linear_annealing", "sinusoidal_annealing", "logarithmic_annealing", or "exponential_annealing"
             - "beta_const": for constant schedules
             - "beta_start", "beta_end": for annealing schedules
         schedule_params is required for parallel execution because schedule functions are closures
