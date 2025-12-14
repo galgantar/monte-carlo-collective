@@ -77,6 +77,25 @@ def logarithmic_annealing_beta(beta_start, beta_end, n_steps):
 
     return schedule
 
+def sinusoidal_annealing_beta(beta_start, beta_end, n_steps):
+    """
+    Sinusoidal (cosine) annealing schedule:
+    β(step) = β_start + (β_end - β_start) * (1 - cos(pi * step / n_steps)) / 2
+
+    Smoothly increases beta with zero slope at the beginning and end.
+    """
+    if n_steps <= 1:
+        def schedule(_):
+            return beta_end
+        return schedule
+
+    def schedule(step):
+        step = np.clip(step, 0, n_steps)
+        x = np.pi * step / n_steps
+        return beta_start + (beta_end - beta_start) * (1 - np.cos(x)) / 2
+
+    return schedule
+
 def build_schedule_from_params(sched_type, n_steps, beta_const=None, beta_start=None, beta_end=None):
     """
     Build a beta schedule from parameters. This function is picklable and can be used
@@ -98,6 +117,10 @@ def build_schedule_from_params(sched_type, n_steps, beta_const=None, beta_start=
         if beta_start is None or beta_end is None:
             raise ValueError("beta_start and beta_end required for logarithmic_annealing schedule")
         return logarithmic_annealing_beta(beta_start, beta_end, n_steps)
+    elif sched_type == "sinusoidal_annealing":
+        if beta_start is None or beta_end is None:
+            raise ValueError("beta_start and beta_end required for sinusoidal_annealing schedule")
+        return sinusoidal_annealing_beta(beta_start, beta_end, n_steps)
     else:
         raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
@@ -130,6 +153,11 @@ def build_schedule_from_common(common_cfg, n_steps):
         beta_end = sched_cfg["beta_end"]
         schedule_params = {"type": "logarithmic_annealing", "beta_start": beta_start, "beta_end": beta_end}
         desc = f"log beta: {beta_start}→{beta_end}"
+    elif sched_type == "sinusoidal_annealing":
+        beta_start = sched_cfg["beta_start"]
+        beta_end = sched_cfg["beta_end"]
+        schedule_params = {"type": "sinusoidal_annealing", "beta_start": beta_start, "beta_end": beta_end}
+        desc = f"sinusoidal beta: {beta_start}→{beta_end}"
     else:
         raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
@@ -168,6 +196,10 @@ def build_schedules_from_types(sched_types, sched_cfg, n_steps):
             schedule_params = {"type": "logarithmic_annealing", "beta_start": beta_start, "beta_end": beta_end}
             desc = f"log beta: {beta_start}→{beta_end}"
             label = f"Logarithmic {beta_start}→{beta_end}"
+        elif sched_type == "sinusoidal_annealing":
+            schedule_params = {"type": "sinusoidal_annealing", "beta_start": beta_start, "beta_end": beta_end}
+            desc = f"sinusoidal beta: {beta_start}→{beta_end}"
+            label = f"Sinusoidal {beta_start}→{beta_end}"
         else:
             raise ValueError(f"Unknown betta_scheduling type: {sched_type}")
 
@@ -484,7 +516,7 @@ def run_experiment(N, n_steps, init_mode, beta_schedule, n_runs, base_seed=0, ve
         n_workers: Number of parallel workers. If None, uses CPU count for parallel execution.
         schedule_params: Dict with schedule parameters for parallel execution. Required when n_runs > 1.
             Must contain:
-            - "type": "constant", "linear_annealing", or "exponential_annealing"
+            - "type": "constant", "linear_annealing", "sinusoidal_annealing", "logarithmic_annealing", or "exponential_annealing"
             - "beta_const": for constant schedules
             - "beta_start", "beta_end": for annealing schedules
         schedule_params is required for parallel execution because schedule functions are closures
@@ -660,7 +692,7 @@ def plot_energy_histories(all_histories, title, out_path=None, schedule_labels=N
     plt.yscale('log')
     plt.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
     plt.legend(fontsize=12, framealpha=0.9, loc='best')
-    
+    plt.xlim(left=0)
     plt.tight_layout()
 
     if out_path is not None:
@@ -758,7 +790,7 @@ def plot_acceptance_rates_binned(all_accepted_steps_list, all_rejected_steps_lis
         plt.title(title, fontsize=18, fontweight='bold')
     plt.grid(True, alpha=0.3, linestyle='--', linewidth=0.5)
     plt.legend(fontsize=12, framealpha=0.9, loc='best')
-    
+    plt.xlim(left=0)
     plt.tight_layout()
     
     if out_path is not None:
@@ -791,7 +823,7 @@ def run_beta_start_end_pairs(
         N: Board size
         n_steps: Number of MCMC steps
         beta_start_ends: List of [beta_start, beta_end] pairs, e.g., [[0.1, 1.0], [2.0, 5.0]]
-        annealing_type: Type of annealing schedule ("linear_annealing", "logarithmic_annealing", or "exponential_annealing")
+        annealing_type: Type of annealing schedule ("linear_annealing", "logarithmic_annealing", "sinusoidal_annealing", or "exponential_annealing")
         init_mode: Initialization mode
         n_runs: Number of runs per pair
         base_seed: Base seed for random number generation

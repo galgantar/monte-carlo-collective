@@ -41,6 +41,8 @@ for label, beta in beta_schedules.items():
         color=colors[label],
     )
 
+plt.legend(fontsize=12, framealpha=0.9, loc="best")
+
 plt.xlabel("Step", fontsize=20)
 plt.ylabel(r"Schedule value", fontsize=20)
 plt.title(r"Comparison of scheduling functions",
@@ -50,4 +52,6 @@ plt.xlim(left=0)
 plt.ylim(0.95, 3.05)
 
 plt.grid(True, alpha=0.3, linestyle="--", linewidth=0.5)
+plt.savefig("beta_schedules.png", dpi=150, bbox_inches="tight")
+
 plt.show()
