@@ -12,6 +12,7 @@ from mcmc_board import State3DQueensBoard
 import logging
 from datetime import datetime
 
+
 def setup_logging():
     log_dir = "outputs"
     os.makedirs(log_dir, exist_ok=True)
@@ -1537,5 +1538,3 @@ if __name__ == "__main__":
 
     else:
         raise ValueError(f"Unknown experiment_type: {experiment_type}")
-
-
