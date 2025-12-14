@@ -1,14 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Steps
 T = 1000
 steps = np.arange(T)
 
-# Normalized time
 t = steps / (T - 1)
 
-# Base schedules in [0, 1]
 base_schedules = {
     "Linear": t,
     "Logarithmic": np.log1p(9 * t) / np.log(10),
@@ -16,7 +13,6 @@ base_schedules = {
     "Cosine": 0.5 * (1 - np.cos(np.pi * t)),
 }
 
-# Map to beta in [1, 3]
 beta_schedules = {
     name: 1.0 + 2.0 * sched
     for name, sched in base_schedules.items()
@@ -29,7 +25,6 @@ colors = {
     "Cosine": "tab:red",
 }
 
-# Plot
 plt.figure(figsize=(8, 5))
 
 for label, beta in beta_schedules.items():
@@ -52,6 +47,6 @@ plt.xlim(left=0)
 plt.ylim(0.95, 3.05)
 
 plt.grid(True, alpha=0.3, linestyle="--", linewidth=0.5)
-plt.savefig("beta_schedules.png", dpi=150, bbox_inches="tight")
+plt.savefig("figures/beta_schedules.png", dpi=150, bbox_inches="tight")
 
 plt.show()

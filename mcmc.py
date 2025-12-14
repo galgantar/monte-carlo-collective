@@ -33,7 +33,6 @@ class State3DQueens:
                     )
 
                 if init_mode == "latin":
-                    # Latin square: full N x N
                     i_grid, j_grid = np.indices((N, N))
                     k_grid = (i_grid + j_grid) % N
                     self.queens = np.stack(
@@ -41,10 +40,9 @@ class State3DQueens:
                         axis=1
                     )
 
-                else:  # init_mode == "klarner"
+                else:
                     g = math.gcd(N, 210)
                     if g == 1:
-                        # Standard Klarner construction on full N x N
                         i_grid, j_grid = np.indices((N, N))
                         k_grid = (3 * i_grid + 5 * j_grid) % N
                         self.queens = np.stack(
@@ -52,7 +50,6 @@ class State3DQueens:
                             axis=1
                         )
                     else:
-                        # Find largest M < N with gcd(M,210) == 1
                         M = None
                         for m in range(N - 1, 0, -1):
                             if math.gcd(m, 210) == 1:
@@ -72,7 +69,6 @@ class State3DQueens:
 
                         positions = []
 
-                        # 1) Klarner core on M x M, depth M (non-attacking among themselves)
                         for i in range(M):
                             for j in range(M):
                                 k = (3 * i + 5 * j) % M
@@ -87,11 +83,8 @@ class State3DQueens:
                                 f"Klarner core size M^2={core_Q} exceeds Q={Q}."
                             )
 
-                        # 2) Place the remaining queens randomly in free 3D cells
                         if remaining > 0:
                             N3 = N ** 3
-                            # To avoid building the full list in huge N,
-                            # we just sample until we have enough distinct free cells.
                             while len(positions) < Q:
                                 i = np.random.randint(0, N)
                                 j = np.random.randint(0, N)
@@ -104,7 +97,6 @@ class State3DQueens:
                         self.queens = np.array(positions, dtype=int)
 
             elif init_mode == "random":
-                # Fully random distinct 3D positions
                 total_cells = N ** 3
                 if Q > total_cells:
                     raise ValueError(f"Q={Q} cannot exceed N^3={total_cells}.")
@@ -125,7 +117,6 @@ class State3DQueens:
             self.queens = positions
             self.Q = positions.shape[0]
 
-        # Build occ_set, energy cache etc. here as in your full class
         self.occ_set = set()
         for (i, j, k) in self.queens:
             pos = (int(i), int(j), int(k))
@@ -153,22 +144,18 @@ class State3DQueens:
             return 0
 
         positions = self.queens
-        # Note: i, j, k have shape (Q,)
         i = positions[:, 0]
         j = positions[:, 1]
         k = positions[:, 2]
 
-        # Note: di, dj, dk have shape (Q, Q)
         di = np.abs(i[:, None] - i[None, :])
         dj = np.abs(j[:, None] - j[None, :])
         dk = np.abs(k[:, None] - k[None, :])
 
-        # Note: same_ij, same_ik, same_jk have shape (Q, Q)
         same_ij = (i[:, None] == i[None, :]) & (j[:, None] == j[None, :])
         same_ik = (i[:, None] == i[None, :]) & (k[:, None] == k[None, :])
         same_jk = (j[:, None] == j[None, :]) & (k[:, None] == k[None, :])
         
-        # Note: plane_k_diag, plane_j_diag, plane_i_diag have shape (Q, Q)
         plane_k_diag = (k[:, None] == k[None, :]) & (di == dj)
         plane_j_diag = (j[:, None] == j[None, :]) & (di == dk)
         plane_i_diag = (i[:, None] == i[None, :]) & (dj == dk)
