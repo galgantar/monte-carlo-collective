@@ -10,7 +10,6 @@ from mcmc import State3DQueens
 from mcmc_board import State3DQueensBoard
 
 
-
 def constant_beta(beta):
     def schedule(step):
         return beta

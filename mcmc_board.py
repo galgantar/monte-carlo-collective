@@ -46,12 +46,6 @@ class State3DQueensBoard:
                             f"(N={N}, gcd(N,210)={g})."
                         )
                     
-                    print(
-                        f"[warning] Klarner: gcd(N={N},210)={g}≠1; "
-                        f"using Klarner core with M={M} (gcd(M,210)=1) "
-                        f"and placing remaining queens randomly."
-                    )
-                    
                     self.heights = np.zeros((N, N), dtype=int)
                     for i in range(M):
                         for j in range(M):

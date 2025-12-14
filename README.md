@@ -1,6 +1,6 @@
 # Monte Carlo Collective: 3D Queens Problem
 
-This project implements Monte Carlo Markov Chain (MCMC) methods to solve the 3D Queens problem (eg placing $N^2$ queens on $N \times N \times N$ board) using simulated annealing with various beta scheduling strategies.
+This project implements Monte Carlo Markov Chain (MCMC) methods to solve the 3D Queens problem (e.g., placing $N^2$ queens on $N \times N \times N$ board) using simulated annealing with various beta scheduling strategies.
 
 ## Installation
 
@@ -62,3 +62,15 @@ python experiments.py
 ```
 
 Results are saved to `figures/` and `results/` folders.
+
+
+# MCMC implementations
+
+Our MCMC implementations are:
+
+- `mcmc.py` - implementation of general MCMC base chain (no restriction on queen placement)
+- `mcmc_board.py` - implementation of MCMC with board constraint (one queen per each pair of the first two $(i,j)$ coordinates)
+
+## Other files
+
+Schedule graphics for the report are produced by `schedules.py`
