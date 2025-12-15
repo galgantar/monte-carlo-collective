@@ -141,11 +141,10 @@ def run_single_chain_board_multithread(args):
 
 
 def main():
-    N = 5
+    N = 15
     n_runs = 10
     n_steps = 100000
     init_mode = "random"
-    run_idx = 0
     early_stop_patience = None
     beta_start = 1.0
     beta_end = 3.0
