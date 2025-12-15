@@ -427,6 +427,7 @@ def run_single_chain_multithread(args):
     duration = end_time - start_time
     return {
         "run_idx": run_idx,
+        "best_state": res["best_state"],
         "energy_history": res["energy_history"],
         "best_energy": res["best_energy"],
         "duration": duration,
@@ -461,6 +462,7 @@ def run_single_chain_board_multithread(args):
     duration = end_time - start_time
     return {
         "run_idx": run_idx,
+        "best_state": res["best_state"],
         "energy_history": res["energy_history"],
         "best_energy": res["best_energy"],
         "duration": duration,
